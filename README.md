@@ -9,3 +9,11 @@ https://www.udemy.com/
 https://es.duolingo.com/
 https://www.nicolas-schurmann.com/
 https://www.kadenze.com
+
+
+30/07 Definimos paleta de colores: 
+Color de fondo (negro) 171313
+Color de fondo 2 F5EEEE
+Titulos y mas EA21A2 - AF05AA
+
+Adjuntamos el link del tablero de tareas https://github.com/users/NaconechneyN/projects/3
