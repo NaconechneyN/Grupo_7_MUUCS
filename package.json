@@ -1,0 +1,22 @@
+{
+  "name": "grupo_7_muucs",
+  "version": "1.0.0",
+  "description": "Plataforma que ofrece cursos gratuitos y pagos, confeccionados por sus propios usuarios.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NaconechneyN/Grupo_7_MUUCS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NaconechneyN/Grupo_7_MUUCS/issues"
+  },
+  "homepage": "https://github.com/NaconechneyN/Grupo_7_MUUCS#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
