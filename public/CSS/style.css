@@ -1,0 +1,41 @@
+header {
+    background-color: #171313;
+}
+body {
+    margin: 0px 0px 0px 0px
+}
+.header {
+    display: flex ;
+    height: 48px;
+}
+
+header img {
+    object-fit: cover;
+    height:100%;
+    width: 100%;
+}
+
+.logo {
+    width: 20%;
+}
+
+.busqueda {
+    width: 40%;
+}
+
+.usuario {
+    width: 40%;
+}
+
+.busqueda p {
+    display: flex;
+}
+#texto {
+    width: 85%;
+}
+#boton {
+    width: 15%;
+}
+input {
+    display: inline;
+}
