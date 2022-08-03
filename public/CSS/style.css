@@ -29,6 +29,7 @@ header img {
 
 .busqueda p {
     display: flex;
+    margin: 0px;
 }
 #texto {
     width: 85%;
@@ -36,6 +37,24 @@ header img {
 #boton {
     width: 15%;
 }
-input {
+.busqueda input {
     display: inline;
+    height: 30px;
+    border-top-left-radius:20px ;
+    border-bottom-left-radius:20px ;
+    border-right: 0px;
+}
+.busqueda {
+    display: flex;
+    align-items: center;
+}
+
+i {
+    color: #EA21A2;
+}
+
+.busqueda button {
+    border-top-right-radius:20px ;
+    border-bottom-right-radius:20px ;
+    border-left: 0px;
 }
