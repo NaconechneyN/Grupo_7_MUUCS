@@ -21,10 +21,17 @@ header img {
 
 .busqueda {
     width: 40%;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    justify-content: center;
 }
 
 .usuario {
     width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content:space-around
 }
 
 .busqueda p {
@@ -43,11 +50,9 @@ header img {
     border-top-left-radius:20px ;
     border-bottom-left-radius:20px ;
     border-right: 0px;
+    border: 0px;
 }
-.busqueda {
-    display: flex;
-    align-items: center;
-}
+
 
 i {
     color: #EA21A2;
@@ -57,4 +62,14 @@ i {
     border-top-right-radius:20px ;
     border-bottom-right-radius:20px ;
     border-left: 0px;
+    border: 0px;
+}
+
+.usuario button {
+    border-radius: 20px;
+    background-color: #EA21A2;
+    height: 30px;
+    width: 40%;
+    border: 2px solid white;
+    color: white;
 }
