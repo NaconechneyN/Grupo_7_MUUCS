@@ -1,12 +1,17 @@
+* {
+    font-family: 'Source Sans Pro', sans-serif;
+    box-sizing: border-box;
+}
+
 header {
-    background-color: #171313;
+    background-color:  #231c24 ;
 }
 body {
     margin: 0px 0px 0px 0px
 }
 .header {
     display: flex ;
-    height: 48px;
+    height: 50px;
 }
 
 header img {
@@ -50,7 +55,8 @@ header img {
     border-top-left-radius:20px ;
     border-bottom-left-radius:20px ;
     border-right: 0px;
-    border: 0px;
+    border: 2px outset #8a9597;
+    box-shadow: #EA21A2 0px 2px 8px;
 }
 
 
@@ -62,16 +68,20 @@ i {
     border-top-right-radius:20px ;
     border-bottom-right-radius:20px ;
     border-left: 0px;
-    border: 0px;
+    border: 2px outset #8a9597;
+    box-shadow: #EA21A2 0px 2px 5px;
 }
+
+
 
 .usuario button {
     border-radius: 20px;
     background-color: #EA21A2;
     height: 30px;
     width: 40%;
-    border: 2px solid white;
+    border: 2px outset #8a9597;
     color: white;
+    box-shadow: #EA21A2 0px 2px 5px;
 }
 footer {
     background-color: #171313;
