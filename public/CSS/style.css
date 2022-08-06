@@ -82,6 +82,11 @@ i {
     border: 2px outset #8a9597;
     color: white;
     box-shadow: #EA21A2 0px 2px 5px;
+    padding: 1px 1px 1px 1px;
+}
+
+.usuario button i {
+    color: white;
 }
 footer {
     background-color: #171313;
