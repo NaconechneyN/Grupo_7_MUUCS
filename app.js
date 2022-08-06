@@ -1,11 +1,13 @@
-const express= require("express");
+const express= require('express');
 const app = express();
 
 const path = require('path');
 
 app.use(express.static('public'));
 
-app.listen(2022, ()=>console.log("Servidor MUUCS acitvo bebé!"));
+app.listen(2022, ()=>{
+    console.log("Servidor MUUCS acitvo bebé!")
+});
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, "./views/index.html"))

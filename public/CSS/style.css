@@ -73,3 +73,17 @@ i {
     border: 2px solid white;
     color: white;
 }
+footer {
+    background-color: #171313;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    height: 150px ;
+    justify-content: space-around;
+}
+
+
+
+.redesSoc{
+    display: flex;
+}
