@@ -4,17 +4,17 @@
 
 .busqueda {
     width: 55%;
-    
+
 }
 
 .usuario {
     width: 25%;
-    
+
 }
 
 .busqueda form {
     width: 100%;
-    
+
 }
 
 
@@ -24,7 +24,8 @@
     text-align: left;
     border: 0px;
     padding: 0px;
-    background-color: #EA21A2;
+    background-color: #231c24;
+    color: #EA21A2;
 }
 
 .direccion {
@@ -32,40 +33,61 @@
     height: 50px;
     display: flex;
     align-items: stretch;
+    border-top: 2px solid #EA21A2;
+    border-bottom: 1px solid #EA21A2;
 }
+
 .direccion form {
     display: flex;
     width: 100%;
     align-content: stretch;
 }
+
 .boton {
     width: 10%;
     border: 0px;
     padding: 0px;
-    background-color: #EA21A2;
+    background-color: #231c24;
     border-left: 1px solid black;
 }
+
+
 .fa-location-dot {
-    color: black;
+    color: #EA21A2;
     font-size: 15px;
 
 }
+
 .fa-angle-right {
-    color: black;
+    color: #EA21A2;
 }
 
-.slider {
-    width: 90% !important;
-    border: 2px solid white;
-}
-
-  
-.carousel-inner img {
-    width: 300px;
-    height: 170px;
+.banner img {
+    width: 90%;
+    height: 150px;
 }
 
 .banner {
     display: flex;
     justify-content: center;
+    height: 180px;
+    align-items: center;
+}
+
+.slider {
+    width: 90%;
+    border: 2px outset #8a9597;
+    box-shadow: #EA21A2 0px 8px 16px -8px;
+}
+
+.banner p {
+    position: absolute;
+    top: 98px;
+    left: 40px;
+    text-align: center;
+    font-family: "Archivo Black", sans-serif;
+    text-align: center;
+    font-size: 47px;
+    color: #EA21A2;
+    text-shadow: rgba(41, 0, 0, 0.91) 2px 2px 2px;
 }

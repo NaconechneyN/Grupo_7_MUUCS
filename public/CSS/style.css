@@ -5,6 +5,7 @@
 
 header {
     background-color:  #231c24 ;
+    
 }
 body {
     margin: 0px 0px 0px 0px
@@ -91,14 +92,14 @@ i {
 footer {
     background-color: #171313;
     color: white;
-    display: flex;
-    flex-wrap: wrap;
+    display: flex !important;
+    flex-wrap: wrap !important;
     height: 150px ;
-    justify-content: space-around;
+    justify-content: space-around !important;
 }
 
 
 
 .redesSoc{
-    display: flex;
+    display: flex !important; 
 }
