@@ -25,7 +25,7 @@
     border: 0px;
     padding: 0px;
     background-color: #231c24;
-    color: #EA21A2;
+    color:  #a62892;
 }
 
 .direccion {
@@ -33,8 +33,8 @@
     height: 50px;
     display: flex;
     align-items: stretch;
-    border-top: 2px solid #EA21A2;
-    border-bottom: 1px solid #EA21A2;
+    border-top: 2px solid  #a62892;
+    border-bottom: 1px solid  #a62892;
 }
 
 .direccion form {
@@ -53,41 +53,63 @@
 
 
 .fa-location-dot {
-    color: #EA21A2;
+    color:  #a62892;
     font-size: 15px;
 
 }
 
 .fa-angle-right {
-    color: #EA21A2;
+    color:  #a62892;
 }
 
 .banner img {
-    width: 90%;
+    width: 95vh;
     height: 150px;
 }
 
 .banner {
     display: flex;
     justify-content: center;
-    height: 180px;
+    height: 200px;
     align-items: center;
 }
 
 .slider {
-    width: 90%;
+    width: 95%;
     border: 2px outset #8a9597;
-    box-shadow: #EA21A2 0px 8px 16px -8px;
+    -webkit-box-shadow: -1px 18px 23px -17px rgba(255,0,255,1);
+    -moz-box-shadow: -1px 18px 23px -17px rgba(255,0,255,1);
+    box-shadow: -1px 18px 23px -17px rgba(255,0,255,1);
 }
 
 .banner p {
     position: absolute;
     top: 98px;
-    left: 40px;
+    left: 70px;
     text-align: center;
     font-family: "Archivo Black", sans-serif;
     text-align: center;
     font-size: 47px;
-    color: #EA21A2;
-    text-shadow: rgba(41, 0, 0, 0.91) 2px 2px 2px;
+    color: white;
+    text-shadow: #a62892 2px 2px 2px;
+}
+
+.menu {
+    display: flex;
+    background-color: #231c24;
+    color: aliceblue;
+}
+
+.items {
+    padding-right: 15px;
+    border-bottom: 2px solid white;
+    margin: 5px;
+}
+
+#primero {
+    margin-left: 20px;
+}
+
+.items:hover{
+    border-bottom: 2px solid rgba(255,0,255,1);
 }

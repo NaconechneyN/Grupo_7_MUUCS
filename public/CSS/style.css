@@ -13,12 +13,17 @@ body {
 .header {
     display: flex ;
     height: 50px;
+    border-bottom: 2px outset #a62892;
+    -webkit-box-shadow: -1px 18px 23px -20px rgba(255,0,255,1);
+    -moz-box-shadow: -1px 18px 23px -20px rgba(255,0,255,1);
+    box-shadow: -1px 18px 23px -20px rgba(255,0,255,1);
 }
 
 header img {
     object-fit: cover;
     height:100%;
     width: 100%;
+    
 }
 
 .logo {
@@ -57,12 +62,12 @@ header img {
     border-bottom-left-radius:20px ;
     border-right: 0px;
     border: 2px outset #8a9597;
-    box-shadow: #EA21A2 0px 2px 8px;
+    box-shadow:   #a62892 0px 2px 8px;
 }
 
 
 i {
-    color: #EA21A2;
+    color:  #a62892;
 }
 
 .busqueda button {
@@ -70,19 +75,19 @@ i {
     border-bottom-right-radius:20px ;
     border-left: 0px;
     border: 2px outset #8a9597;
-    box-shadow: #EA21A2 0px 2px 5px;
+    box-shadow:  #a62892 0px 2px 5px;
 }
 
 
 
 .usuario button {
     border-radius: 20px;
-    background-color: #EA21A2;
+    background-color:  #a62892;
     height: 30px;
     width: 40%;
     border: 2px outset #8a9597;
     color: white;
-    box-shadow: #EA21A2 0px 2px 5px;
+    box-shadow:  #a62892 0px 2px 5px;
     padding: 1px 1px 1px 1px;
 }
 
