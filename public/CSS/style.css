@@ -14,10 +14,10 @@ body {
     display: flex ;
     height: 50px;
     border-bottom: 2px outset #a62892;
-    -webkit-box-shadow: -1px 18px 23px -20px rgba(255,0,255,1);
-    -moz-box-shadow: -1px 18px 23px -20px rgba(255,0,255,1);
-    box-shadow: -1px 18px 23px -20px rgba(255,0,255,1);
+    
 }
+
+
 
 header img {
     object-fit: cover;

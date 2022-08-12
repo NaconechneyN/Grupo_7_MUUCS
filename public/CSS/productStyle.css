@@ -112,4 +112,134 @@
 
 .items:hover{
     border-bottom: 2px solid rgba(255,0,255,1);
+    color: rgba(255,0,255,1) ;
+}
+
+.categorias{
+    display: flex;
+    color: #a62892;
+    height: 40px;
+    align-items: stretch;
+    justify-content: flex-start;
+    box-shadow: -1px 18px 23px -15px rgba(255,0,255,1) !important;
+    border-bottom: 2px outset #a62892;
+}
+.principal {
+    width: 25% !important;
+    display: flex;
+    margin-left: 10px;
+    justify-content: space-around;
+    
+
+}
+.principal i{
+    font-size: 2em;
+    align-items: center;
+    -webkit-text-stroke: 1px #a62892;
+}
+.categorias p {
+    text-shadow: 0px 2px 18px rgba(255,0,255,1);
+    color: white; 
+    font-size: 1.25em;
+    margin: 0px;
+    font-weight: bolder;
+
+}
+
+.secundarias {
+    display: flex;
+    align-items: center;
+}
+
+.categorias div{
+    width: 15%;
+    margin-right: 0px;
+    color: rgba(255,0,255,1);
+    align-items: center;
+}
+
+.titulos {
+    background-color: #231c24;
+    color: white;
+    text-shadow: 4px 4px 2px #a62892;
+}
+
+.titulos h1 {
+    font-size: 4em;
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+
+.titulos h3 {
+    margin: 0px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+}
+
+.cursos {
+    background-color: #231c24;
+}
+
+.cursos article {
+    color:  white;
+    display: flex;
+    margin: 10px 10px 0px 30px;
+    background-color: #231c24;
+
+}
+
+.cursos article .imagen {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cursos article .imagen img{
+    width: 90%;
+    height: 20vh;
+    border: 2px outset #8a9597;
+}
+
+.cursos article .descripcion {
+    width: 70%;
+    padding: 10px 10px 10px 20px;
+    position: relative;
+}
+
+.cursos article .descripcion h4{
+    color: #a62892;
+    text-shadow: 1px 1px 1px white;
+    font-weight: bolder;
+    margin-bottom: 4px;
+    font-size: 2em;
+}
+
+.cursos article .descripcion p{
+    color: #aeb0b1;
+    margin: 0px;
+}
+
+.cursos article .descripcion span {
+    font-size: 0.7em;
+    margin-right: 10px;
+}
+
+.cursos article:hover {
+    border: 3px solid #a62892;
+    border-radius: 5px;
+
+}
+
+.cursos article .descripcion button {
+    position: absolute;
+    left: 90%;
+    background-color: #231c24;
+    border: 2px solid #a62892;
+    border-radius: 100%;
+
+}
+
+main {
+    background-color: #231c24;
 }
