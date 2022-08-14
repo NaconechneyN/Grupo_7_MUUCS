@@ -12,6 +12,7 @@ header {
 body {
     margin: 0px 0px 0px 0px;
     line-height: 1.5;
+    background-color: #0f0c0f;
 }
 .header {
     display: flex ;
@@ -121,6 +122,7 @@ ul{
 .footer{
     background-color: #231c24;
     padding: 70px 0;
+    box-shadow: 0 0 10px #a62892;
 }
 
 .columnaFoot{
@@ -199,4 +201,173 @@ ul{
     .columnaFoot {
         width: 100%;
     }
+}
+
+
+/* -------------------------------------------------------------REGISTER--------------------------------------------------------------------------- */
+
+
+.mainXd{
+    display: flex;
+    justify-content: center;
+    background-color: #231c24;
+}
+
+.contenedorReg{
+    max-width: 700px;
+    width: 100%;
+    background-color: #231c24;
+    padding: 25px 30px;
+    border-radius: 5px;
+    margin-right: auto;
+    margin-left: auto;
+    box-shadow: 0 0 5px #a62892;
+}
+
+.contenedorReg .title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+    color: #ffffff;
+}
+
+.contenedorReg .title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: #a62892;
+}
+
+.details{
+    color: #ffffff;
+}
+
+.contenedorReg form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+
+.user-details .input-box .details{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.user-details .input-box input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #a6289184;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+    border-color: #d32eb8;
+}
+
+
+
+
+form input[type="radio"]{
+    display: none;
+}
+
+.contenedor-de-botones{
+    display: flex;
+    justify-content: space-around;
+}
+
+form .buttonRegistrarse{
+    height: 45px;
+    margin: 45px 0;
+}
+
+form .buttonRegistrarse input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #ffffff;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: #a6289184
+}
+
+form .buttonRegistrarse input:hover{
+    background: #a62892
+}
+
+.wrap{
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 20px;
+}
+
+
+@media (max-width: 584px){
+    .contenedorReg{
+        max-width: 100%;
+    }
+
+    form .user-details .input-box{
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    .contenedorReg form .user-details{
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+
+    .user-details::-webkit-scrollbar{
+        width: 0;
+    }
+}
+
+/* -------------------------------------------------------------LOGIN--------------------------------------------------------------------------- */
+
+.button-inicioSesion{
+    display: block;
+    width: 100%;
+    font-weight: 700;
+    background: #a6289184;
+    border-radius: 5px;
+    color:#ffffff;
+    border: none;
+    letter-spacing: 1px;
+    font-size: 18px;
+    outline: none;
+    font-weight: 500;
+    display: flex;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 32px;
+    margin: 4px 2px;
+    display: flex;
+    text-align: center;
+    align-self: center;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.button-inicioSesion:hover{
+    background: #a62892;
 }
