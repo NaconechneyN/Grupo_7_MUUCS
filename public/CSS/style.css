@@ -1,6 +1,12 @@
+/*paleta de colores:
+Color de fondo (negro) #231c24
+Color de fondo 2 F5EEEE
+Titulos y mas EA21A2 - AF05AA*/
+
+
 * {
-    font-family: 'Source Sans Pro', sans-serif;
-    box-sizing: border-box;
+    font-family: "Source Sans Pro", "Roboto";
+    box-sizing: border-box
 }
 
 header {
