@@ -65,6 +65,10 @@
 .banner img {
     width: 95vh;
     height: 150px;
+    border: 2px outset #8a9597;
+    -webkit-box-shadow: -1px 18px 23px -17px rgba(255,0,255,1);
+    -moz-box-shadow: -1px 18px 23px -17px rgba(255,0,255,1);
+    box-shadow: -1px 18px 23px -17px rgba(255,0,255,1);
 }
 
 .banner {
@@ -76,16 +80,12 @@
 
 .slider {
     width: 95%;
-    border: 2px outset #8a9597;
-    -webkit-box-shadow: -1px 18px 23px -17px rgba(255,0,255,1);
-    -moz-box-shadow: -1px 18px 23px -17px rgba(255,0,255,1);
-    box-shadow: -1px 18px 23px -17px rgba(255,0,255,1);
+    
+    
 }
 
 .banner p {
-    position: absolute;
-    top: 98px;
-    left: 70px;
+    
     text-align: center;
     font-family: "Archivo Black", sans-serif;
     text-align: center;
@@ -228,18 +228,57 @@
 .cursos article:hover {
     border: 3px solid #a62892;
     border-radius: 5px;
+    box-shadow: rgba(255,0,255,1) 0px 30px 60px -12px inset,rgba(255,0,255,1) 0px 18px 36px -18px inset;
 
 }
 
+.cursos article:hover h4{
+    color: #231c24;
+
+}
 .cursos article .descripcion button {
     position: absolute;
-    left: 90%;
+    left: 65%;
+    top: 65%;
     background-color: #231c24;
-    border: 2px solid #a62892;
-    border-radius: 100%;
+    color: #a62892;
+    border: 1px solid  rgba(255,0,255,1);
+    padding: 4px;
 
 }
 
 main {
     background-color: #231c24;
+}
+
+.banner {
+    height: 40%;
+    padding-bottom: 40px;
+    background-color: #231c24;
+    flex-direction: column;
+    border: 2px solid rgba(255,0,255,1);
+    margin: 5% 5% 5% 5%;
+}
+
+.cursos article .descripcion button span{
+    font-size: 1em;
+
+}
+
+.cursos article .descripcion button:hover {
+    background-color: #a62892;
+    color: white;
+}
+
+.cursos article .descripcion button:hover i{
+    color: white;
+}
+
+.titulobanner {
+    align-self: flex-start;
+    padding: 2% 0px 2% 5%;
+    color: #FFFFFF;
+
+    font-size: 2em;
+    -webkit-text-stroke: 1px #a62892;
 }
