@@ -41,6 +41,15 @@ header img {
 
 .logo {
     width: 20%;
+    animation: rotacion 5s infinite;
+}
+
+@keyframes rotacion {
+    20%{transform:rotate(10deg)}
+    40%{transform:rotate(-10deg)}
+    60%{transform:rotate(5deg)}
+    80%{transform:rotate(-5deg)}
+    100%{transform:rotate(0deg)}
 }
 
 .busqueda {

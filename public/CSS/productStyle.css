@@ -175,11 +175,19 @@
     text-shadow: 2px 2px 2px #a62892;
     display: flex;
     justify-content: center;
+    transition-property: color, text-shadow, padding-left;
+    transition-duration: 0.8s;
 }
 
 .categorias li i{
     padding-left: 10px;
     text-shadow: none;
+}
+
+.categorias ul li:hover{
+    color: rgba(255,0,255,1);
+    text-shadow: 1px 1px 2px #FFFFFF;
+    padding-left: 5px;
 }
 
 .titulos {
@@ -209,6 +217,8 @@
     display: flex;
     margin: 10px 10px 0px 30px;
     background-color: #231c24;
+    transition-property: border, border-radius, box-shadow;
+    transition-duration: 0.3s;
 
 }
 
@@ -283,6 +293,15 @@ main {
     border: 2px solid rgba(255,0,255,1);
     margin: 5% 5% 5% 5%;
     box-shadow: -1px 18px 23px -15px rgba(255,0,255,1) !important;
+    animation: rotacion 5s infinite;
+}
+
+@keyframes rotacion {
+    20%{transform:rotate(10deg)}
+    40%{transform:rotate(-10deg)}
+    60%{transform:rotate(5deg)}
+    80%{transform:rotate(-5deg)}
+    100%{transform:rotate(0deg)}
 }
 
 .cursos article .descripcion button span{
