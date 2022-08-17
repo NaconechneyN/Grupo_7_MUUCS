@@ -43,7 +43,7 @@
     <div class="MainXd">
         <div class="contenedorReg">
             <div class="title">Registrarse</div>
-            <form action="#" id="formulario">
+            <form action="/" id="formulario" method="get">
                 <div class="user-details">
                     <div class="input-box">
                         <span class="details"> Nombre y apellido</span>
@@ -67,7 +67,7 @@
                     </div>
                     <div class="input-box">
                         <span class="details"> Confirmar contraseña</span>
-                        <input type="password" placeholder="Confirmar contraseña" >
+                        <input type="password" placeholder="Confirmar contraseña" id="password2">
                     </div>
                 </div>
 
@@ -143,14 +143,14 @@
                 e.preventDefault();
             }
 
-            else if (tiene_numeros(formulario.password.value)==0 || tiene_letras(formulario.password.value)==0 || formulario.password.value> 8 ) {
+            else if (tiene_numeros(formulario.password.value)==0 || tiene_letras(formulario.password.value)==0 || formulario.password.value.length < 8 ) {
                 alert('La contraseña debe contener dígitos  y letras. Su longitud debe ser de mas de 8 caracteres');
                 e.preventDefault();
                 let password = formulario.password.value;
                 console.log(formulario.password.value);
             }
             
-            else if(formulario.password.value!=formulario.password2.value){
+            else if(formulario.password.value != formulario.password2.value){
                 alert('Las contraseñas deben coincidir');
                 e.preventDefault();
             }
