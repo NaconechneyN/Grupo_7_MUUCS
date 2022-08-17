@@ -84,14 +84,18 @@
     
 }
 
-.banner p {
-    
+.banner h3 {
+    padding-top: 5px;
     text-align: center;
     font-family: "Archivo Black", sans-serif;
     text-align: center;
     font-size: 47px;
     color: white;
     text-shadow: #a62892 2px 2px 2px;
+}
+.banner p {
+    color: #cfcfcf;
+    text-align: center;
 }
 
 .menu {
@@ -118,33 +122,15 @@
 .categorias{
     display: flex;
     color: #a62892;
-    height: 40px;
+    height: 50px;
     align-items: stretch;
     justify-content: flex-start;
     box-shadow: -1px 18px 23px -15px rgba(255,0,255,1) !important;
     border-bottom: 2px outset #a62892;
 }
-.principal {
-    width: 25% !important;
-    display: flex;
-    margin-left: 10px;
-    justify-content: space-around;
-    
 
-}
-.principal i{
-    font-size: 2em;
-    align-items: center;
-    -webkit-text-stroke: 1px #a62892;
-}
-.categorias p {
-    text-shadow: 0px 2px 18px rgba(255,0,255,1);
-    color: white; 
-    font-size: 1.25em;
-    margin: 0px;
-    font-weight: bolder;
 
-}
+
 
 .secundarias {
     display: flex;
@@ -156,6 +142,44 @@
     margin-right: 0px;
     color: rgba(255,0,255,1);
     align-items: center;
+}
+.categorias ul{
+    display: flex;
+    padding-left: 3vh;
+    align-items: center;
+    margin-bottom: 0px !important;
+}
+
+#izquierda {
+    width: 60%;
+    justify-content: start;
+}
+#derecha {
+    justify-content: end;
+    width: 40%;
+    padding-right: 2vh;
+    
+}
+
+#derecha li {
+    width: 50%;
+    font-size: 1.10em;
+}
+
+.categorias li{
+    width: 22%;
+    font-size: 1.30em;
+    color: #FFFFFF;
+    align-items: center;
+    font-weight: bolder;
+    text-shadow: 2px 2px 2px #a62892;
+    display: flex;
+    justify-content: center;
+}
+
+.categorias li i{
+    padding-left: 10px;
+    text-shadow: none;
 }
 
 .titulos {
@@ -197,7 +221,7 @@
 
 .cursos article .imagen img{
     width: 90%;
-    height: 20vh;
+    height: 40vh;
     border: 2px outset #8a9597;
 }
 
@@ -212,7 +236,7 @@
     text-shadow: 1px 1px 1px white;
     font-weight: bolder;
     margin-bottom: 4px;
-    font-size: 2em;
+    font-size: 2.5em;
 }
 
 .cursos article .descripcion p{
@@ -238,8 +262,8 @@
 }
 .cursos article .descripcion button {
     position: absolute;
-    left: 65%;
-    top: 65%;
+    left: 75%;
+    top: 85%;
     background-color: #231c24;
     color: #a62892;
     border: 1px solid  rgba(255,0,255,1);
@@ -258,6 +282,7 @@ main {
     flex-direction: column;
     border: 2px solid rgba(255,0,255,1);
     margin: 5% 5% 5% 5%;
+    box-shadow: -1px 18px 23px -15px rgba(255,0,255,1) !important;
 }
 
 .cursos article .descripcion button span{
@@ -282,3 +307,31 @@ main {
     font-size: 2em;
     -webkit-text-stroke: 1px #a62892;
 }
+
+.descripcion i.desplegador{
+    font-size: 2em;
+    position: absolute;
+    left: 95%;
+    top: 5%;
+    -webkit-text-stroke: 1px #231c24;
+}
+.descripcion2 h3 {
+    color: #a62892;
+    text-shadow: 1px 1px 1px white;
+    font-weight: bolder;
+    margin-bottom: 4px;
+    font-size: 1.5em;
+}
+
+.descripcion2 p {
+    font-size: 0.8em;
+}
+
+.descripcion2 {
+    padding-bottom: 10px;
+}
+
+article:enabled .descripcion2 {
+    display: block;
+}
+

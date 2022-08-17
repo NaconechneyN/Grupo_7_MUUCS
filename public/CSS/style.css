@@ -5,15 +5,13 @@ Titulos y mas EA21A2 - AF05AA*/
 
 
 * {
-<<<<<<< HEAD
-    font-family: "Source Sans Pro", "Roboto";
-    box-sizing: border-box
-=======
+
+
     margin: 0;
     padding: 0;
     font-family: 'Source Sans Pro', sans-serif;
     box-sizing: border-box;
->>>>>>> 38039d3af45c1608a3d3c11bec8b93f8dab517c2
+
 }
 
 header {
@@ -47,11 +45,15 @@ header img {
 
 .busqueda {
     width: 40%;
-    display: flex;
     align-items: center;
     margin: auto;
+    display: flex;
     justify-content: center;
 }
+ .busqueda form {
+    display: flex;
+    justify-content: center;
+ }
 
 .usuario {
     width: 40%;
@@ -63,7 +65,11 @@ header img {
 .busqueda p {
     display: flex;
     margin: 0px;
+    width: 100%;
+    justify-content: center;
 }
+
+
 #texto {
     width: 85%;
 }
