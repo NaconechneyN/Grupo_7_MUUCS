@@ -297,10 +297,10 @@ main {
 }
 
 @keyframes rotacion {
-    20%{transform:rotate(10deg)}
-    40%{transform:rotate(-10deg)}
-    60%{transform:rotate(5deg)}
-    80%{transform:rotate(-5deg)}
+    20%{transform:rotate(2deg)}
+    40%{transform:rotate(-2deg)}
+    60%{transform:rotate(1deg)}
+    80%{transform:rotate(-1deg)}
     100%{transform:rotate(0deg)}
 }
 
