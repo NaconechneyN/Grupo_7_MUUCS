@@ -1,3 +1,4 @@
+
 .baner-completo {
     
     display: flex;
@@ -5,10 +6,8 @@
     /* justify-content: center; */
     align-items: center;
     /* position: relative; */
-    padding: 2rem 0;
     gap: 1rem;
-    background-color: #e1e7e9;
-    border: 3px solid rgba(255,0,255,1);
+    background: linear-gradient(0deg, #00021A, #4d1259, #BD1CBE);
     border-top: none;
     box-shadow: -1px 18px 23px -15px rgba(255,0,255,1);
   }
@@ -16,24 +15,25 @@
 
 
 .texto_baner {
-    font-size: 1rem;
-    border: 3px solid rgba(255,0,255,1);
+    font-size: 2.5rem;
     /* width: 40%; */
-    margin: 0 3rem;
     /* margin-top: 100px; */
     padding: 15px;
     align-self: stretch;
     background-color: white;
-    color: #a62892;
-    background-color: #231c24;
+    color: white;
+    background: linear-gradient(0deg, #00021A, #661876, #d61fd6);
+    padding-right: 200px;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    
 }
 
-.texto_baner {
-    box-shadow: 16px 24px 0 grey;
-}
+
 
 .texto_baner p {
     font-weight: bold;
+
 }
 
 .img_publicidad img {
@@ -49,8 +49,6 @@
 
     .texto_baner {
         width: 40%;
-        height: 70%;
-        margin-top: 10%;
     }
     
 }
@@ -60,30 +58,30 @@
     /* padding: 3vh; */
     padding-top: 2rem;
     padding-bottom: 3rem;
-    border: 3px solid rgba(255,0,255,1);
     border-top: none;
-    color: #a62892;
-    box-shadow: -1px 18px 23px -15px rgba(255,0,255,1);
+    color: #AE4CC5;
+    background: linear-gradient(180deg, #00021A, #0F0C0F);
     /* height: 25vh; */
 }
 
 .presentacion h2{
-    font-size: 40px;
+    font-size: 30px;
     padding-bottom: 4vh;
+    text-align: center;
 }
 
 .presentacion p{
-    font-size: 30px
+    font-size: 20px;
+    text-align: center;
 }
 
 .descubre{
     font-size: 30px;
     /* margin-bottom: 15px; */
     border-top: none;
-    border: 3px solid rgba(255,0,255,1);
     color: #a62892;
-    box-shadow: -1px 18px 23px -15px rgba(255,0,255,1);
     /* height: 35vh; */
+    background: linear-gradient(180deg, #0F0C0F, #14062A, #4a1255);
 }
 
 .categorias{
@@ -129,7 +127,6 @@
 
 .cursos {
     border: 3px solid rgba(255,0,255,1);
-    box-shadow: -1px 18px 23px -15px rgba(255,0,255,1);
 }
 
 .vistos h2{
@@ -187,12 +184,30 @@
     margin-inline: auto;
 }
 
+
+
+
 .titulo-seccion {
     font-size: 3.5rem;
     font-weight: bold;
     color: #a62892;
+    text-align: center;
 }
   
-.padding-seccion {
-    padding: 3rem 0;
+.box-seccion {
+    padding: 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    border: 3rem;
+    margin: 100px;
+    background: #ffffff0f;
+    backdrop-filter: blur(10px);
+}
+
+.box-seccion h2{
+    background: #ccc;
+    background: linear-gradient(70deg, #773cd7, #D51FD5);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+
 }

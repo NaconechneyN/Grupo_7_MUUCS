@@ -9,6 +9,10 @@ const mainRouter = require ('./src/routes/mainRouter')
 
 app.use(express.static('public'));
 
+app.set('view engine', 'ejs')
+
+app.set('views', path.join(__dirname, "./src/views"))
+
 
 
 app.listen(process.env.PORT, ()=>{
