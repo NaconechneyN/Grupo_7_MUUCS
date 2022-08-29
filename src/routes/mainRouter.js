@@ -14,4 +14,13 @@ router.get('/productDetail', controllers.productDetail);
 
 router.get('/register', controllers.register);
 
+router.get('/productsEdi', controllers.productsEdi);
+
+router.get('/ProductsList', controllers.ProductsList);
+
+router.get('/productsCarga', controllers.productsCarga);
+
+
+
+
 module.exports = router;

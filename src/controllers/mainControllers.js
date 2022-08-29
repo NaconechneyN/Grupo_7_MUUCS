@@ -8,6 +8,9 @@ const controllers = {
     productCart: (req, res) => res.render('productCart',{title: 'ProductCart'}),
     productDetail: (req, res) => res.render('productDetail',{title: 'ProductDetail', cursos:cursos}),
     register: (req, res) => res.render('register',{title: 'Register'}),
+    productsEdi: (req, res) => res.render ('productsEdi',{title: 'productsEdi'}),
+    productsList: (req, res) => res.render ('productsList',{title: 'productsList'}),
+    productsCarga: (req, res) => res.render ('productsCarga',{title: 'productsCarga'}),
 }
 
 module.exports = controllers;
