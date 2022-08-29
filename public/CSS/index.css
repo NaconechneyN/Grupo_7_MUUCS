@@ -125,12 +125,14 @@
 }
 
 
-.cursos {
-    border: 3px solid rgba(255,0,255,1);
+.cursos-padding-seccion {
+    padding-top: 160px;
+    padding-bottom: 200px;
+    background: linear-gradient(180deg, #491254, #401648, #1d132f); 
 }
 
 .vistos h2{
-    font-size: 40px
+    font-size: 40px;
 }
 .foto{
     height: 70%;
@@ -164,8 +166,11 @@
     flex-direction: column;
     text-align: center;
     border: solid black 2px;
-    border-radius: 0 0 10px 10px;
-    margin-bottom:15px;
+    border-radius: 0 0 5px 5px;
+    margin:15px;
+    background-color: #231C24;
+    box-shadow: 0px 1px 11px -5px rgba(228, 53, 185, 0.75);
+    transition: all 0.3s ease;
 
 }
 
@@ -176,6 +181,11 @@
     justify-content: center;
     color: white;
     height: 100%;
+}
+
+.tarjeta_producto:hover{
+    box-shadow: 0px 1px 20px -5px rgb(255, 65, 207);
+    transition: all 0.8s ease;
 }
 
 .container {
@@ -189,10 +199,15 @@
 
 
 .titulo-seccion {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: bold;
-    color: #a62892;
+    color: #c82eae;
     text-align: center;
+    padding-bottom: 50px;
+    padding-top: 50px;
+   /*  background: linear-gradient(70deg, #7038ff, #e233fd, #f633fd);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text; */
 }
   
 .box-seccion {
@@ -201,13 +216,14 @@
     padding-right: 3rem;
     border: 3rem;
     margin: 100px;
+    margin-bottom: 0px;
     background: #ffffff0f;
     backdrop-filter: blur(10px);
 }
 
 .box-seccion h2{
     background: #ccc;
-    background: linear-gradient(70deg, #660ff3, #ec0dec);
+    background: linear-gradient(70deg, #320d6c, #ff0cff);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 
@@ -230,6 +246,8 @@
    flex-direction: column;
    display: flex;
    justify-content: center;
+   transition: all 0.5s ease;
+   cursor: pointer;
 
   }
   .unaSeccion p{
@@ -239,11 +257,22 @@
     text-align: center;
   }
 
+
+
   .Seccion{
     width: 150px;
+    transition: all 0.5s ease;
   }
 
-  
-  
+  .Seccion:hover{
+    width: 170px;
+    transition: all 0.5s ease;
+  }
 
-  
+  .unaSeccion:hover{
+    background: #a62891a5;
+    padding: 15px;
+    transition: all 0.5s ease;
+  }
+
+ 
