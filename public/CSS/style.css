@@ -126,6 +126,7 @@ i {
 }
 
 
+
 /* -------------------------------------------------------------FOOTER--------------------------------------------------------------------------- */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
@@ -397,4 +398,74 @@ form .buttonRegistrarse input:hover{
 
 .button-inicioSesion:hover{
     background: #a62892;
+}
+
+/* -------------------------------------------------------------HEADEr--------------------------------------------------------------------------- */
+
+.categoria{
+    display: flex !important;
+    color: #a62892;
+    height: 50px;
+    align-items: stretch;
+    justify-content: flex-start;
+    box-shadow: -1px 18px 23px -15px rgba(255,0,255,1) !important;
+    border-bottom: 2px outset #a62892;
+}
+
+
+
+
+
+
+.categoria div{
+    width: 15%;
+    margin-right: 0px;
+    color: rgba(255,0,255,1);
+    align-items: center;
+}
+.categoria ul{
+    display: flex;
+    padding-left: 3vh;
+    align-items: center;
+    margin-bottom: 0px !important;
+}
+
+#izquierda {
+    width: 60%;
+    justify-content: start;
+}
+#derecha {
+    justify-content: end;
+    width: 40%;
+    padding-right: 2vh;
+    
+}
+
+#derecha li {
+    width: 50%;
+    font-size: 1.10em;
+}
+
+.categoria li{
+    width: 22%;
+    font-size: 1.30em;
+    color: #FFFFFF;
+    align-items: center;
+    font-weight: bolder;
+    text-shadow: 2px 2px 2px #a62892;
+    display: flex;
+    justify-content: center;
+    transition-property: color, text-shadow, padding-left;
+    transition-duration: 0.8s;
+}
+
+.categoria li i{
+    padding-left: 10px;
+    text-shadow: none;
+}
+
+.categoria ul li:hover{
+    color: rgba(255,0,255,1);
+    text-shadow: 1px 1px 2px #FFFFFF;
+    padding-left: 5px;
 }

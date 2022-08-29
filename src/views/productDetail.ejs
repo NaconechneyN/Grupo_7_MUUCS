@@ -2,12 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProdcutDetail</title>
-    <script src="https://kit.fontawesome.com/b2124379f6.js" crossorigin="anonymous"></script>
-    <link href="css/style.css" rel="stylesheet">
+    <%- include('./partials/partHead') %>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="css/productStyle.css" rel="stylesheet">
@@ -16,45 +11,7 @@
 <body>
 
     <body>
-        <header>
-            <div class="header">
-                <div class="logo">
-                    <img src="img/logo.jpeg" alt="">
-                </div>
-                <div class="busqueda">
-                    <form action="../../form-result.php" method="post" target="_blank">
-
-                        <p>
-
-                            <input id="texto" type="search" name="busquedamusica" placeholder=" Cur`s Muucs">
-
-                            <button><i class="fa-brands fa-searchengin"></i></button>
-
-                        </p>
-
-                    </form>
-                </div>
-                <div class="usuario">
-                    <button><i class="fa-solid fa-bars"></i></button>
-                    <button><i class="fa-solid fa-cart-shopping"></i></button>
-                </div>
-            </div>
-            <div class="categorias">
-                
-                <ul id="izquierda">
-                    <li>Nosotros<i class="fa-solid fa-chevron-right"></i></li>
-                    <li>Ofertas<i class="fa-solid fa-chevron-right"></i></li>
-                    <li>Vender<i class="fa-solid fa-chevron-right"></i></li>
-                    <li>Soporte<i class="fa-solid fa-chevron-right"></i></li>
-                </ul>
-                <ul id="derecha">
-                    <li>Crear Cuenta<i class="fa-solid fa-chevron-right"></i></li>
-                    <li>Iniciar session<i class="fa-solid fa-chevron-right"></i></li>
-                </ul>
-            </div>
-            
-            <div class="espsombra">&nbsp;</div>
-        </header>
+        <%- include('./partials/header') %> 
 
         <main>
             <div class="titulos">

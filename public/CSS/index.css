@@ -274,5 +274,8 @@
     padding: 15px;
     transition: all 0.5s ease;
   }
+  .espsombra {
+    display: none;
+  }
 
  

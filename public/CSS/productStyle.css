@@ -118,6 +118,10 @@
     border-bottom: 2px solid rgba(255,0,255,1);
     color: rgba(255,0,255,1) ;
 }
+.secundarias {
+    display: flex;
+    align-items: center;
+}
 
 .categorias{
     display: flex;
@@ -132,10 +136,7 @@
 
 
 
-.secundarias {
-    display: flex;
-    align-items: center;
-}
+
 
 .categorias div{
     width: 15%;
