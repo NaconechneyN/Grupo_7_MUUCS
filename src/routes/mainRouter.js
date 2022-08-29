@@ -14,11 +14,11 @@ router.get('/productDetail', controllers.productDetail);
 
 router.get('/register', controllers.register);
 
-router.get('/productsEdi', controllers.productsEdi);
+router.get('/productEdi', controllers.productEdi);
 
-router.get('/ProductsList', controllers.ProductsList);
+router.get('/productList', controllers.productList);
 
-router.get('/productsCarga', controllers.productsCarga);
+router.get('/productCarga', controllers.productCarga);
 
 
 
