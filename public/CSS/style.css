@@ -469,3 +469,12 @@ form .buttonRegistrarse input:hover{
     text-shadow: 1px 1px 2px #FFFFFF;
     padding-left: 5px;
 }
+.busqueda {
+    width: 55%;
+
+}
+
+.busqueda form {
+    width: 100%;
+
+}
