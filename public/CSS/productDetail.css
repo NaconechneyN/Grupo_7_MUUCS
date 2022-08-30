@@ -1,0 +1,63 @@
+main{
+    background: rgb(35,28,36);
+    background: linear-gradient(114deg, rgba(35,28,36,1) 4%, rgba(45,14,66,1) 80%, rgba(8,24,54,1) 100%);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contenedorPD{
+    width: 100%;
+    /* background-color: #231C24; */
+    background: none;
+    border-radius: 5px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    margin-left: 100px;
+    margin-right: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.contenedorPD .imgPD{
+    max-width: 650px;
+    max-height: 650px;
+}
+
+.titulo{
+    color: white;
+    font-size: 80px;
+}
+
+.descripcion{
+    color: white;
+    font-size: 20px;
+    padding-right: 50px;
+    padding-top: 50px;
+}
+
+.precio{
+    color: #ea46ce;
+    font-size: 40px;
+    padding-top: 20px;
+}
+
+.boton{
+    padding-top: 50px;
+}
+
+.boton button{
+    cursor: pointer;
+}
+
+.infoDelCurso{
+    width: 100%;
+    background: white;
+    border-radius: 5px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    margin-left: 100px;
+    margin-right: 100px;
+    display: flex;
+    justify-content: space-around;
+}
