@@ -5,7 +5,7 @@ Por otro lado surguieron problemas a la hora de usar el respositorio remoto, en 
 Para una mejor contancia, acordamos realizar una videollamada obligatoria los Sabados del tiempo que sea necesario y una los lunes y miercoles de 15 minutos antes de la clase, en la que nos pondremos al tanto de los progresos.
 
 
-22/10
+22/08
 
 En la reunion que tuvimos con los integrantes se concluyo en :
 *Comenzar a enfocarnos en terminar las tareas con tiempo pra poder revisarlas. Enfocarnos en como presentar nuestro trabajo.
@@ -15,3 +15,5 @@ En la reunion que tuvimos con los integrantes se concluyo en :
 *Hacer tareas pertinentes de manera conjunta en favor de que todos aprendamos*
 
 
+02/09
+En esta retro al notar que todos los integrantes teniamos tiempos diferentes, hicimos foco en conectarnos lo antes posible y definir las tareas que corresponden a cada integrante y consultarnos en caso de que surgan dificultades y concretar videollamada para solucionarlo.

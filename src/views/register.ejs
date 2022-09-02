@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/partHead') %>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="logo">
+                <img src="img/logo.jpeg" alt="">
+            </div>
+            <div class="busqueda">
+                <form action="../../form-result.php" method="post" target="_blank">
+
+                    <p>
+
+                        <input id="texto" type="search" name="busquedamusica"
+                            placeholder=" Cur`s Muucs">
+                            
+                        <button><i class="fa-brands fa-searchengin"></i></button>
+
+                    </p>
+
+                </form>
+            </div>
+            <div class="usuario">
+                <button><i class="fa-solid fa-right-to-bracket"></i> Ingresa</button>
+                <button><i class="fa-solid fa-child-reaching"></i> Registrate</button>
+            </div>
+        </div>
+    </header>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="MainXd">
+        <div class="contenedorReg">
+            <div class="title">Registrarse</div>
+            <form action="/" id="formulario" method="get">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details"> Nombre y apellido</span>
+                        <input type="text" placeholder="Nombre y apellido" id="nombre">
+                    </div>
+                    <div class="input-box">
+                        <span class="details"> Nombre de usuario</span>
+                        <input type="text" placeholder="Nombre de usuario" id="nombreUsuario" name="nombreUsuario" >
+                    </div>
+                    <div class="input-box">
+                        <span class="details"> Fecha de nacimiento</span>
+                        <input type="date" id="date" placeholder="" >
+                    </div>
+                    <div class="input-box">
+                        <span class="details"> Domicilio</span>
+                        <input type="text" placeholder="Domicilio" id="domicilio">
+                    </div>
+                    <div class="input-box">
+                        <span class="details"> Contraseña</span>
+                        <input type="password" placeholder="Contraseña" id="password" >
+                    </div>
+                    <div class="input-box">
+                        <span class="details"> Confirmar contraseña</span>
+                        <input type="password" placeholder="Confirmar contraseña" id="password2">
+                    </div>
+                </div>
+
+                <div class="buttonRegistrarse">
+                    <input type="submit" value="Registrarse">
+                </div>
+
+                
+            </form>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <%- include('./partials/footer') %> 
+    <script>
+
+        const formulario = document.getElementById('formulario');
+
+        
+
+        formulario.addEventListener('submit', function (e) {
+            if (formulario.nombre.value.length < 2) {
+                alert('No se ingresó un nombre válido!');
+                e.preventDefault();
+            }
+            else if (formulario.nombreUsuario.value.length < 2) {
+                alert('No se ingresó un nombre de Usuario válido!');
+                e.preventDefault();
+            }
+            else if ((Date.now() - Date.parse(formulario.date.value)) < 567993600000) {
+                alert('Tienes que ser mayor de edad para registrarse');
+                e.preventDefault();
+            }
+
+            else if (tiene_numeros(formulario.password.value)==0 || tiene_letras(formulario.password.value)==0 || formulario.password.value.length < 8 ) {
+                alert('La contraseña debe contener dígitos  y letras. Su longitud debe ser de mas de 8 caracteres');
+                e.preventDefault();
+                let password = formulario.password.value;
+                console.log(formulario.password.value);
+            }
+            
+            else if(formulario.password.value != formulario.password2.value){
+                alert('Las contraseñas deben coincidir');
+                e.preventDefault();
+            }
+            else {
+                alert('Se ha registrado correctamente!!')
+            }
+            
+
+            function tiene_numeros(texto) {
+                var numeros="0123456789";
+                for (i = 0; i < texto.length; i++) {
+                    if (numeros.indexOf(texto.charAt(i), 0) != -1) {
+                        return 1;
+                    }
+                }
+                return 0;
+            }
+
+            function tiene_letras(texto) {
+                var letras="abcdefghyjklmnñopqrstuvwxyzABCDEFGHYJKLMNÑOPQRSTUVWXYZ";
+                texto = texto.toLowerCase();
+                for (i = 0; i < texto.length; i++) {
+                    if (letras.indexOf(texto.charAt(i), 0) != -1) {
+                        return 1;
+                    }
+                }
+                return 0;
+            }
+        });
+    </script>
+</body>
+<!--<script>
+    function validacion() {
+            var formvalido = true;
+            var nombre = document.getElementById("nombre").value;
+            if (nombre == null || nombre.length == 0) {
+                alert("El nombre  no puede estar vacío.");
+                formvalido = false;
+            }
+            var nom = document.getElementById("nombreUsuario").value;
+            if (nom == null || nom.length == 0) {
+                alert("El nombre de usuario no puede estar vacío.");
+                formvalido = false;
+            }
+            var mail = document.getElementById("domicilio").value;
+            if (mail == null || mail < 4) {
+                alert("El e-mail no puede estar vacío.")
+                formvalido = false;
+            }
+            var pass = document.getElementById("contraseña").value;
+            if (pass == null || pass < 8) {
+                alert("La contraseña debe ser mayor a 8 caracteres.")
+                formvalido = false;
+            }
+            
+            return formvalido;
+        }
+</script>-->
+</html>
