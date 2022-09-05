@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/partHead', {title: "Titulo de la pagina de Carga"}) %>
+    <link href="css/index.css" rel="stylesheet">
+</head>
+
+<body>
+    <%- include('../partials/header') %> 
+    <main>
+        <form action="/courses" method="post">
+            <input type="text" name="titulo" placeholder="titulo">
+            </br>
+            <input type="number" name="precio" placeholder="precio">
+            </br>
+            </br>
+
+            <input type="submit" value="Cargar Curso">
+        </form>
+    </main>
+
+    <%- include('../partials/footer') %> 
+
+
+</body>
+
+</html>

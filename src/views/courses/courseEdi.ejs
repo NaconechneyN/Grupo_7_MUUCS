@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/partHead') %>
+    <link href="css/index.css" rel="stylesheet">
+</head>
+
+<body>
+    <%- include('../partials/header') %> 
+    <main>
+        <form action="/courses/<%= locals.id %>?_method=PUT" method="post">
+            <input type="text" name="titulo" placeholder="titulo" value="<%= locals.titulo %>">
+            </br>
+            <input type="number" name="precio" placeholder="precio" value="<%= locals.precio %>">
+            </br>
+            </br>
+
+            <input type="submit" value="Cargar Curso">
+        </form>
+    </main>
+
+    <%- include('../partials/footer') %> 
+
+
+</body>
+
+</html>

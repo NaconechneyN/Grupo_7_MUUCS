@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/partHead') %>
+    <link href="css/index.css" rel="stylesheet">
+</head>
+
+<body>
+    <%- include('../partials/header') %> 
+    <main>
+        <h1>¿Desea eliminar el curso <%= locals.titulo %>?</h1>
+        <form action="/courses/<%= locals.id %>?_method=DELETE" method="post">
+            <input type="submit" value="Si">
+        </form>
+    </main>
+
+    <%- include('../partials/footer') %> 
+
+
+</body>
+
+</html>

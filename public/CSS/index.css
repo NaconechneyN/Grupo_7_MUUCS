@@ -279,3 +279,10 @@
   }
 
  
+
+.lista-de-prueba {
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
