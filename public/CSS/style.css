@@ -215,6 +215,9 @@ ul{
     background-color: #ffffff;
 }
 
+.categoria {
+    display: none
+}
 /* las mediaaaas del footer */
 
 @media(max-width: 767px){
@@ -441,12 +444,13 @@ form .buttonRegistrarse input:hover{
     
 }
 
-#derecha li {
-    width: 50%;
-    font-size: 1.10em;
+#derecha a {
+    width: 40%;
+    font-size: 1em;
+    text-decoration: none;
 }
 
-.categoria li{
+.categoria a{
     width: 22%;
     font-size: 1.30em;
     color: #FFFFFF;
@@ -457,14 +461,16 @@ form .buttonRegistrarse input:hover{
     justify-content: center;
     transition-property: color, text-shadow, padding-left;
     transition-duration: 0.8s;
+    text-decoration: none;
 }
 
-.categoria li i{
+.categoria a i{
     padding-left: 10px;
     text-shadow: none;
+    text-decoration: none;
 }
 
-.categoria ul li:hover{
+.categoria ul a:hover{
     color: rgba(255,0,255,1);
     text-shadow: 1px 1px 2px #FFFFFF;
     padding-left: 5px;
@@ -477,4 +483,25 @@ form .buttonRegistrarse input:hover{
 .busqueda form {
     width: 100%;
 
+}
+.hamburguesa {
+    display: none 
+}
+
+.busqueda {
+    width: 55%;
+
+}
+.usuario {
+    width: 25%;
+    
+}
+@media(max-width: 767px){
+    .categoria {
+        display: none !important;
+    }
+    .hamburguesa {
+        display: inline-block;
+    }
+    
 }
