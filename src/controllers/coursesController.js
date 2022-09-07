@@ -4,9 +4,9 @@ const setCourses = require("../utils/setCourses")
 const coursesCotroller = {
     coursesList: (req, res) => {
         const courses = getCourses() 
-        const context = courses
+        const cursos = courses
         
-        res.render("coursesList", context)
+        res.render("productList", cursos)
     }, 
     courseDetail: (req, res) => {
         const courses = getCourses() 

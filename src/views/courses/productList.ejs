@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="cursos">
-                <% for( let i = 0; i <cursos.length; i++ ) { %>
+                <% locals.cursos.forEach(curso => { %>
                 
                 
                 <article>
@@ -41,104 +41,28 @@
                         <img src="img/cursos4.jpg" alt="">
                     </div>
                     <div class="descripcion">
-                        <h4><%=cursos[i].titulo%> </h4>
+                        <h4><%=curso.titulo%> </h4>
 
-                        <p class="palabrasClaves">asdasd,asdasdasd,asdasd,asdasd,asdasd,asda</p>
+                        <p class="palabrasClaves">curso.descripcion</p>
                         <div class="descripcion2">
                             <h3>Metodos de enseñansa</h3>
-                            <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla blabla bla bla bla bla bla v </p>
+                            <p><%=curso.tipoDeEnseñanza%></p>
                             <h3>Que aprenderas</h3>
-                            <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla blabla bla bla bla bla bla v </p>
-                            <h3>Al completarlo</h3>
-                            <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla blabla bla bla bla bla bla v ( la idea es que esto algun dia se cuando se despligue el articulo</p>
+                            <p><%=curso.descripcionQueAprenderás %></p>
+                            <h3>Certificacion</h3>
+                            <p><%=curso.certificacion%></p>
                         </div>
-                        <p class="dueño">Por Lucio</p>
-                        <span class="fecha">Agosto 2022</span>
-                        <span class="valoracion">5.9 <i class="fa-solid fa-bolt"></i></span>
-                        <span class="cantidadAlumnos">499 <i class="fa-solid fa-address-book"></i></span>
-                        <span class="duracion">2hs <i class="fa-solid fa-clock"></i></span>
-                        <span class="precio"><i class="fa-solid fa-hand-holding-dollar"></i> 999999</span>
+                        <p class="dueño">Por <%=curso.QuienLoImparte%></p>
+                        <span class="fecha"><%=curso.actulizacion%></span>
+                        <span class="valoracion"><%=curso.valoracion%><i class="fa-solid fa-bolt"></i></span>
+                        <span class="duracion"><%=curso.duracion%><i class="fa-solid fa-clock"></i></span>
+                        <span class="precio"><i class="fa-solid fa-hand-holding-dollar"></i> <%=curso.precio%></span>
                         <button><span>Agregar al Carrito</span><i class="fa-solid fa-cart-shopping"></i></button>
                         <i class="fa-solid fa-chevron-right desplegador"></i>
                     </div>
                 </article>
-                <article>
-                    <div class="imagen">
-                        <img src="img/cursos5.jpg" alt="">
-                    </div>
-                    <div class="descripcion">
-                        <h4>Titulo</h4>
-                        <p class="palabrasClaves">asdasd,asdasdasd,asdasd,asdasd,asdasd,asda</p>
-                        <div class="descripcion2">
-                            <h3>Metodos de enseñansa</h3>
-                            <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla blabla bla bla bla bla bla v </p>
-                            <h3>Que aprenderas</h3>
-                            <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla blabla bla bla bla bla bla v </p>
-                            <h3>Al completarlo</h3>
-                            <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla blabla bla bla bla bla bla v </p>
-                        </div>
-                        <p class="dueño">Por Lucio</p>
-                        <span class="fecha">Agosto 2022</span>
-                        <span class="valoracion">5.9 <i class="fa-solid fa-bolt"></i></span>
-                        <span class="cantidadAlumnos">499 <i class="fa-solid fa-address-book"></i></span>
-                        <span class="duracion">2hs <i class="fa-solid fa-clock"></i></span>
-                        <span class="precio"><i class="fa-solid fa-hand-holding-dollar"></i> 999999</span>
-                        <button><span>Agregar al Carrito</span><i class="fa-solid fa-cart-shopping"></i></button>
-                        <i class="fa-solid fa-chevron-right desplegador"></i>
-                    </div>
-                </article>
-                <article>
-                    <div class="imagen">
-                        <img src="img/cursos6.jpg" alt="">
-                    </div>
-                    <div class="descripcion">
-                        <h4>Titulo</h4>
-                        <p class="palabrasClaves">asdasd,asdasdasd,asdasd,asdasd,asdasd,asda</p>
-                        <div class="descripcion2">
-                            <h3>Metodos de enseñansa</h3>
-                            <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla blabla bla bla bla bla bla v </p>
-                            <h3>Que aprenderas</h3>
-                            <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla blabla bla bla bla bla bla v </p>
-                            <h3>Al completarlo</h3>
-                            <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla blabla bla bla bla bla bla v </p>
-                        </div>
-                        <p class="dueño">Por Lucio</p>
-                        <span class="fecha">Agosto 2022</span>
-                        <span class="valoracion">5.9 <i class="fa-solid fa-bolt"></i></span>
-                        <span class="cantidadAlumnos">499 <i class="fa-solid fa-address-book"></i></span>
-                        <span class="duracion">2hs <i class="fa-solid fa-clock"></i></span>
-                        <span class="precio"><i class="fa-solid fa-hand-holding-dollar"></i> 999999</span>
-                        <button><span>Agregar al Carrito</span><i class="fa-solid fa-cart-shopping"></i></button>
-                        <i class="fa-solid fa-chevron-right desplegador"></i>
-                    </div>
-                </article>
-                <article>
-                    <div class="imagen">
-                        <img src="img/cursos7.jpg" alt="">
-                    </div>
-                    <div class="descripcion">
-                        <h4>Titulo</h4>
-                        <p class="palabrasClaves">asdasd,asdasdasd,asdasd,asdasd,asdasd,asda</p>
-                        <div class="descripcion2">
-                            <h3>Metodos de enseñansa</h3>
-                            <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla blabla bla bla bla bla bla v </p>
-                            <h3>Que aprenderas</h3>
-                            <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla blabla bla bla bla bla bla v </p>
-                            <h3>Al completarlo</h3>
-                            <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla blabla bla bla bla bla bla v </p>
-                        </div>
-                        <p class="dueño">Por Lucio</p>
-                        <span class="fecha">Agosto 2022</span>
-                        <span class="valoracion">5.9 <i class="fa-solid fa-bolt"></i></span>
-                        <span class="cantidadAlumnos">499 <i class="fa-solid fa-address-book"></i></span>
-                        <span class="duracion">2hs <i class="fa-solid fa-clock"></i></span>
-                        <span class="precio"><i class="fa-solid fa-hand-holding-dollar"></i> 999999</span>
-                        <button><span>Agregar al Carrito</span><i class="fa-solid fa-cart-shopping"></i></button>
-                        <i class="fa-solid fa-chevron-right desplegador"></i>
-                        
-                    </div>
-                </article>
-                <% } %>
+                
+                <% }) %>
             </div>
             <div class="banner">
                 <div class="titulobanner">Cursos Destacados</div>
