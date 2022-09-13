@@ -10,7 +10,7 @@ app.use(methodOverride('_method'))
 
 // Routes
 const mainRouter = require ('./src/routes/mainRouter')
-const coursesRouter = require('./src/routes/coursesRouter')
+const coursesRouter = require('./src/routes/productsRouter')
 
 
 app.use(express.static('public'));
