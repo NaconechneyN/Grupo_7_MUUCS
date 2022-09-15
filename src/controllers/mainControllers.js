@@ -1,6 +1,6 @@
 const path = require('path');
 
-const cursos = require('./cursos');
+
 
 const controllers = {
     index: (req, res) => res.render('index', {title: 'Home'}),
