@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/partHead') %>
+    <link href="css/index.css" rel="stylesheet">
+</head>
+
+<body>
+    <%- include('./partials/header') %> 
+    <main>
+        <div class="contenedorReg">
+            <div class="title">Registrarse</div>
+            <form action="/" id="formulario" method="get">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details"> Nombre y apellido</span>
+                        <input type="text" placeholder="Nombre y apellido" id="nombre">
+                    </div>
+                    <div class="input-box">
+                        <span class="details"> Nombre de usuario</span>
+                        <input type="text" placeholder="Nombre de usuario" id="nombreUsuario" name="nombreUsuario" >
+                    </div>
+                    <div class="input-box">
+                        <span class="details"> Fecha de nacimiento</span>
+                        <input type="date" id="date" placeholder="" >
+                    </div>
+                    <div class="input-box">
+                        <span class="details"> Domicilio</span>
+                        <input type="text" placeholder="Domicilio" id="domicilio">
+                    </div>
+                    <div class="input-box">
+                        <span class="details"> Contraseña</span>
+                        <input type="password" placeholder="Contraseña" id="password" >
+                    </div>
+                    <div class="input-box">
+                        <span class="details"> Confirmar contraseña</span>
+                        <input type="password" placeholder="Confirmar contraseña" id="password2">
+                    </div>
+                </div>
+
+                <div class="buttonRegistrarse">
+                    <input type="submit" value="Registrarse">
+                </div>
+
+                
+            </form>
+        </div>
+    </main>
+
+    <%- include('./partials/footer') %> 
+
+
+</body>
+
+</html>
