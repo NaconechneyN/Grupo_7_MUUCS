@@ -11,6 +11,7 @@ app.use(methodOverride('_method'))
 // Routes
 const mainRouter = require ('./src/routes/mainRouter')
 const productsRouter = require('./src/routes/productsRouter')
+const usersRouter = require('./src/routes/usersRouter')
 
 
 app.use(express.static('public'));
@@ -32,3 +33,5 @@ app.listen(process.env.PORT, ()=>{
 app.use(mainRouter);
 
 app.use("/products", productsRouter);
+
+app.use("/users", usersRouter);

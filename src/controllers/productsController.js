@@ -1,14 +1,26 @@
 const getCourses = require("../utils/getCourses")
 const setCourses = require("../utils/setCourses")
 
-const coursesCotroller = {
-    coursesList: (req, res) => {
+const productController = {
+    productDetail: (req, res) => {
+        /*const courses = getCourses() 
+        const courseId = req.params.id
+
+        const courseItem = courses.cursos.filter(course => course.id == courseId)
+
+        const context = courseItem[0]
+        console.log(context)*/
+
+        res.render("productDetail", /*context*/)
+    },
+    
+    /*productList: (req, res) => {
         const courses = getCourses() 
         const cursos = courses
         
         res.render("productList", cursos)
     }, 
-    courseDetail: (req, res) => {
+    prductDetail: (req, res) => {
         const courses = getCourses() 
         const courseId = req.params.id
 
@@ -17,9 +29,9 @@ const coursesCotroller = {
         const context = courseItem[0]
         console.log(context)
 
-        res.render("courseDetail", context)
+        res.render("prductDetail", context)
     },
-    courseCreateForm: (req, res) => {
+    productCreateForm: (req, res) => {
         res.render("coursesCarga")
     },
     courseCreate: (req, res) => {
@@ -77,7 +89,7 @@ const coursesCotroller = {
 
         setCourses(JSON.stringify(courses))
         res.redirect("/courses")
-    }
+    }*/
 }
 
-module.exports = coursesCotroller;
+module.exports = productController;
