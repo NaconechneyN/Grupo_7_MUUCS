@@ -3,53 +3,52 @@
 
 <head>
     <%- include('./partials/partHead') %>
-    <link href="css/productDetail.css" rel="stylesheet">
+        <link href="/CSS/detail.css" rel="stylesheet">
 </head>
 
 <body>
-    <%- include('./partials/header') %> 
-    <main>
-        
-        <div class="contenedorPD">
-            <div class="infoPD">
-                <div class="titulo">
-                    <p>Nombre del curso</p>
+    <%- include('./partials/header') %>
+        <main>
+            <div class="containerDetail">
+                <div>
+                    <img src="/img/imgproductDetail.png" alt="Imagen salud" class="imgDetail">
                 </div>
-                <div class="descripcion">
-                    <p> aca iria la descripion del curso o lo que quieran poner, la verdad no tengo mas fuerzas para pensar en una descripcion elaborada asi que estoy escribiendo esto sin sentido</p>
-                </div>
-                <div class="precio">
-                    <p> $800</p>
-                </div>
-                <div class="boton">
-                    <button>añadir al carrito de compras</button>
-                </div>
-            </div>
-            <img src="img/productDetail.jpg" alt="Imagen salud" class="imgPD">
-        </div>
 
-        <div class="infoDelCurso">
-            <div class="unaInfo">
-                <h2>titulo</h2>
-                <p>mas info</p>
-            </div>
-            <div class="unaInfo">
-                <h2>titulo</h2>
-                <p>mas info</p>
-            </div>
-            <div class="unaInfo">
-                <h2>titulo</h2>
-                <p>mas info</p>
-            </div>
-            <div class="unaInfo">
-                <h2>titulo</h2>
-                <p>mas info</p>
-            </div>
-        </div>
+                <div class="totalDescription">
+                    <div class="tituloDetail">
+                        <h1>titulo del curso</h1>
+                    </div>
+                    <div class="descripcionDetail">
+                        <p> Ciclo de Conferencias en la Fundación Centro Psicoanalítico Argentino. Coordinación general: Rogelio Fernández Couto. Dictadas por Profesores Asociados.
 
-    </main>
+                            Esta publicación brinda acceso a: conferencias con modalidad de Grupo de Estudio mensual con frecuencia semanal o a un seminario de 3 reuniones, a cargo del Profesor Asociado de su elección.</p>
+                        <p class="admCurse">
+                            Persona que ofrece el curso
+                        </p>    
+                    </div>
+                    <div class="cursePrice">
+                        <p class="num">$2578</p>
+                        <p class="ofer">en 12 cuotas de $ 330</p>
+                    </div>
+                    <div class="botonCartDetail">
+                        <a href="#"><p class ="addcart">agregar al carrito</p></a>
+                        <button><i class="fa-solid fa-cart-shopping"></i></button>
+                    </div>
+                    <div class="actulization">
+                        <p>Actualizado en septiembre de 2022, cantidad de clases, cantidad de horas </p>
+                    </div>
+                    <div>
+                        <p class="preg">Preguntas y respuestas</p>
+                        <textarea name="Su pregunta" id="pregunta"></textarea>
+                        <p class="ENVIAR">
+                            <input type="submit" value="ENVIAR"></input>
+                        </p>
+                    </div>
+                </div>
+             </div>   
+        </main>
 
-    <%- include('./partials/footer') %> 
+        <%- include('./partials/footer') %>
 
 
 </body>
