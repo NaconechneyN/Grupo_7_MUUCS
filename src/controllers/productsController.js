@@ -6,7 +6,7 @@ const productController = {
         const courses = getCourses() 
         const courseId = req.params.id
 
-        const courseItem = courses.cursos.filter(course => course.id == courseId)
+        const courseItem = courses.filter(course => course.id == courseId)
 
         const context = courseItem[0]
         const context1 = {
@@ -24,7 +24,26 @@ const productController = {
         },    
 
         productCreate1: (req, res) => {
-            console.log("holas");
+            
+            const curso = req.body;
+
+            const courses = getCourses();
+            
+
+            curso.id =(courses.length+1);
+            curso.actualizacion =Date.now();
+            curso.valoracion =0;
+            curso.numeroDeRegistarados =0;
+
+            console.log(curso);
+
+            courses.push(curso);
+
+            setCourses(JSON.stringify(courses));
+            
+
+
+
             res.render("productCreate", {titulo:"Creacion de producto"})
         },   
     

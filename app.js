@@ -15,7 +15,8 @@ const usersRouter = require('./src/routes/usersRouter')
 
 
 app.use(express.static('public'));
-app.use(express.urlencoded({ extended: false })); // Leer req.body
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json()); // Leer req.body
 
 app.set('view engine', 'ejs')
 
