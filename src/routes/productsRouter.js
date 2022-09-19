@@ -5,10 +5,14 @@ const router = express.Router()
 // Se importa el controlador
 const productsControllers = require("../controllers/productsController")
 
-router.get("/detail", productsControllers.productDetail)
+router.get("/detail/:id", productsControllers.productDetail)
+
+router.get("/create", productsControllers.productCreate)
+
+router.post("/create", productsControllers.productCreate1)
 /*
 router.get("/", productsControllers.coursesList)
-router.post("/", productsControllers.courseCreate)
+
 
 router.get("/create", productsControllers.courseCreateForm)
 

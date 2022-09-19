@@ -4,35 +4,7 @@
     <%- include('./partials/partHead') %>
 </head>
 <body>
-    <header>
-        <div class="header">
-            <div class="logo">
-                <img src="img/logo.jpeg" alt="">
-            </div>
-            <div class="busqueda">
-                <form action="../../form-result.php" method="post" target="_blank">
-
-                    <p>
-
-                        <input id="texto" type="search" name="busquedamusica"
-                            placeholder=" Cur`s Muucs">
-                            
-                        <button><i class="fa-brands fa-searchengin"></i></button>
-
-                    </p>
-
-                </form>
-            </div>
-            <div class="usuario">
-                <button><i class="fa-solid fa-right-to-bracket"></i> Ingresa</button>
-                <button><i class="fa-solid fa-child-reaching"></i> Registrate</button>
-            </div>
-        </div>
-    </header>
-    <br>
-    <br>
-    <br>
-    <br>
+    <%- include('./partials/header') %> 
 
     <div class="MainXd">
         <div class="contenedorReg">
@@ -56,10 +28,6 @@
         </div>
     </div>
 
-    <br>
-    <br>
-    <br>
-    <br>
     <%- include('./partials/footer') %> 
 </body>
 </html>

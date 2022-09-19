@@ -1,0 +1,79 @@
+.main {
+    background-color: #231c24 !important;
+    padding: 30px 0px 0px 0px;
+    padding-bottom: 30px;
+
+}
+
+textarea {
+    height: 70px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #a6289184;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.input-box  {
+    width: 100% !important;
+}
+
+label {
+    color: #ffffff;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.cajaEnseñanza {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 8px;
+    
+}
+
+.cajaEnseñanza input {
+    width: 20% !important;
+    
+}
+.cajaEnseñanza label {
+    width: 80%;
+    padding-top: 5px;
+    
+}
+
+.details {
+    border-bottom: 2px solid #d32eb8 !important;
+}
+
+.cajaCertificacion {
+    display: flex;
+}
+
+.cajaCertificacion label{
+    width: 25% !important;
+    padding-top: 10px;
+}
+
+.cajaCertificacion input{
+    display: block !important;
+    width: 25% !important;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.precioA {
+    width: 90% !important;
+}
+
+.input-box i{
+    width: 10% !important;
+    font-size: 1.5em;
+    padding-left: 10px;
+}
+.contenedorReg {
+    width: 80% !important;
+    max-width: none !important;
+    padding-bottom: 5px;
+}

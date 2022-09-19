@@ -3,52 +3,124 @@
 
 <head>
     <%- include('./partials/partHead') %>
-    <link href="css/index.css" rel="stylesheet">
+        <link href="/css/formCreate.css" rel="stylesheet">
+
+
 </head>
 
 <body>
-    <%- include('./partials/header') %> 
-    <main>
-        <div class="contenedorReg">
-            <div class="title">Registrarse</div>
-            <form action="/" id="formulario" method="get">
-                <div class="user-details">
-                    <div class="input-box">
-                        <span class="details"> Nombre y apellido</span>
-                        <input type="text" placeholder="Nombre y apellido" id="nombre">
+    <%- include('./partials/header') %>
+        <main class="main">
+            <div class="contenedorReg">
+                <div class="title">Agregar un Curso</div>
+                <form action="/product/create" id="formulario" method="post">
+                    <div class="user-details">
+                        <div class="input-box">
+                            <span class="details"> Titulo</span>
+                            <input type="text" placeholder="5 a 20 caracteres" id="nombre">
+                        </div>
+                        <div class="input-box">
+                            <span class="details"> Descripcion</span>
+                            <textarea placeholder="200 caracteres maximo" id="nombreUsuario"
+                                name="nombreUsuario"></textarea>
+                        </div>
+                        <div class="input-box">
+                            <span class="details"> Tipo de Enseñanza</span>
+                            <div class="cajaEnseñanza">
+                                <input type="checkbox" name="Categorías de interés" id="categoria1"
+                                    value="APRENDIZAJE COOPERATIVO">
+                                <label for="Categorías de interés" class="chicos">APRENDIZAJE COOPERATIVO</label>
+                                <label for="Categorías de interés" class="chicos">Método en el cual los educadores
+                                    agrupan a los alumnos para realizar sus tareas con éxito e impactar en los
+                                    estudiantes de forma positiva,
+                                    asegurando la atención y mejorando el aprendizaje, ya que cada miembro del grupo
+                                    realiza sus tareas apoyándose en el trabajo de los demás. </label>
+                            </div>
+                            <div class="cajaEnseñanza">
+                                <input type="checkbox" name="Categorías de interés" id="categoria1"
+                                    value="CLASES O AULA INVERTIDA">
+                                <label for="Categorías de interés" class="chicos">CLASES O AULA INVERTIDA</label>
+                                <label for="Categorías de interés" class="chicos">Método en el cual los educadores
+                                    agrupan a los alumnos para realizar sus tareas con éxito e impactar en los
+                                    estudiantes de forma positiva,
+                                    asegurando la atención y mejorando el aprendizaje, ya que cada miembro del grupo
+                                    realiza sus tareas apoyándose en el trabajo de los demás. </label>
+                            </div>
+                            <div class="cajaEnseñanza">
+                                <input type="checkbox" name="Categorías de interés" id="categoria1"
+                                    value="APRENDIZAJE BASADO EN EL PENSAMIENTO">
+                                <label for="Categorías de interés" class="chicos">APRENDIZAJE BASADO EN EL
+                                    PENSAMIENTO</label>
+                                <label for="Categorías de interés" class="chicos">El objetivo de este método consiste en
+                                    otorgar herramientas para contextualizar, relacionar, analizar, entender,
+                                    argumentar, convertir información en conocimiento y desarrollar el pensamiento, más
+                                    allá de la memorización.</label>
+                            </div>
+                            <div class="cajaEnseñanza">
+                                <input type="checkbox" name="Categorías de interés" id="categoria1"
+                                    value="PENSAMIENTO DE DISEÑO">
+                                <label for="Categorías de interés" class="chicos">PENSAMIENTO DE DISEÑO</label>
+                                <label for="Categorías de interés" class="chicos">Este método consiste en identificar
+                                    con mayor exactitud los problemas individuales de los alumnos, generando ideas,
+                                    resolviendo problemas creativamente y ampliar horizontes para las
+                                    soluciones.</label>
+                            </div>
+                            <div class="cajaEnseñanza">
+                                <input type="checkbox" name="Categorías de interés" id="categoria1"
+                                    value="APRENDIZAJE BASADO EN PROYECTO">
+                                <label for="Categorías de interés" class="chicos">APRENDIZAJE BASADO EN PROYECTO</label>
+                                <label for="Categorías de interés" class="chicos">Este tipo de aprendizaje permite que
+                                    los alumnos adquieran conocimiento y habilidades en la elaboración de proyectos.
+                                    Garantiza procesos de aprendizaje más didáctico, eficaces y prácticos, que permiten
+                                    que los alumnos desarrollen competencias como la comunicación, colaboración y
+                                    resolución de problemas.</label>
+                            </div>
+                            <div class="cajaEnseñanza">
+                                <input type="checkbox" name="Categorías de interés" id="categoria1"
+                                    value="GAMIFICACIÓN">
+                                <label for="Categorías de interés" class="chicos">GAMIFICACIÓN</label>
+                                <label for="Categorías de interés" class="chicos">Consiste en la integración mecánica y
+                                    dinámica de juegos y videojuegos en entornos no lúdicos, para potenciar la
+                                    motivación, concentración, esfuerzos y valores positivos. El uso exponencial de los
+                                    videojuegos ha despertado el interés de expertos en este ámbito, que recomiendan
+                                    videojuegos educativos para los niños.</label>
+                            </div>
+                        </div>
+                        <div class="input-box">
+                            <span class="details"> ¿Que aprenderan los alumnos?</span>
+                            <textarea placeholder="200 caracteres maximo" id="nombreUsuario"
+                                name="nombreUsuario"></textarea>
+                        </div>
+                        <div class="input-box">
+                            <span class="details"> Certificacion</span>
+                            <div class="cajaCertificacion">
+                                <input type="radio" name="Certifiacion" id="perfil1" value="Oficial">
+                                <label for="Certifiacion" class="chicos">Oficial</label>
+                                <input type="radio" name="Certifiacion" id="perfil2" value="No Oficial">
+                                <label for="Certifiacion" class="chicos">No Oficial</label>
+                            </div>
+                        </div>
+                        <div class="input-box">
+                            <span class="details"> ¿Quien lo imparte?</span>
+                            <input type="text" placeholder="5 a 20 caracteres" id="nombre">
+                        </div>
+                        <div class="input-box">
+                            <span class="details"> Precio</span>
+                            <i class="fa-solid fa-hand-holding-dollar"></i><input class="precioA" type="text" placeholder="Si es gratis, indicarlo con 0" id="domicilio">
+                        </div>
+                        
                     </div>
-                    <div class="input-box">
-                        <span class="details"> Nombre de usuario</span>
-                        <input type="text" placeholder="Nombre de usuario" id="nombreUsuario" name="nombreUsuario" >
-                    </div>
-                    <div class="input-box">
-                        <span class="details"> Fecha de nacimiento</span>
-                        <input type="date" id="date" placeholder="" >
-                    </div>
-                    <div class="input-box">
-                        <span class="details"> Domicilio</span>
-                        <input type="text" placeholder="Domicilio" id="domicilio">
-                    </div>
-                    <div class="input-box">
-                        <span class="details"> Contraseña</span>
-                        <input type="password" placeholder="Contraseña" id="password" >
-                    </div>
-                    <div class="input-box">
-                        <span class="details"> Confirmar contraseña</span>
-                        <input type="password" placeholder="Confirmar contraseña" id="password2">
-                    </div>
-                </div>
 
-                <div class="buttonRegistrarse">
-                    <input type="submit" value="Registrarse">
-                </div>
+                    <div class="buttonRegistrarse">
+                        <input type="submit" value="Crea Curso">
+                    </div>
 
-                
-            </form>
-        </div>
-    </main>
 
-    <%- include('./partials/footer') %> 
+                </form>
+            </div>
+            
+        </main>
+        <%- include('./partials/footer') %>
 
 
 </body>

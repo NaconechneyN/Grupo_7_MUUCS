@@ -3,16 +3,30 @@ const setCourses = require("../utils/setCourses")
 
 const productController = {
     productDetail: (req, res) => {
-        /*const courses = getCourses() 
+        const courses = getCourses() 
         const courseId = req.params.id
 
         const courseItem = courses.cursos.filter(course => course.id == courseId)
 
         const context = courseItem[0]
-        console.log(context)*/
+        const context1 = {
+            id: 1,
+            titulo:"titulo"
+        }
+        /*console.log(context)*/
 
-        res.render("productDetail", /*context*/)
+        res.render("productDetail", {nombre: context, titulo:"detalle de producto"})
     },
+
+ 
+        productCreate: (req, res) => {
+            res.render("productCreate", {titulo:"Creacion de producto"})
+        },    
+
+        productCreate1: (req, res) => {
+            console.log("holas");
+            res.render("productCreate", {titulo:"Creacion de producto"})
+        },   
     
     /*productList: (req, res) => {
         const courses = getCourses() 
