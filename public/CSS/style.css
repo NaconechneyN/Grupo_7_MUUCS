@@ -21,7 +21,7 @@ header {
 body {
     margin: 0px 0px 0px 0px;
     line-height: 1.5;
-    background-color: #0f0c0f;
+    background-color: #231c24;
 }
 .header {
     display: flex ;
@@ -252,7 +252,8 @@ ul{
     border-radius: 5px;
     margin-right: auto;
     margin-left: auto;
-    box-shadow: 0 0 5px #a62892;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .contenedorReg .title{

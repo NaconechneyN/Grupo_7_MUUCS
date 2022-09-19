@@ -13,7 +13,6 @@ main{
 
 .containerDetail{
     display: flex;
-    border: 1px solid red ;
     flex-direction: row;
     gap: 2rem;
 }
@@ -38,12 +37,13 @@ main{
 }
 
 .descripcionDetail{
-    font-size: 12px;
+    font-size: 15px;
     color: white;
     margin-bottom: 2rem;
 }
 
 .admCurse{
+    font-size: 12.5px;
     margin-top: 1rem;
 }
 
@@ -56,10 +56,28 @@ main{
     font-size: 25px;
 }
 
+.ofer{
+    font-size: 13.5px;
+
+}
+
+.addcart{
+    text-decoration: none;
+}
+
 .botonCartDetail{
     display: flex;
     flex-direction: row;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    background-color: #c82eae;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
+
 
 .actulization{
     margin: 1rem;
@@ -67,9 +85,29 @@ main{
 }
 
 .preg{
-    margin-top: 1rem;
+    margin-top: 80px;
     color: white;
     font-size: 30px;
+}
+
+.areaPreg{
+    height: 15rem;
+}
+
+.ENVIAR{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.enviarBoton{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: bold;
+    background-color: #c82eae;
+    border: 1px white;
+    color: white;
 }
 
 textarea{

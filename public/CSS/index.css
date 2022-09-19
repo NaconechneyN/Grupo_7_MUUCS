@@ -215,10 +215,11 @@
     padding-left: 3rem;
     padding-right: 3rem;
     border: 3rem;
-    margin: 100px;
-    margin-bottom: 0px;
     background: #ffffff0f;
     backdrop-filter: blur(10px);
+    -webkit-box-shadow: inset 0px 0px 9px 1px rgba(166,40,146,1);
+    -moz-box-shadow: inset 0px 0px 9px 1px rgba(166,40,146,1);
+    box-shadow: inset 0px 0px 9px 1px rgba(166,40,146,1);
 }
 
 .box-seccion h2{
