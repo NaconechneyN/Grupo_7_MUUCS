@@ -10,6 +10,11 @@ router.get("/detail/:id", productsControllers.productDetail)
 router.get("/create", productsControllers.productCreate)
 
 router.post("/create", productsControllers.productCreate1)
+
+router.get("/:id/editar", productsControllers.productEdit)
+
+/*router.put("/:id/editar", productsControllers.productEdit1)*/
+
 /*
 router.get("/", productsControllers.coursesList)
 

@@ -9,11 +9,7 @@ const productController = {
         const courseItem = courses.filter(course => course.id == courseId)
 
         const context = courseItem[0]
-        const context1 = {
-            id: 1,
-            titulo:"titulo"
-        }
-        /*console.log(context)*/
+        
 
         res.render("productDetail", {nombre: context, titulo:"detalle de producto"})
     },
@@ -45,7 +41,34 @@ const productController = {
 
 
             res.render("productCreate", {titulo:"Creacion de producto"})
-        },   
+        },
+        
+        productEdit: (req, res) => {
+            const id = req.params.id;
+
+            const courses = getCourses();
+
+            const curso = courses.filter(course => course.id == id);
+
+            const curso1 = curso.shift();
+
+            console.log(curso1);
+            
+
+
+
+            res.render("productEdit", {titulo:"Edicion de producto", curso:curso1})
+        },
+
+        productEdit1: (req, res) => {
+            
+            
+            
+
+
+
+            res.render("productEdit", {titulo:"Edicion de producto"})
+        }
     
     /*productList: (req, res) => {
         const courses = getCourses() 

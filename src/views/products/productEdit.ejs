@@ -3,16 +3,204 @@
 
 <head>
     <%- include('./partials/partHead') %>
-    <link href="css/index.css" rel="stylesheet">
+        <link href="/css/formCreate.css" rel="stylesheet">
 </head>
 
 <body>
-    <%- include('./partials/header') %> 
-    <main>
-        <!-- aca va el main -->
-    </main>
+    <%- include('./partials/header') %>
+        <main class="main">
+            <div class="contenedorReg">
+                <div class="title">Editar un Curso</div>
 
-    <%- include('./partials/footer') %> 
+                <form action="/products/create" id="formulario" method="POST">
+                    <div class="user-details">
+                        <div class="input-box">
+                            <span class="details"> Titulo</span>
+                            <input type="text" placeholder="5 a 20 caracteres" value="<%= curso.titulo %> "
+                                name="titulo" id="nombre">
+                        </div>
+                        <div class="input-box">
+                            <span class="details"> Descripcion</span>
+                            <textarea placeholder="200 caracteres maximo" name="descripcion"
+                                id="nombreUsuario"><%= curso.descripcion %></textarea>
+                        </div>
+                        <div class="input-box">
+                            <span class="details"> ¿Que aprenderan los alumnos?</span>
+                            <textarea placeholder="200 caracteres maximo" name="descripcionQueAprenderas"
+                                id="nombreUsuario"><%= curso.descripcionQueAprenderas %></textarea>
+                        </div>
+                        <div class="input-box">
+                            <span class="details"> Tipo de Enseñanza</span>
+
+                            <div class="cajaEnseñanza">
+                                <% if (curso.tipoDeEnsenianza==="APRENDIZAJE COOPERATIVO" ) { %>
+
+
+                                    <input type="checkbox" name="tipoDeEnsenianza" checked id="categoria1"
+                                        value="APRENDIZAJE COOPERATIVO">
+                                    <% }else{ %>
+                                        <input type="checkbox" name="tipoDeEnsenianza" id="categoria1"
+                                            value="APRENDIZAJE COOPERATIVO">
+                                        <% } %>
+                                            <label for="tipoDeEnsenianza" class="chicos">APRENDIZAJE COOPERATIVO</label>
+                                            <label for="tipoDeEnsenianza" class="chicos">Método en el cual los
+                                                educadores
+                                                agrupan a los alumnos para realizar sus tareas con éxito e impactar en
+                                                los
+                                                estudiantes de forma positiva,
+                                                asegurando la atención y mejorando el aprendizaje, ya que cada miembro
+                                                del grupo
+                                                realiza sus tareas apoyándose en el trabajo de los demás. </label>
+                            </div>
+                            <div class="cajaEnseñanza">
+                                <% if (curso.tipoDeEnsenianza==="CLASES O AULA INVERTIDA" ) { %>
+
+
+                                    <input type="checkbox" name="tipoDeEnsenianza" checked id="categoria1"
+                                        value="CLASES O AULA INVERTIDA">
+                                    <% }else{ %>
+                                        <input type="checkbox" name="tipoDeEnsenianza" id="categoria1"
+                                            value="CLASES O AULA INVERTIDA">
+                                        <% } %>
+                                            <label for="tipoDeEnsenianza" class="chicos">CLASES O AULA INVERTIDA</label>
+                                            <label for="tipoDeEnsenianza" class="chicos">Método en el cual los
+                                                educadores
+                                                agrupan a los alumnos para realizar sus tareas con éxito e impactar en
+                                                los
+                                                estudiantes de forma positiva,
+                                                asegurando la atención y mejorando el aprendizaje, ya que cada miembro
+                                                del grupo
+                                                realiza sus tareas apoyándose en el trabajo de los demás. </label>
+                            </div>
+                            <div class="cajaEnseñanza">
+                                <% if (curso.tipoDeEnsenianza==="APRENDIZAJE BASADO EN EL PENSAMIENTO" ) { %>
+
+
+                                    <input type="checkbox" name="tipoDeEnsenianza" checked id="categoria1"
+                                        value="APRENDIZAJE BASADO EN EL PENSAMIENTO">
+                                    <% }else{ %>
+                                        <input type="checkbox" name="tipoDeEnsenianza" id="categoria1"
+                                            value="APRENDIZAJE BASADO EN EL PENSAMIENTO">
+                                        <% } %>
+                                            <label for="tipoDeEnsenianza" class="chicos">APRENDIZAJE BASADO EN EL
+                                                PENSAMIENTO</label>
+                                            <label for="tipoDeEnsenianza" class="chicos">El objetivo de este método
+                                                consiste en
+                                                otorgar herramientas para contextualizar, relacionar, analizar,
+                                                entender,
+                                                argumentar, convertir información en conocimiento y desarrollar el
+                                                pensamiento, más
+                                                allá de la memorización.</label>
+                            </div>
+                            <div class="cajaEnseñanza">
+                                <% if (curso.tipoDeEnsenianza==="PENSAMIENTO DE DISEÑO" ) { %>
+
+
+                                    <input type="checkbox" name="tipoDeEnsenianza" checked id="categoria1"
+                                        value="PENSAMIENTO DE DISEÑO">
+                                    <% }else{ %>
+                                        <input type="checkbox" name="tipoDeEnsenianza" id="categoria1"
+                                            value="PENSAMIENTO DE DISEÑO">
+                                        <% } %>
+
+                                            <label for="tipoDeEnsenianza" class="chicos">PENSAMIENTO DE DISEÑO</label>
+                                            <label for="tipoDeEnsenianza" class="chicos">Este método consiste en
+                                                identificar
+                                                con mayor exactitud los problemas individuales de los alumnos, generando
+                                                ideas,
+                                                resolviendo problemas creativamente y ampliar horizontes para las
+                                                soluciones.</label>
+                            </div>
+                            <div class="cajaEnseñanza">
+                                <% if (curso.tipoDeEnsenianza==="APRENDIZAJE BASADO EN PROYECTO" ) { %>
+
+
+                                    <input type="checkbox" name="tipoDeEnsenianza" checked id="categoria1"
+                                        value="APRENDIZAJE BASADO EN PROYECTO">
+                                    <% }else{ %>
+                                        <input type="checkbox" name="tipoDeEnsenianza" id="categoria1"
+                                            value="APRENDIZAJE BASADO EN PROYECTO">
+                                        <% } %>
+                                            <label for="tipoDeEnsenianza" class="chicos">APRENDIZAJE BASADO EN
+                                                PROYECTO</label>
+                                            <label for="tipoDeEnsenianza" class="chicos">Este tipo de aprendizaje
+                                                permite que
+                                                los alumnos adquieran conocimiento y habilidades en la elaboración de
+                                                proyectos.
+                                                Garantiza procesos de aprendizaje más didáctico, eficaces y prácticos,
+                                                que permiten
+                                                que los alumnos desarrollen competencias como la comunicación,
+                                                colaboración y
+                                                resolución de problemas.</label>
+                            </div>
+                            <div class="cajaEnseñanza">
+                                <% if (curso.tipoDeEnsenianza==="GAMIFICACIÓN" ) { %>
+
+
+                                    <input type="checkbox" name="tipoDeEnsenianza" checked id="categoria1"
+                                        value="GAMIFICACIÓN">
+                                    <% }else{ %>
+                                        <input type="checkbox" name="tipoDeEnsenianza" id="categoria1"
+                                            value="GAMIFICACIÓN">
+                                        <% } %>
+
+                                            <label for="tipoDeEnsenianza" class="chicos">GAMIFICACIÓN</label>
+                                            <label for="tipoDeEnsenianza" class="chicos">Consiste en la integración
+                                                mecánica y
+                                                dinámica de juegos y videojuegos en entornos no lúdicos, para potenciar
+                                                la
+                                                motivación, concentración, esfuerzos y valores positivos. El uso
+                                                exponencial de los
+                                                videojuegos ha despertado el interés de expertos en este ámbito, que
+                                                recomiendan
+                                                videojuegos educativos para los niños.</label>
+                            </div>
+                        </div>
+
+                        <div class="input-box">
+                            <span class="details"> Certificacion</span>
+                            <div class="cajaCertificacion">
+                                <% if (curso.certifiacion==="Oficial" ) { %>
+
+
+                                    <input type="radio" name="certifiacion" id="perfil1" value="Oficial" checked>
+                                    <label for="Certifiacion" class="chicos" >Oficial</label>
+                                    <input type="radio" name="certifiacion" id="perfil2" value="No Oficial">
+                                    <label for="Certifiacion" class="chicos">No Oficial</label>
+                                    <% }else{ %>
+                                        <input type="radio" name="certifiacion" id="perfil1" value="Oficial">
+                                        <label for="Certifiacion" class="chicos">Oficial</label>
+                                        <input type="radio" name="certifiacion" id="perfil2" value="No Oficial" checked>
+                                        <label for="Certifiacion" class="chicos" >No Oficial</label>
+                                        <% } %>
+                            </div>
+                        </div>
+                        <div class="input-box">
+                            <span class="details"> ¿Quien lo imparte?</span>
+                            <input type="text" name="QuienLoImparte" placeholder="5 a 20 caracteres" id="nombre" value="<%= curso.QuienLoImparte %>" >
+                        </div>
+                        <div class="input-box">
+                            <span class="details"> Precio</span>
+                            <i class="fa-solid fa-hand-holding-dollar"></i><input class="precioA" type="text"
+                                name="precio" placeholder="Si es gratis, indicarlo con 0" id="domicilio" value="<%= curso.precio %>">
+                        </div>
+                        <div class="input-box">
+                            <span class="details"> Duracion</span>
+                            <input type="text" name="duracion" placeholder="5 a 20 caracteres" id="nombre" value="<%= curso.duracion %>">
+                        </div>
+                    </div>
+
+                    <div class="buttonRegistrarse">
+                        <input type="submit" value="Editar Curso">
+                    </div>
+
+
+                </form>
+            </div>
+
+        </main>
+
+        <%- include('./partials/footer') %>
 
 
 </body>
