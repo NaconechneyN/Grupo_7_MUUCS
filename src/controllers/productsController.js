@@ -2,74 +2,98 @@ const getCourses = require("../utils/getCourses")
 const setCourses = require("../utils/setCourses")
 
 const productController = {
+    productList: (req, res) => {
+        const courses = getCourses()
+
+        res.render("productList", { cursos: courses, titulo: "listado de producto" })
+    },
     productDetail: (req, res) => {
-        const courses = getCourses() 
+        const courses = getCourses()
         const courseId = req.params.id
 
         const courseItem = courses.filter(course => course.id == courseId)
 
         const context = courseItem[0]
-        
 
-        res.render("productDetail", {nombre: context, titulo:"detalle de producto"})
+
+        res.render("productDetail", { nombre: context, titulo: "detalle de producto" })
     },
 
- 
-        productCreate: (req, res) => {
-            res.render("productCreate", {titulo:"Creacion de producto"})
-        },    
 
-        productCreate1: (req, res) => {
-            
-            const curso = req.body;
+    productCreate: (req, res) => {
+        res.render("productCreate", { titulo: "Creacion de producto" })
+    },
 
-            const courses = getCourses();
-            
+    productCreate1: (req, res) => {
 
-            curso.id =(courses.length+1);
-            curso.actualizacion =Date.now();
-            curso.valoracion =0;
-            curso.numeroDeRegistarados =0;
+        const curso = req.body;
 
-            console.log(curso);
-
-            courses.push(curso);
-
-            setCourses(JSON.stringify(courses));
-            
+        const courses = getCourses();
 
 
+        curso.id = (courses.length + 1);
+        curso.actualizacion = Date.now();
+        curso.valoracion = 0;
+        curso.numeroDeRegistarados = 0;
 
-            res.render("productCreate", {titulo:"Creacion de producto"})
-        },
-        
-        productEdit: (req, res) => {
-            const id = req.params.id;
+        console.log(curso);
 
-            const courses = getCourses();
+        courses.push(curso);
 
-            const curso = courses.filter(course => course.id == id);
-
-            const curso1 = curso.shift();
-
-            console.log(curso1);
-            
+        setCourses(JSON.stringify(courses));
 
 
 
-            res.render("productEdit", {titulo:"Edicion de producto", curso:curso1})
-        },
 
-        productEdit1: (req, res) => {
-            
-            
-            
+        res.render("productCreate", { titulo: "Creacion de producto" })
+    },
+
+    productEdit: (req, res) => {
+        const id = req.params.id;
+
+        const courses = getCourses();
+
+        const curso = courses.filter(course => course.id == id);
+
+        const curso1 = curso.shift();
+
+        console.log(curso1);
 
 
 
-            res.render("productEdit", {titulo:"Edicion de producto"})
-        }
-    
+
+        res.render("productEdit", { titulo: "Edicion de producto", curso: curso1 })
+    },
+
+    productEdit1: (req, res) => {
+
+
+        const curso = req.body;
+
+        const courses = getCourses();
+
+        courses.forEach(curso => {
+            if (curso.id == req.body.id) {
+
+                curso.titulo = req.body.titulo,
+                    curso.descripcion = req.body.descripcion,
+                    curso.descripcionQueAprenderas = req.body.descripcionQueAprenderas,
+                    curso.tipoDeEnsenianza = req.body.tipoDeEnsenianza,
+                    curso.certifiacion = req.body.certifiacion,
+                    curso.QuienLoImparte = req.body.QuienLoImparte,
+                    curso.precio = req.body.precio,
+                    curso.duracion = req.body.duracion,
+                    curso.actualizacion = req.body.actualizacion
+            }
+        })
+        setCourses(JSON.stringify(courses));
+        console.log(req.body)
+
+        res.render('index', { titulo: 'Home' })
+
+
+    }
+
     /*productList: (req, res) => {
         const courses = getCourses() 
         const cursos = courses

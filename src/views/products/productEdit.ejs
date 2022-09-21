@@ -12,7 +12,7 @@
             <div class="contenedorReg">
                 <div class="title">Editar un Curso</div>
 
-                <form action="/products/create" id="formulario" method="POST">
+                <form action="/products/editar?_method=PUT" id="formulario" method="POST">
                     <div class="user-details">
                         <div class="input-box">
                             <span class="details"> Titulo</span>
@@ -189,7 +189,11 @@
                             <input type="text" name="duracion" placeholder="5 a 20 caracteres" id="nombre" value="<%= curso.duracion %>">
                         </div>
                     </div>
-
+                    <input type="text" class="none" value="<%= curso.actualizacion %>" name="actualizacion" hidden> 
+                    <input type="text" class="none" value="<%= curso.valoracion %>" name="valoracion" hidden> 
+                    <input type="text" class="none" value="<%= curso.numeroDeRegistarados %>" name="numeroDeRegistarados" hidden> 
+                    <input type="text" class="none" value="<%= curso.id %>" name="id" hidden> 
+                    
                     <div class="buttonRegistrarse">
                         <input type="submit" value="Editar Curso">
                     </div>

@@ -43,21 +43,21 @@
                     <div class="descripcion">
                         <h4><%=cursos[i].titulo%> </h4>
 
-                        <p class="palabrasClaves">asdasd,asdasdasd,asdasd,asdasd,asdasd,asda</p>
+                        <p class="palabrasClaves"><%=cursos[i].descripcion%></p>
                         <div class="descripcion2">
                             <h3>Metodos de enseñansa</h3>
-                            <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla blabla bla bla bla bla bla v </p>
+                            <p><%=cursos[i].tipoDeEnsenianza%> </p>
                             <h3>Que aprenderas</h3>
-                            <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla blabla bla bla bla bla bla v </p>
+                            <p><%=cursos[i].descripcionQueAprenderas%> </p>
                             <h3>Al completarlo</h3>
                             <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla blabla bla bla bla bla bla v ( la idea es que esto algun dia se cuando se despligue el articulo</p>
                         </div>
                         <p class="dueño">Por Lucio</p>
-                        <span class="fecha">Agosto 2022</span>
+                        <span class="fecha"><%=cursos[i].actualizacion%></span>
                         <span class="valoracion">5.9 <i class="fa-solid fa-bolt"></i></span>
                         <span class="cantidadAlumnos">499 <i class="fa-solid fa-address-book"></i></span>
-                        <span class="duracion">2hs <i class="fa-solid fa-clock"></i></span>
-                        <span class="precio"><i class="fa-solid fa-hand-holding-dollar"></i> 999999</span>
+                        <span class="duracion"><%=cursos[i].duracion%> <i class="fa-solid fa-clock"></i></span>
+                        <span class="precio"><i class="fa-solid fa-hand-holding-dollar"></i> <%=cursos[i].precio%></span>
                         <button><span>Agregar al Carrito</span><i class="fa-solid fa-cart-shopping"></i></button>
                         <i class="fa-solid fa-chevron-right desplegador"></i>
                     </div>

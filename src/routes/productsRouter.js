@@ -5,6 +5,8 @@ const router = express.Router()
 // Se importa el controlador
 const productsControllers = require("../controllers/productsController")
 
+router.get("/", productsControllers.productList)
+
 router.get("/detail/:id", productsControllers.productDetail)
 
 router.get("/create", productsControllers.productCreate)
@@ -13,7 +15,7 @@ router.post("/create", productsControllers.productCreate1)
 
 router.get("/:id/editar", productsControllers.productEdit)
 
-/*router.put("/:id/editar", productsControllers.productEdit1)*/
+router.put("/editar", productsControllers.productEdit1)
 
 /*
 router.get("/", productsControllers.coursesList)
