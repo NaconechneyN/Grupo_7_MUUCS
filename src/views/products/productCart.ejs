@@ -6,48 +6,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href="/css/productStyle.css" rel="stylesheet">
+        
 </head>
 
 <body>
-    <header>
-        <div class="header">
-            <div class="logo">
-                <img src="/img/logo.jpeg" alt="">
-            </div>
-            <div class="busqueda">
-                <form action="../../form-result.php" method="post" target="_blank">
-
-                    <p>
-
-                        <input id="texto" type="search" name="busquedamusica" placeholder=" Cur`s Muucs">
-
-                        <button><i class="fa-brands fa-searchengin"></i></button>
-
-                    </p>
-
-                </form>
-            </div>
-            <div class="usuario">
-                <button><i class="fa-solid fa-bars"></i></button>
-                <button><i class="fa-solid fa-cart-shopping"></i></button>
-            </div>
-        </div>
-        <div class="categorias">
-
-            <ul id="izquierda">
-                <li>Nosotros<i class="fa-solid fa-chevron-right"></i></li>
-                <li>Ofertas<i class="fa-solid fa-chevron-right"></i></li>
-                <li>Vender<i class="fa-solid fa-chevron-right"></i></li>
-                <li>Soporte<i class="fa-solid fa-chevron-right"></i></li>
-            </ul>
-            <ul id="derecha">
-                <li>Crear Cuenta<i class="fa-solid fa-chevron-right"></i></li>
-                <li>Iniciar session<i class="fa-solid fa-chevron-right"></i></li>
-            </ul>
-        </div>
-
-        <div>&nbsp;</div>
-    </header>
+    <%- include('./partials/header') %> 
     <main>
         <div>&nbsp;</div>
         <div class="carrito">
@@ -64,98 +27,32 @@
 
             <div class="relleno">
                 <div class="cursos">
-                    <article>
-                        <div class="imagen">
-                            <img src="img/cursos4.jpg" alt="">
-                        </div>
-                        <div class="descripcion">
-                            <h4>Titulo</h4>
-                            <p class="palabrasClaves">asdasd,asdasdasd,asdasd,asdasd,asdasd,asda</p>
-                            <div class="descripcion2">
-                                <h3>Metodos de enseñansa</h3>
-                                <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla blabla bla bla bla bla bla v </p>
-                                <h3>Que aprenderas</h3>
-                                <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla blabla bla bla bla bla bla v </p>
-                                <h3>Al completarlo</h3>
-                                <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla blabla bla bla bla bla bla v ( la idea es que esto algun dia se cuando se despligue el articulo</p>
+                    <% cursos.forEach(cursos => { %>
+                        <article>
+                            <div class="imagen">
+                                <img src="img/cursos4.jpg" alt="">
                             </div>
-                            <p class="dueño">Por Lucio</p>
-                            <span class="fecha">Agosto 2022</span>
-                            <span class="valoracion">5.9 <i class="fa-solid fa-bolt"></i></span>
-                            <span class="cantidadAlumnos">499 <i class="fa-solid fa-address-book"></i></span>
-                            <span class="duracion">2hs <i class="fa-solid fa-clock"></i></span>
-                            <button class="eliminar"><i class="fa-solid fa-xmark"></i></button>
-                        </div>
-                    </article>
-                    <article>
-                        <div class="imagen">
-                            <img src="img/cursos5.jpg" alt="">
-                        </div>
-                        <div class="descripcion">
-                            <h4>Titulo</h4>
-                            <p class="palabrasClaves">asdasd,asdasdasd,asdasd,asdasd,asdasd,asda</p>
-                            <div class="descripcion2">
-                                <h3>Metodos de enseñansa</h3>
-                                <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla blabla bla bla bla bla bla v </p>
-                                <h3>Que aprenderas</h3>
-                                <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla blabla bla bla bla bla bla v </p>
-                                <h3>Al completarlo</h3>
-                                <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla blabla bla bla bla bla bla v </p>
+                            <div class="descripcion">
+                                <h4> <%= cursos.titulo %>  </h4>
+                                <p class="palabrasClaves">asdasd,asdasdasd,asdasd,asdasd,asdasd,asda</p>
+                                <div class="descripcion2">
+                                    <h3>Metodos de enseñansa</h3>
+                                    <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla blabla bla bla bla bla bla v </p>
+                                    <h3>Que aprenderas</h3>
+                                    <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla blabla bla bla bla bla bla v </p>
+                                    <h3>Al completarlo</h3>
+                                    <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla blabla bla bla bla bla bla v ( la idea es que esto algun dia se cuando se despligue el articulo</p>
+                                </div>
+                                <p class="dueño">Por Lucio</p>
+                                <span class="fecha">Agosto 2022</span>
+                                <span class="valoracion">5.9 <i class="fa-solid fa-bolt"></i></span>
+                                <span class="cantidadAlumnos">499 <i class="fa-solid fa-address-book"></i></span>
+                                <span class="duracion">2hs <i class="fa-solid fa-clock"></i></span>
+                                <button class="eliminar"><i class="fa-solid fa-xmark"></i></button>
                             </div>
-                            <p class="dueño">Por Lucio</p>
-                            <span class="fecha">Agosto 2022</span>
-                            <span class="valoracion">5.9 <i class="fa-solid fa-bolt"></i></span>
-                            <span class="cantidadAlumnos">499 <i class="fa-solid fa-address-book"></i></span>
-                            <span class="duracion">2hs <i class="fa-solid fa-clock"></i></span>
-                            <button class="eliminar"><i class="fa-solid fa-xmark"></i></button>
-                        </div>
-                    </article>
-                    <article>
-                        <div class="imagen">
-                            <img src="img/cursos6.jpg" alt="">
-                        </div>
-                        <div class="descripcion">
-                            <h4>Titulo</h4>
-                            <p class="palabrasClaves">asdasd,asdasdasd,asdasd,asdasd,asdasd,asda</p>
-                            <div class="descripcion2">
-                                <h3>Metodos de enseñansa</h3>
-                                <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla blabla bla bla bla bla bla v </p>
-                                <h3>Que aprenderas</h3>
-                                <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla blabla bla bla bla bla bla v </p>
-                                <h3>Al completarlo</h3>
-                                <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla blabla bla bla bla bla bla v </p>
-                            </div>
-                            <p class="dueño">Por Lucio</p>
-                            <span class="fecha">Agosto 2022</span>
-                            <span class="valoracion">5.9 <i class="fa-solid fa-bolt"></i></span>
-                            <span class="cantidadAlumnos">499 <i class="fa-solid fa-address-book"></i></span>
-                            <span class="duracion">2hs <i class="fa-solid fa-clock"></i></span>
-                            <button class="eliminar"><i class="fa-solid fa-xmark"></i></button>
-                        </div>
-                    </article>
-                    <article>
-                        <div class="imagen">
-                            <img src="img/cursos7.jpg" alt="">
-                        </div>
-                        <div class="descripcion">
-                            <h4>Titulo</h4>
-                            <p class="palabrasClaves">asdasd,asdasdasd,asdasd,asdasd,asdasd,asda</p>
-                            <div class="descripcion2">
-                                <h3>Metodos de enseñansa</h3>
-                                <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla blabla bla bla bla bla bla v </p>
-                                <h3>Que aprenderas</h3>
-                                <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla blabla bla bla bla bla bla v </p>
-                                <h3>Al completarlo</h3>
-                                <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla blabla bla bla bla bla bla v </p>
-                            </div>
-                            <p class="dueño">Por Lucio</p>
-                            <span class="fecha">Agosto 2022</span>
-                            <span class="valoracion">5.9 <i class="fa-solid fa-bolt"></i></span>
-                            <span class="cantidadAlumnos">499 <i class="fa-solid fa-address-book"></i></span>
-                            <span class="duracion">2hs <i class="fa-solid fa-clock"></i></span>
-                            <button class="eliminar"><i class="fa-solid fa-xmark"></i></button>
-                        </div>
-                    </article>
+                        </article>
+                    <% }) %>
+                    
                     
                 </div>
                 <div class="finalizar">
