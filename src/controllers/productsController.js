@@ -1,11 +1,17 @@
 const getCourses = require("../utils/getCourses")
 const setCourses = require("../utils/setCourses")
 
+
 const productController = {
     productList: (req, res) => {
         const courses = getCourses()
 
         res.render("productList", { cursos: courses, titulo: "listado de producto" })
+    },
+    productListCarrito: (req, res) => {
+        const courses = getCourses()
+
+        res.render("productCart", { /*cursos: courses, */titulo: "Carrito de producto" })
     },
     productDetail: (req, res) => {
         const courses = getCourses()

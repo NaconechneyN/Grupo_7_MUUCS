@@ -14,7 +14,9 @@ const productsRouter = require('./src/routes/productsRouter')
 const usersRouter = require('./src/routes/usersRouter')
 
 
-app.use(express.static('public'));
+/*app.use(express.static('public'));*/
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json()); // Leer req.body
 
@@ -36,3 +38,4 @@ app.use(mainRouter);
 app.use("/products", productsRouter);
 
 app.use("/users", usersRouter);
+

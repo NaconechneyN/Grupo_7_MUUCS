@@ -17,6 +17,8 @@ router.get("/:id/editar", productsControllers.productEdit)
 
 router.put("/editar", productsControllers.productEdit1)
 
+router.get("/carritoT", productsControllers.productListCarrito)
+
 /*
 router.get("/", productsControllers.coursesList)
 
