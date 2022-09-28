@@ -17,3 +17,6 @@ En la reunion que tuvimos con los integrantes se concluyo en :
 
 02/09
 En esta retro al notar que todos los integrantes teniamos tiempos diferentes, hicimos foco en conectarnos lo antes posible y definir las tareas que corresponden a cada integrante y consultarnos en caso de que surgan dificultades y concretar videollamada para solucionarlo.
+
+28/09 
+El punto mas fuerte de este sprint es que coinicidimos la mayor cantidad de veces desde el inicio del proyecto integrador en reuniones y trabajamos juntos en varias oportunidades, lo cual mejoró la interrelacion de todos los integrantes. Cumplimos con la consigna y estuvimos conformes con las funciones de la aplicacion. 
