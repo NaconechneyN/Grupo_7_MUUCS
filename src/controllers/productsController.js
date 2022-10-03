@@ -11,7 +11,7 @@ const productController = {
     productListCarrito: (req, res) => {
         const courses = getCourses()
 
-        res.render("productCart", { /*cursos: courses, */titulo: "Carrito de producto" })
+        res.render("productCart", { cursos: courses, titulo: "Carrito de producto" })
     },
     productDetail: (req, res) => {
         const courses = getCourses()
