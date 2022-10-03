@@ -2,6 +2,11 @@
 const express = require("express")
 const router = express.Router()
 
+//requiero el multer ara usarlo y hago el upload
+const multer = require('multer');
+const storage = require("../middlewares/multerImgProducts");
+const upload = multer({ storage })
+
 // Se importa el controlador
 const productsControllers = require("../controllers/productsController")
 
