@@ -20,18 +20,22 @@
                             <span class="details"> Titulo</span>
                             <input type="text" placeholder="5 a 20 caracteres" name="titulo" id="nombre">
                         </div>
+                        <div class="errorCreate">
+                            <p> Error: debe contener de 5 a 20 caracteres</p>
+                        </div>
                         <div class="input-box">
                             <span class="details"> Descripcion</span>
                             <textarea placeholder="200 caracteres maximo" name="descripcion" id="nombreUsuario"
                                 ></textarea>
                         </div>
-                        <div class="input-box">
-                            <span class="details"> Descripcion</span>
-                            <textarea placeholder="200 caracteres maximo" name="descripcionQueAprenderas" id="nombreUsuario"
-                                ></textarea>
+                        <div class="errorCreate">
+                            <p> Error: te has pasado de los caracteres maximos (200)</p>
                         </div>
                         <div class="input-box">
                             <span class="details"> Tipo de Enseñanza</span>
+                            <div class="errorCreate">
+                                <p> Error: tiene que elegir al menos una</p>
+                            </div>
                             <div class="cajaEnseñanza">
                                 <input type="checkbox" name="tipoDeEnsenianza" id="categoria1"
                                     value="APRENDIZAJE COOPERATIVO">
@@ -94,6 +98,9 @@
                         
                         <div class="input-box">
                             <span class="details"> Certificacion</span>
+                            <div class="errorCreate">
+                                <p> Error: tiene que elegir al menos una</p>
+                            </div>
                             <div class="cajaCertificacion">
                                 <input type="radio" name="certifiacion" id="perfil1" value="Oficial">
                                 <label for="Certifiacion" class="chicos">Oficial</label>
@@ -102,17 +109,19 @@
                             </div>
                         </div>
                         <div class="input-box">
-                            <span class="details"> ¿Quien lo imparte?</span>
-                            <input type="text" name="QuienLoImparte" placeholder="5 a 20 caracteres" id="nombre">
-                        </div>
-                        <div class="input-box">
                             <span class="details"> Precio</span>
                             <i class="fa-solid fa-hand-holding-dollar"></i><input class="precioA" type="text"
                                 name="precio" placeholder="Si es gratis, indicarlo con 0" id="domicilio">
                         </div>
+                        <div class="errorCreate">
+                            <p> Error: este campo es obligatorio</p>
+                        </div>
                         <div class="input-box">
                             <span class="details"> Duracion</span>
                             <input type="text" name="duracion" placeholder="5 a 20 caracteres" id="nombre">
+                        </div>
+                        <div class="errorCreate">
+                            <p> Error: debe contener de 5 a 20 caracteres</p>
                         </div>
                     </div>
 

@@ -80,3 +80,13 @@ label {
 /*.none{
     display: block;
 }*/
+
+.errorCreate{
+    color: #ffffff;
+    font-size: 14px;
+    border: 2px solid red;
+    background-color: #C7352B;
+    padding: 3px;
+    width: 100%;
+    margin-bottom: 10px;
+}

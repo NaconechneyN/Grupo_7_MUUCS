@@ -247,8 +247,8 @@
    flex-direction: column;
    display: flex;
    justify-content: center;
-   transition: all 0.5s ease;
-   cursor: pointer;
+   transition: all 0.5s ease-in-out;
+
 
   }
   .unaSeccion p{
@@ -266,14 +266,12 @@
   }
 
   .Seccion:hover{
-    width: 170px;
     transition: all 0.5s ease;
   }
 
   .unaSeccion:hover{
-    background: #a62891a5;
-    padding: 15px;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
+    transform: scale(0.9);
   }
   .espsombra {
     display: none;

@@ -254,7 +254,7 @@
     color: #231c24;
 
 }
-.cursos article .descripcion button {
+/* .cursos article .descripcion button {
     position: absolute;
     left: 75%;
     top: 85%;
@@ -263,7 +263,18 @@
     border: 1px solid  rgba(255,0,255,1);
     padding: 4px;
 
+} */
+
+.agregarCarritoList{
+    position: absolute;
+    left: 75%;
+    top: 85%;
+    background-color: #231c24;
+    color: #a62892;
+    border: 1px solid  rgba(255,0,255,1);
+    padding: 4px;
 }
+
 
 main {
     background-color: #231c24;
@@ -372,6 +383,21 @@ article:enabled .descripcion2 {
     left:90% !important;
     height: 7vh;
     align-items: center;
+}
+.eliminarList{
+    font-size: 2em;
+    position: absolute;
+    top: 5% !important;
+    left:90% !important;
+    height: 7vh;
+    align-items: center;
+    position: absolute;
+    left: 75%;
+    top: 85%;
+    background-color: #231C24;
+    color: #a62892;
+    border: #231C24;
+    padding: 4px;
 }
 
 .eliminar i{

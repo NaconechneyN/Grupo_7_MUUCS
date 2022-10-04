@@ -68,14 +68,25 @@ main{
 .botonCartDetail{
     display: flex;
     flex-direction: row;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     text-decoration: none;
     display: flex;
     justify-content: center;
     background-color: #c82eae;
     margin-top: 30px;
     margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+.botonCartDetail :hover{
+    transition: all 0.3s ease;
+    transform: scale(0.9);
+}
+
+.botonCartDetail a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
 }
 
 
