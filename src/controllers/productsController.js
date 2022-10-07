@@ -98,6 +98,24 @@ const productController = {
         res.render('index', { titulo: 'Home' })
 
 
+    },
+    productDelete: (req, res) => {
+        let courses = getCourses() 
+
+        const id = req.body.id
+
+        console.log(id)
+
+        const cursos = courses.filter(course => course.id != id)
+
+        
+
+        setCourses(JSON.stringify(cursos))
+
+        let curso1 = getCourses() 
+
+
+        res.render("productList", { cursos: curso1, titulo: "listado de producto" })
     }
 
     /*productList: (req, res) => {

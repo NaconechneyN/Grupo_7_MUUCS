@@ -25,6 +25,8 @@ router.put("/editar", productsControllers.productEdit1)
 
 router.get("/carritoT", productsControllers.productListCarrito)
 
+router.delete("/delete", productsControllers.productDelete)
+
 /*
 router.get("/", productsControllers.coursesList)
 
