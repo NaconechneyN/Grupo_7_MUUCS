@@ -38,7 +38,7 @@
                 
                 <article>
                     <div class="imagen">
-                        <img src="img/cursos4.jpg" alt="">
+                        <img src="/img/products/<%= cursos[i].imagen %> "alt="">
                     </div>
                     <div class="descripcion">
                         <h4><%=cursos[i].titulo%> </h4>
@@ -60,8 +60,8 @@
                         <span class="precio"><i class="fa-solid fa-hand-holding-dollar"></i> <%=cursos[i].precio%></span>
                         <button class="agregarCarritoList"><span>Agregar al Carrito</span><i class="fa-solid fa-cart-shopping"></i></button>
                         <!-- <i class="fa-solid fa-chevron-right desplegador"></i> -->
-                        <form method="POST"  id="formulario" action="/products/delete/?_method=DELETE">
-                            <input type="text" class="none" value="<%= cursos[i].id %>" name="id" hidden> 
+                        <form method="POST"  id="formulario" action="/products/delete/<%= cursos[i].id %>/?_method=DELETE">
+                           
                             <button class="eliminarList"><i class="fa-solid fa-xmark"></i></button>
                         </form>
                         

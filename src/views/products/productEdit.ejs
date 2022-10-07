@@ -12,7 +12,7 @@
             <div class="contenedorReg">
                 <div class="title">Editar un Curso</div>
 
-                <form action="/products/editar?_method=PUT" id="formulario" method="POST">
+                <form action="/products/editar?_method=PUT" id="formulario" method="POST" enctype="multipart/form-data">
                     <div class="user-details">
                         <div class="input-box">
                             <span class="details"> Titulo</span>
@@ -215,10 +215,15 @@
                     <input type="text" class="none" value="<%= curso.numeroDeRegistarados %>" name="numeroDeRegistarados" hidden> 
                     <input type="text" class="none" value="<%= curso.id %>" name="id" hidden> 
                     
+                    <div class="input-box">
+                        <span class="details"> imagen de perfil</span>
+                        <input type="file" name="imagen"  id="imagen">
+                        <img src="/img/products/<%= curso.imagen %> " alt="" class="">
+                    </div>
+
                     <div class="buttonRegistrarse">
                         <input type="submit" value="Editar Curso">
                     </div>
-
 
                 </form>
             </div>

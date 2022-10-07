@@ -1,6 +1,7 @@
 const getCourses = require("../utils/getCourses")
 const setCourses = require("../utils/setCourses")
-
+const fs = require('fs')
+const path = require('path')
 
 const productController = {
     productList: (req, res) => {
@@ -41,8 +42,9 @@ const productController = {
         curso.actualizacion = Date.now();
         curso.valoracion = 0;
         curso.numeroDeRegistarados = 0;
+        curso.imagen = req.file.filename
 
-        console.log(curso);
+        console.log(req.file);
 
         courses.push(curso);
 
@@ -82,14 +84,18 @@ const productController = {
             if (curso.id == req.body.id) {
 
                 curso.titulo = req.body.titulo,
-                    curso.descripcion = req.body.descripcion,
-                    curso.descripcionQueAprenderas = req.body.descripcionQueAprenderas,
-                    curso.tipoDeEnsenianza = req.body.tipoDeEnsenianza,
-                    curso.certifiacion = req.body.certifiacion,
-                    curso.QuienLoImparte = req.body.QuienLoImparte,
-                    curso.precio = req.body.precio,
-                    curso.duracion = req.body.duracion,
-                    curso.actualizacion = req.body.actualizacion
+                curso.descripcion = req.body.descripcion,
+                curso.descripcionQueAprenderas = req.body.descripcionQueAprenderas,
+                curso.tipoDeEnsenianza = req.body.tipoDeEnsenianza,
+                curso.certifiacion = req.body.certifiacion,
+                curso.QuienLoImparte = req.body.QuienLoImparte,
+                curso.precio = req.body.precio,
+                curso.duracion = req.body.duracion,
+                curso.actualizacion = req.body.actualizacion
+                if (req.file != null) {
+                    curso.imagen = req.file.filename
+                }
+                
             }
         })
         setCourses(JSON.stringify(courses));
@@ -102,21 +108,28 @@ const productController = {
     productDelete: (req, res) => {
         let courses = getCourses() 
 
-        const id = req.body.id
-
-        console.log(id)
-
-        const cursos = courses.filter(course => course.id != id)
+        const id = req.params.id
 
         
 
-        setCourses(JSON.stringify(cursos))
+        const cursos = courses.filter(course => course.id != id)
+        const imagen= ({},courses.filter(course => course.id == id)).pop()
 
+        console.log(imagen)
+    
+
+        fs.unlinkSync(path.join(__dirname, `../../public/img/products/${imagen.imagen}`))
+          
+        setCourses(JSON.stringify(cursos))
+        
         let curso1 = getCourses() 
 
 
         res.render("productList", { cursos: curso1, titulo: "listado de producto" })
+
     }
+
+    
 
     /*productList: (req, res) => {
         const courses = getCourses() 

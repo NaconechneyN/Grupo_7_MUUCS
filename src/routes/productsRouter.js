@@ -2,10 +2,19 @@
 const express = require("express")
 const router = express.Router()
 
-//requiero el multer ara usarlo y hago el upload
-//const multer = require('multer');
-//const storage = require("../middlewares/multerImgProducts");
-//const upload = multer({ storage })
+const multer = require("multer")
+const path = require('path');
+
+const storage = multer.diskStorage({
+    destination : function (req,file,cb) {
+        cb(null, './public/img/products');
+    },
+    filename: function (req,file,cb) {
+        cb(null, `${Date.now()}_img${path.extname(file.originalname)}`)
+    }
+})
+
+const upload = multer({ storage });
 
 // Se importa el controlador
 const productsControllers = require("../controllers/productsController")
@@ -17,15 +26,15 @@ router.get("/detail/:id", productsControllers.productDetail)
 
 router.get("/create", productsControllers.productCreate)
 
-router.post("/create", productsControllers.productCreate1)
+router.post("/create",upload.single("imagen"), productsControllers.productCreate1)
 
 router.get("/:id/editar", productsControllers.productEdit)
 
-router.put("/editar", productsControllers.productEdit1)
+router.put("/editar", upload.single("imagen"), productsControllers.productEdit1)
 
 router.get("/carritoT", productsControllers.productListCarrito)
 
-router.delete("/delete", productsControllers.productDelete)
+router.delete("/delete/:id", productsControllers.productDelete)
 
 /*
 router.get("/", productsControllers.coursesList)

@@ -14,7 +14,7 @@
             <div class="contenedorReg">
                 <div class="title">Agregar un Curso</div>
 
-                <form action="/products/create" id="formulario" method="POST">
+                <form action="/products/create" id="formulario" method="POST" enctype="multipart/form-data">
                     <div class="user-details">
                         <div class="input-box">
                             <span class="details"> Titulo</span>
@@ -122,6 +122,13 @@
                         </div>
                         <div class="errorCreate">
                             <p> Error: debe contener de 5 a 20 caracteres</p>
+                        </div>
+                        <div class="input-box">
+                            <span class="details"> imagen de perfil</span>
+                            <input type="file" name="imagen"  id="imagen">
+                        </div>
+                        <div class="errorCreate">
+                            <p> Error: Debe subir una imagen</p>
                         </div>
                     </div>
 
