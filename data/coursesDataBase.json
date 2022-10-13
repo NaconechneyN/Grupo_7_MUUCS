@@ -1,15 +1,21 @@
 [
     {
-        "titulo": "Carpitería",
-        "descripcion": "jasdnhfujmwña",
-        "tipoDeEnsenianza": "CLASES O AULA INVERTIDA",
-        "certifiacion": "Oficial",
-        "precio": "$30000",
-        "duracion": "kfeld,w",
-        "id": 2,
-        "actualizacion": 1665173442490,
-        "valoracion": 0,
-        "numeroDeRegistarados": 0,
-        "imagen": "1665173442446_img.jpg"
+        "id": 1,
+        "titulo": "Calculo",
+        "descripcion": "En este curso aprenderás desde las bases de calculo matemático hacia temas más avanzados",
+        "tipoDeEnseñanza": "A demanda",
+        "descripcionQueAprenderás": "Aprenderás sobre las estructuras de calculo, diferentes operadores, estructura y orden de los elementos",
+        "certificacion": "Certificacion oficial",
+        "QuienLoImparte": "UTN",
+        "actulizacion": "julio 2022",
+        "valoracion": "8",
+        "numeroDeRegistarados": 13255,
+        "duracion": "5 meses",
+        "precio": "$40264"
+    },
+    {
+        "id": 3,
+        "titulo": "Lengua",
+        "precio": "8000"
     }
 ]
