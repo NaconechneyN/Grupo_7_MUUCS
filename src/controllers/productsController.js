@@ -2,6 +2,7 @@ const getCourses = require("../utils/getCourses")
 const setCourses = require("../utils/setCourses")
 const fs = require('fs')
 const path = require('path')
+const { validationResult } = require('express-validator')
 
 const productController = {
     productList: (req, res) => {
@@ -33,6 +34,13 @@ const productController = {
 
     productCreate1: (req, res) => {
 
+        let errors = validationResult(req)
+
+        if(errors != null){
+            res.render("productCreate", { titulo: "Creacion de producto" , errors : errors})
+        }
+
+
         const curso = req.body;
 
         const courses = getCourses();
@@ -49,8 +57,6 @@ const productController = {
         courses.push(curso);
 
         setCourses(JSON.stringify(courses));
-
-
 
 
         res.render("productCreate", { titulo: "Creacion de producto" })

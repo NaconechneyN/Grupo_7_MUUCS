@@ -5,6 +5,11 @@ const router = express.Router()
 const multer = require("multer")
 const path = require('path');
 
+const { body } = require('express-validator')
+
+const validateUser = require('../middlewares/mildwareProductsForm')
+
+
 const storage = multer.diskStorage({
     destination : function (req,file,cb) {
         cb(null, './public/img/products');
@@ -26,7 +31,7 @@ router.get("/detail/:id", productsControllers.productDetail)
 
 router.get("/create", productsControllers.productCreate)
 
-router.post("/create",upload.single("imagen"), productsControllers.productCreate1)
+router.post("/create",[upload.single("imagen"), validateUser ], productsControllers.productCreate1)
 
 router.get("/:id/editar", productsControllers.productEdit)
 

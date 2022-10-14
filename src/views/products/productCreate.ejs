@@ -14,27 +14,33 @@
             <div class="contenedorReg">
                 <div class="title">Agregar un Curso</div>
 
+                
+
                 <form action="/products/create" id="formulario" method="POST" enctype="multipart/form-data">
                     <div class="user-details">
                         <div class="input-box">
                             <span class="details"> Titulo</span>
                             <input type="text" placeholder="5 a 20 caracteres" name="titulo" id="nombre">
                         </div>
-                        <div class="errorCreate">
-                            <p> Error: debe contener de 5 a 20 caracteres</p>
-                        </div>
+                        <% if (locals.errors != null) { %>
+                          <div class="errorCreate"> 
+                            
+                               <p> <%= errors.titulo.msg %></p> 
+                               
+                             </div>
+                             <% } %> 
                         <div class="input-box">
                             <span class="details"> Descripcion</span>
                             <textarea placeholder="200 caracteres maximo" name="descripcion" id="nombreUsuario"
                                 ></textarea>
                         </div>
                         <div class="errorCreate">
-                            <p> Error: te has pasado de los caracteres maximos (200)</p>
+                            <p> errors.descripcion.msg</p>
                         </div>
                         <div class="input-box">
                             <span class="details"> Tipo de Enseñanza</span>
                             <div class="errorCreate">
-                                <p> Error: tiene que elegir al menos una</p>
+                                <p> errors.tipoDeEnsenianza.msg</p>
                             </div>
                             <div class="cajaEnseñanza">
                                 <input type="checkbox" name="tipoDeEnsenianza" id="categoria1"
@@ -99,7 +105,7 @@
                         <div class="input-box">
                             <span class="details"> Certificacion</span>
                             <div class="errorCreate">
-                                <p> Error: tiene que elegir al menos una</p>
+                                <p> errors.certificacion.msg</p>
                             </div>
                             <div class="cajaCertificacion">
                                 <input type="radio" name="certifiacion" id="perfil1" value="Oficial">
@@ -114,14 +120,14 @@
                                 name="precio" placeholder="Si es gratis, indicarlo con 0" id="domicilio">
                         </div>
                         <div class="errorCreate">
-                            <p> Error: este campo es obligatorio</p>
+                            <p> errors.precio.msg</p>
                         </div>
                         <div class="input-box">
                             <span class="details"> Duracion</span>
                             <input type="text" name="duracion" placeholder="5 a 20 caracteres" id="nombre">
                         </div>
                         <div class="errorCreate">
-                            <p> Error: debe contener de 5 a 20 caracteres</p>
+                            <p> errors.duracion.msg</p>
                         </div>
                         <div class="input-box">
                             <span class="details"> imagen de perfil</span>
@@ -132,6 +138,7 @@
                         </div>
                     </div>
 
+                   
                     <div class="buttonRegistrarse">
                         <input type="submit" value="Crea Curso">
                     </div>
