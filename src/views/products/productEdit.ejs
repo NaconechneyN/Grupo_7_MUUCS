@@ -19,17 +19,25 @@
                             <input type="text" placeholder="5 a 20 caracteres" value="<%= curso.titulo %> "
                                 name="titulo" id="nombre">
                         </div>
-                        <div class="errorCreate">
-                            <p> Error: debe contener de 5 a 20 caracteres</p>
-                        </div>
+                        <% if (locals.errors && errors.titulo) { %>
+                            <div class="errorCreate"> 
+                              
+                                 <p> <%= errors.titulo.msg %></p> 
+                                 
+                               </div>
+                               <% } %> 
                         <div class="input-box">
                             <span class="details"> Descripcion</span>
                             <textarea placeholder="200 caracteres maximo" name="descripcion"
                                 id="nombreUsuario"><%= curso.descripcion %></textarea>
                         </div>
-                        <div class="errorCreate">
-                            <p> Error: te has pasado de los caracteres maximos (200)</p>
-                        </div>
+                        <% if (locals.errors != null) { %>
+                            <div class="errorCreate"> 
+                              
+                                 <p> <%= errors.descripcion.msg %></p> 
+                                 
+                               </div>
+                               <% } %> 
                         <div class="input-box">
                             <span class="details"> ¿Que aprenderan los alumnos?</span>
                             <textarea placeholder="200 caracteres maximo" name="descripcionQueAprenderas"
@@ -40,9 +48,13 @@
                         </div>
                         <div class="input-box">
                             <span class="details"> Tipo de Enseñanza</span>
-                            <div class="errorCreate">
-                                <p> Error: tiene que elegir al menos una</p>
-                            </div>
+                            <% if (locals.errors != null) { %>
+                                <div class="errorCreate"> 
+                                  
+                                     <p> <%= errors.tipodeensenianza.msg %></p> 
+                                     
+                                   </div>
+                                   <% } %> 
                             <div class="cajaEnseñanza">
                                 <% if (curso.tipoDeEnsenianza==="APRENDIZAJE COOPERATIVO" ) { %>
 
@@ -170,9 +182,13 @@
 
                         <div class="input-box">
                             <span class="details"> Certificacion</span>
-                            <div class="errorCreate">
-                                <p> Error: tiene que elegir al menos una</p>
-                            </div>
+                            <% if (locals.errors != null) { %>
+                                <div class="errorCreate"> 
+                                  
+                                     <p> <%= errors.certificacion.msg %></p> 
+                                     
+                                   </div>
+                                   <% } %> 
                             <div class="cajaCertificacion">
                                 <% if (curso.certifiacion==="Oficial" ) { %>
 
@@ -199,16 +215,24 @@
                             <i class="fa-solid fa-hand-holding-dollar"></i><input class="precioA" type="text"
                                 name="precio" placeholder="Si es gratis, indicarlo con 0" id="domicilio" value="<%= curso.precio %>">
                         </div>
-                        <div class="errorCreate">
-                            <p> Error: este campo es obligatorio</p>
-                        </div>
+                        <% if (locals.errors != null) { %>
+                            <div class="errorCreate"> 
+                              
+                                 <p> <%= errors.precio.msg %></p> 
+                                 
+                               </div>
+                               <% } %> 
                         <div class="input-box">
                             <span class="details"> Duracion</span>
                             <input type="text" name="duracion" placeholder="5 a 20 caracteres" id="nombre" value="<%= curso.duracion %>">
                         </div>
-                        <div class="errorCreate">
-                            <p> Error: debe contener de 5 a 20 caracteres</p>
-                        </div>
+                        <% if (locals.errors != null) { %>
+                            <div class="errorCreate"> 
+                              
+                                 <p> <%= errors.duracion.msg %></p> 
+                                 
+                               </div>
+                               <% } %> 
                     </div>
                     <input type="text" class="none" value="<%= curso.actualizacion %>" name="actualizacion" hidden> 
                     <input type="text" class="none" value="<%= curso.valoracion %>" name="valoracion" hidden> 

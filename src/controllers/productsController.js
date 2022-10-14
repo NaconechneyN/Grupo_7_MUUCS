@@ -35,9 +35,10 @@ const productController = {
     productCreate1: (req, res) => {
 
         let errors = validationResult(req)
-
+        let errors2 = errors.mapped()
+        console.log(errors2 && errors2.titulo)
         if(errors != null){
-            res.render("productCreate", { titulo: "Creacion de producto" , errors : errors})
+            res.render("productCreate", { titulo: "Creacion de producto" , errors : errors.mapped()})
         }
 
 
@@ -81,6 +82,20 @@ const productController = {
 
     productEdit1: (req, res) => {
 
+        let errors = validationResult(req)
+
+        if(errors != null){
+            const id = req.body.id;
+
+            const courses = getCourses();
+
+            const curso = courses.filter(course => course.id == id);
+    
+            const curso1 = curso.shift();
+
+            res.render("productEdit", { titulo: "Edición de producto" , errors : errors.mapped(), curso: curso1})
+    
+        }
 
         const curso = req.body;
 

@@ -31,11 +31,11 @@ router.get("/detail/:id", productsControllers.productDetail)
 
 router.get("/create", productsControllers.productCreate)
 
-router.post("/create",[upload.single("imagen"), validateUser ], productsControllers.productCreate1)
+router.post("/create",[upload.single("imagen"), validateUser], productsControllers.productCreate1)
 
 router.get("/:id/editar", productsControllers.productEdit)
 
-router.put("/editar", upload.single("imagen"), productsControllers.productEdit1)
+router.put("/editar",[upload.single("imagen"), validateUser], productsControllers.productEdit1)
 
 router.get("/carritoT", productsControllers.productListCarrito)
 
