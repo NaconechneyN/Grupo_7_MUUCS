@@ -31,7 +31,7 @@
                             <textarea placeholder="200 caracteres maximo" name="descripcion"
                                 id="nombreUsuario"><%= curso.descripcion %></textarea>
                         </div>
-                        <% if (locals.errors != null) { %>
+                        <% if (locals.errors  && errors.descripcion) { %>
                             <div class="errorCreate"> 
                               
                                  <p> <%= errors.descripcion.msg %></p> 
@@ -48,7 +48,7 @@
                         </div>
                         <div class="input-box">
                             <span class="details"> Tipo de Enseñanza</span>
-                            <% if (locals.errors != null) { %>
+                            <% if (locals.errors  && errors.tipoDeEnsenianza) { %>
                                 <div class="errorCreate"> 
                                   
                                      <p> <%= errors.tipodeensenianza.msg %></p> 
@@ -182,7 +182,7 @@
 
                         <div class="input-box">
                             <span class="details"> Certificacion</span>
-                            <% if (locals.errors != null) { %>
+                            <% if (locals.errors  && errors.certificacion) { %>
                                 <div class="errorCreate"> 
                                   
                                      <p> <%= errors.certificacion.msg %></p> 
@@ -215,7 +215,7 @@
                             <i class="fa-solid fa-hand-holding-dollar"></i><input class="precioA" type="text"
                                 name="precio" placeholder="Si es gratis, indicarlo con 0" id="domicilio" value="<%= curso.precio %>">
                         </div>
-                        <% if (locals.errors != null) { %>
+                        <% if (locals.errors  && errors.precio) { %>
                             <div class="errorCreate"> 
                               
                                  <p> <%= errors.precio.msg %></p> 
@@ -244,7 +244,13 @@
                         <input type="file" name="imagen"  id="imagen">
                         <img src="/img/products/<%= curso.imagen %> " alt="" class="">
                     </div>
-
+                    <% if (locals.errors != null) { %>
+                        <div class="errorCreate"> 
+                          
+                             <p> <%= errors.duracion.msg %></p> 
+                             
+                           </div>
+                           <% } %> 
                     <div class="buttonRegistrarse">
                         <input type="submit" value="Editar Curso">
                     </div>

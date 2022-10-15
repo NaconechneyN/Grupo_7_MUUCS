@@ -20,9 +20,10 @@
                     <div class="user-details">
                         <div class="input-box">
                             <span class="details"> Titulo</span>
-                            <input type="text" placeholder="5 a 20 caracteres" name="titulo" id="nombre">
+                            <input type="text" placeholder="5 a 20 caracteres" name="titulo" id="nombre"
+                            value=<%= locals.oldDate? oldDate.titulo : null %>>
                         </div>
-                        <% if (locals.errors != null) { %>
+                        <% if (locals.errors && errors.titulo) { %>
                           <div class="errorCreate"> 
                             
                                <p> <%= errors.titulo.msg %></p> 
@@ -31,10 +32,9 @@
                              <% } %> 
                         <div class="input-box">
                             <span class="details"> Descripcion</span>
-                            <textarea placeholder="200 caracteres maximo" name="descripcion" id="nombreUsuario"
-                                ></textarea>
+                            <textarea  name="descripcion" id="nombreUsuario"><%= locals.oldDate? oldDate.descripcion : "200 caracteres como maximos"%></textarea>
                         </div>
-                        <% if (locals.errors != null) { %>
+                        <% if (locals.errors && errors.descripcion) { %>
                             <div class="errorCreate"> 
                               
                                  <p> <%= errors.descripcion.msg %></p> 
@@ -43,7 +43,7 @@
                                <% } %> 
                         <div class="input-box">
                             <span class="details"> Tipo de Enseñanza</span>
-                            <% if (locals.errors != null) { %>
+                            <% if (locals.errors && errors.tipoDeEnsenianza) { %>
                                 <div class="errorCreate"> 
                                   
                                      <p> <%= errors.tipoDeEnsenianza.msg %></p> 
@@ -112,7 +112,7 @@
                         
                         <div class="input-box">
                             <span class="details"> Certificacion</span>
-                            <% if (locals.errors != null) { %>
+                            <% if (locals.errors && errors.certificacion) { %>
                                 <div class="errorCreate"> 
                                   
                                      <p> <%= errors.certificacion.msg %></p> 
@@ -120,18 +120,18 @@
                                    </div>
                                    <% } %> 
                             <div class="cajaCertificacion">
-                                <input type="radio" name="certifiacion" id="perfil1" value="Oficial">
+                                <input type="radio" name="certificacion" id="perfil1" value="Oficial">
                                 <label for="Certifiacion" class="chicos">Oficial</label>
-                                <input type="radio" name="certifiacion" id="perfil2" value="No Oficial">
+                                <input type="radio" name="certificacion" id="perfil2" value="No Oficial">
                                 <label for="Certifiacion" class="chicos">No Oficial</label>
                             </div>
                         </div>
                         <div class="input-box">
                             <span class="details"> Precio</span>
                             <i class="fa-solid fa-hand-holding-dollar"></i><input class="precioA" type="text"
-                                name="precio" placeholder="Si es gratis, indicarlo con 0" id="domicilio">
+                                name="precio" placeholder="Si es gratis, indicarlo con 0" id="domicilio" value=<%= locals.oldDate? oldDate.precio : null %>>
                         </div>
-                        <% if (locals.errors != null) { %>
+                        <% if (locals.errors && errors.precio) { %>
                             <div class="errorCreate"> 
                               
                                  <p> <%= errors.precio.msg %></p> 
@@ -140,9 +140,9 @@
                                <% } %> 
                         <div class="input-box">
                             <span class="details"> Duracion</span>
-                            <input type="text" name="duracion" placeholder="5 a 20 caracteres" id="nombre">
+                            <input type="text" name="duracion" placeholder="5 a 20 caracteres" id="nombre" value=<%= locals.oldDate? oldDate.duracion : null %>>
                         </div>
-                        <% if (locals.errors != null) { %>
+                        <% if (locals.errors && errors.duracion) { %>
                             <div class="errorCreate"> 
                               
                                  <p> <%= errors.duracion.msg %></p> 
@@ -153,9 +153,13 @@
                             <span class="details"> imagen de perfil</span>
                             <input type="file" name="imagen"  id="imagen">
                         </div>
-                        <div class="errorCreate">
-                            <p> Error: Debe subir una imagen</p>
-                        </div>
+                        <% if (locals.errors && errors.imagen) { %>
+                            <div class="errorCreate"> 
+                              
+                                 <p> <%= errors.imagen.msg %></p> 
+                                 
+                               </div>
+                               <% } %> 
                     </div>
 
                    
