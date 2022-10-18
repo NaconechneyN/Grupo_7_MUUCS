@@ -36,7 +36,7 @@ const productController = {
 
         let errors = validationResult(req)
 
-        if (errors == null) {
+        if (errors.isEmpty()) {
             const curso = req.body;
 
             const courses = getCourses();
@@ -87,7 +87,7 @@ const productController = {
 
         let errors = validationResult(req)
 
-        if (errors == null) {
+        if (errors.isEmpty()) {
             const curso = req.body;
 
             const courses = getCourses();

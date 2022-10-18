@@ -1,35 +1,10 @@
 [
 {
-"Id": 1,
-"Nombre": "Nicolás",
-"Apellido": "Naconechney",
+"id": 1,
+"nombreyapellido": "Nicolás Naconechney",
+"date": "Naconechney",
 "Email": "naconechneynicolas@gmail.com",
 "Contraseña": "123Nico",
-"Imagen": "image"
-},
-{
-"Id": 2,
-"Nombre": "Lucio",
-"Apellido": "Abalos",
-"Email": "lucioabalos@gmail.com",
-"Contraseña": "Lucio123",
-"Imagen": "image"
-},
-{
-"Id": 3,
-"Nombre": "Camila",
-"Apellido": "Sapino",
-"Email": "camilasapino@gmail.com",
-"Contraseña": "12Cami",
-"Categoría": "A",
-"Imagen": "image"
-},
-{
-"Id": 4,
-"Nombre": "Leonardo",
-"Apellido": "Perez",
-"Email": "leoperez@gmail.com",
-"Contraseña": "Perez1234",
 "Imagen": "image"
 }
 ]
