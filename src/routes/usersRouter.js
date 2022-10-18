@@ -18,7 +18,7 @@ const validateUser = [
     body('password')
     .notEmpty().withMessage('Debes completar tu contraseña'),
     body('password2')
-    .notEmpty().withMessage('Las contraseñas no coinciden'),
+    .notEmpty().withMessage('Debes completar este campo'),
     
 ];
 

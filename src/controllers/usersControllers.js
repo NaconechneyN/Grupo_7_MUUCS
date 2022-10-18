@@ -5,6 +5,7 @@ const { validationResult } = require('express-validator');
 const bcryptjs = require('bcryptjs');
 const getUsers = require("../utils/getUsers")
 const setUsers = require("../utils/setUsers")
+const  {  v4 : uuidv4  }  =  require ( 'uuid' ) ; 
 
 
 const controllers = {
@@ -44,11 +45,11 @@ const controllers = {
         console.log(errors)
         if (errors.isEmpty()){
             let newUser = {
-                id : users.length+1,
+                id : uuidv4 ( ),
                 nombreyapellido : req.body.nombre,
                 date : req.body.date,
                 email : req.body.email,
-                password: req.body.password,
+                password: req.body.password
                 }
                 console.log(newUser);
                 

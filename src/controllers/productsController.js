@@ -3,6 +3,7 @@ const setCourses = require("../utils/setCourses")
 const fs = require('fs')
 const path = require('path')
 const { validationResult } = require('express-validator')
+const  {  v4 : uuidv4  }  =  require ( 'uuid' ) ; 
 
 const productController = {
     productList: (req, res) => {
@@ -42,7 +43,7 @@ const productController = {
             const courses = getCourses();
 
 
-            curso.id = (courses.length + 1);
+            curso.id = uuidv4 ( );
             curso.actualizacion = Date.now();
             curso.valoracion = 0;
             curso.numeroDeRegistarados = 0;
@@ -55,7 +56,7 @@ const productController = {
             setCourses(JSON.stringify(courses));
 
 
-            res.redirect("/product/carritoT");
+            res.redirect('/products/carritoT');
         }
 
 
