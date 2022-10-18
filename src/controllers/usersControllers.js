@@ -64,7 +64,54 @@ const controllers = {
             res.render('register', {errors: errors.mapped(), old: req.body},)
         }
 
-    }    
+    },
+    processLogin: (req, res) =>{
+        // GUARDAMOS ERRORES
+        let errors = validationResult(req);
+
+
+
+        let users = getUsers()
+
+        console.log(users)
+        if (errors.isEmpty()){
+            
+            let userInDb = users.some(elem => elem.email === req.body.email)
+
+            console.log(userInDb)
+            if (userInDb){
+                if(bcryptjs.compareSync(userInDb.password, req.body.password)){
+                    req.session.usuarioLogueado = userInDb;
+                    console.log(req.session.usuarioLogueado)
+                    res.redirect('/')
+
+                }
+                else{
+                    let error = {
+                        value: '',
+                        msg: 'Contraseña invalida',
+                        param: 'password',
+                        location: 'body'
+                      }
+                      errors.errors.push(error)
+                }
+            }
+            else{
+                let error = {
+                    value: '',
+                    msg: 'Email invalido',
+                    param: 'email',
+                    location: 'body'
+                 }
+                
+                errors.errors.push(error)
+            }    
+        }
+
+        res.render('login', {errors: errors.mapped(), old: req.body},)
+
+
+    }     
 }
 
 

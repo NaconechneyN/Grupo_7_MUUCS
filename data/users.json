@@ -1,1 +1,17 @@
-[{"id":1,"nombreyapellido":"Nicolás Naconechney","date":"Naconechney","Email":"naconechneynicolas@gmail.com","Contraseña":"123Nico","Imagen":"image"},{"id":2,"nombreyapellido":"Maria Luisa Fernandez","date":"2022-10-11","email":"lucioabalos97@gmail.com","password":"sdfsdfsdf"}]
+[
+    {
+        "id": 1,
+        "nombreyapellido": "Nicolás Naconechney",
+        "date": "Naconechney",
+        "Email": "naconechneynicolas@gmail.com",
+        "Contraseña": "123Nico",
+        "Imagen": "image"
+    },
+    {
+        "id": 2,
+        "nombreyapellido": "Maria Luisa Fernandez",
+        "date": "2022-10-11",
+        "email": "lucioabalos97@gmail.com",
+        "password": "sdfsdfsdf"
+    }
+]

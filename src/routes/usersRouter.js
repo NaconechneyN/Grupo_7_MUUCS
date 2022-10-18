@@ -8,19 +8,8 @@ const { body } = require('express-validator')
 
 //VER DONDE VA
 
-const validateUser = [
-    body('nombre')
-    .notEmpty().withMessage('Debes completar tu nombre y apellido'),
-    body('date')
-    .isDate().withMessage('Debes colocar tu fecha de nacimiento'),
-    body('email')
-    .isEmail().withMessage('Debes completar tu email'),
-    body('password')
-    .notEmpty().withMessage('Debes completar tu contraseña'),
-    body('password2')
-    .notEmpty().withMessage('Las contraseñas no coinciden'),
-    
-];
+const validateUser = require('../middlewares/mildwareUserForm');
+const validateLogin = require('../middlewares/mildwareUserLogin');
 
 // REQUIERO VISTA LOGIN
 
@@ -37,6 +26,8 @@ router.get('/register', controllers.register);
 // POSTEO REGISTER 
 
 router.post('/register', validateUser, controllers.updateUser);
+
+router.post('/login', validateLogin, controllers.processLogin);
 
 
 
