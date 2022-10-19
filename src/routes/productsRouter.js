@@ -7,7 +7,7 @@ const path = require('path');
 
 const { body } = require('express-validator')
 
-const validateUser = require('../middlewares/mildwareProductsForm')
+const validateProduct = require('../middlewares/mildwareProductsForm')
 
 
 const storage = multer.diskStorage({
@@ -31,11 +31,11 @@ router.get("/detail/:id", productsControllers.productDetail)
 
 router.get("/create", productsControllers.productCreate)
 
-router.post("/create",[upload.single("imagen"), validateUser], productsControllers.productCreate1)
+router.post("/create",[upload.single("imagen"), validateProduct], productsControllers.productCreate1)
 
 router.get("/:id/editar", productsControllers.productEdit)
 
-router.put("/editar",[upload.single("imagen"), validateUser], productsControllers.productEdit1)
+router.put("/editar",[upload.single("imagen"), validateProduct], productsControllers.productEdit1)
 
 router.get("/carritoT", productsControllers.productListCarrito)
 

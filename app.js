@@ -8,11 +8,14 @@ const dotenv= require('dotenv').config();
 const methodOverride = require('method-override')
 app.use(methodOverride('_method'))
 
+const session = require('express-session')
+
 // Routes
 const mainRouter = require ('./src/routes/mainRouter')
 const productsRouter = require('./src/routes/productsRouter')
 const usersRouter = require('./src/routes/usersRouter')
 
+app.use(session({secret: "Muucs" }));
 
 /*app.use(express.static('public'));*/
 app.use(express.static(path.join(__dirname, 'public')));
