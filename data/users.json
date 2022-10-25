@@ -6,20 +6,6 @@
         "Email": "naconechneynicolas@gmail.com",
         "Contraseña": "123Nico",
         "Imagen": "image"
-    },
-    {
-<<<<<<< HEAD
-        "id": "3cf707b9-9fd2-4389-aae9-25ea4a805fce",
-        "nombreyapellido": "Lucio Abalos",
-        "date": "2022-10-05",
-        "email": "lucioabalos97@gmail.com",
-        "password": "155151460"
-=======
-        "id": 2,
-        "nombreyapellido": "Maria Luisa Fernandez",
-        "date": "2022-10-11",
-        "email": "lucioabalos97@gmail.com",
-        "password": "sdfsdfsdf"
->>>>>>> 20256a52805c7666c746e76b87f981371354d42a
     }
+
 ]
