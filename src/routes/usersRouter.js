@@ -25,6 +25,10 @@ const validateUser = [
 
 const validateUser = require('../middlewares/mildwareUserForm');
 const validateLogin = require('../middlewares/mildwareUserLogin');
+<<<<<<< HEAD
+=======
+
+>>>>>>> 142fcffd9ef0f0a53e4aadbc1e91c1056b779cc0
 
 // REQUIERO VISTA LOGIN
 
