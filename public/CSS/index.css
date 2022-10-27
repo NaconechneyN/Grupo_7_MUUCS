@@ -41,17 +41,7 @@
     padding: 3rem;
 }
 
-@media (min-width: 30em) {
-    .baner-completo {
-        flex-direction: row;
-        justify-content: space-between; 
-    }
 
-    .texto_baner {
-        width: 40%;
-    }
-    
-}
 
 .presentacion{
     /* margin-bottom: 15px; */
@@ -93,17 +83,7 @@
 
 }
 
-@media (min-width: 30em) {
-    .categorias {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
-@media (min-width: 50em) {
-    .categorias {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
 
 .categorias li {
     border-radius: 8px;
@@ -149,17 +129,7 @@
     gap: 1rem;
 }
 
-@media (min-width: 30em) {
-    .cursos__items {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
-@media (min-width: 50em) {
-    .cursos__items {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
 
 .tarjeta_producto{
     display: flex;
@@ -205,9 +175,6 @@
     text-align: center;
     padding-bottom: 50px;
     padding-top: 50px;
-   /*  background: linear-gradient(70deg, #7038ff, #e233fd, #f633fd);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text; */
 }
   
 .box-seccion {
@@ -285,3 +252,39 @@
     flex-direction: column;
     gap: 1rem;
   }
+
+
+  @media (min-width: 30em) {
+    .cursos__items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 50em) {
+    .cursos__items {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media (min-width: 30em) {
+    .categorias {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 50em) {
+    .categorias {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 30em) {
+    .baner-completo {
+        flex-direction: row;
+        justify-content: space-between; 
+    }
+
+    .texto_baner {
+        width: 40%;
+    }
+    
+}

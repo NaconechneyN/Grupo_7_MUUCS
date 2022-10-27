@@ -20,3 +20,7 @@ En esta retro al notar que todos los integrantes teniamos tiempos diferentes, hi
 
 28/09 
 El punto mas fuerte de este sprint es que coinicidimos la mayor cantidad de veces desde el inicio del proyecto integrador en reuniones y trabajamos juntos en varias oportunidades, lo cual mejoró la interrelacion de todos los integrantes. Cumplimos con la consigna y estuvimos conformes con las funciones de la aplicacion. Actulizamos el tablero de actividades.
+
+25/10
+Otra vez estuvimos desorganizados debido al poco tiempo que dispone cada integrante, y los horarios diferentes. Con respecto al trabajo en si, no logramos completarlo a tiempo y eso hace que se junte con el sprint nuevo que hay que hacer. 
+Nuestro objetivo central es ponernos al dia, y definimos el grupo comentar el codigo.

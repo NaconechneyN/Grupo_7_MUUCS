@@ -8,24 +8,11 @@ const { body } = require('express-validator')
 
 //VER DONDE VA
 
-<<<<<<< HEAD
-const validateUser = [
-    body('nombre')
-    .notEmpty().withMessage('Debes completar tu nombre y apellido'),
-    body('date')
-    .isDate().withMessage('Debes colocar tu fecha de nacimiento'),
-    body('email')
-    .isEmail().withMessage('Debes completar tu email'),
-    body('password')
-    .notEmpty().withMessage('Debes completar tu contraseña'),
-    body('password2')
-    .notEmpty().withMessage('Debes completar este campo'),
-    
-];
-=======
+
+
 const validateUser = require('../middlewares/mildwareUserForm');
 const validateLogin = require('../middlewares/mildwareUserLogin');
->>>>>>> 20256a52805c7666c746e76b87f981371354d42a
+
 
 // REQUIERO VISTA LOGIN
 
