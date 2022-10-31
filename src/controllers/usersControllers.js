@@ -83,9 +83,10 @@ const controllers = {
 
             if (userInDb){
                 if(bcryptjs.compareSync(req.body.password, userInDb.password)){
+                    delete userInDb.password;
                     req.session.usuarioLogueado = userInDb;
                     console.log(req.session.usuarioLogueado)
-                    res.redirect('/')
+                    res.send(req.session.usuarioLogueado)
 
                 }
                 else{

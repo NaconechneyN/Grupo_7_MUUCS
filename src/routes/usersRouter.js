@@ -1,7 +1,7 @@
 const express= require('express');
 const router= express.Router();
 const controllers = require('../controllers/usersControllers');
-const { body } = require('express-validator')
+const guest = require('../middlewares/mildwareGuest')
 
 
 //VALIDACIONES
@@ -18,7 +18,7 @@ const upload = require('../middlewares/mildwareMulterUser')
 
 // REQUIERO VISTA LOGIN
 
-router.get('/login', controllers.login);
+router.get('/login',guest, controllers.login);
 
 // POSTEO VISTA DE LOGIN
 
@@ -26,7 +26,7 @@ router.get('/login', controllers.login);
 
 // REQUIERO VISTA REGISTER
 
-router.get('/register', controllers.register);
+router.get('/register',guest, controllers.register);
 
 // POSTEO REGISTER 
 

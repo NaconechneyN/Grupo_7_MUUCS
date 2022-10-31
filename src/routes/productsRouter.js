@@ -6,6 +6,8 @@ const router = express.Router()
 const multer = require("multer")
 // Requerimos path para poder manejar rutas relativas y absolutas
 const path = require('path');
+// Requerimos mildware para verificar que el usuario esta logueado
+const guest = require('../middlewares/mildwareNoGuest.js')
 
 // Requerimos el mildware que creamos para la validacion del formulario de registro de un producto
 const validateProduct = require('../middlewares/mildwareProductsForm')
@@ -21,15 +23,15 @@ router.get("/", productsControllers.productList)
 // Ruta a un producto en particular por su ID
 router.get("/detail/:id", productsControllers.productDetail)
 // Ruta a form para crear un nuevo producto
-router.get("/create", productsControllers.productCreate)
+router.get("/create",guest ,productsControllers.productCreate)
 //
 router.post("/create",[upload.single("imagen"), validateProduct], productsControllers.productCreate1)
 // Ruta a traves de ID para modificar un producto
-router.get("/:id/editar", productsControllers.productEdit)
+router.get("/:id/editar", guest, productsControllers.productEdit)
 //
 router.put("/editar",[upload.single("imagen"), validateProduct], productsControllers.productEdit1)
 // Ruta a lista de productos
-router.get("/carritoT", productsControllers.productListCarrito)
+router.get("/carritoT", guest, productsControllers.productListCarrito)
 // Ruta a traves de ID para eliminar un producto
 router.delete("/delete/:id", productsControllers.productDelete)
 
