@@ -6,22 +6,13 @@ const router = express.Router()
 const multer = require("multer")
 // Requerimos path para poder manejar rutas relativas y absolutas
 const path = require('path');
-// Requerimos el modulo de express validator (conjunto de middlewares)para realizar la validación de entrada desde el lado del servidor.
-const { body } = require('express-validator')
-// 
+
+// Requerimos el mildware que creamos para la validacion del formulario de registro de un producto
 const validateProduct = require('../middlewares/mildwareProductsForm')
 
-// utilizamos multer
-const storage = multer.diskStorage({
-    destination : function (req,file,cb) {
-        cb(null, './public/img/products');
-    },
-    filename: function (req,file,cb) {
-        cb(null, `${Date.now()}_img${path.extname(file.originalname)}`)
-    }
-})
 
-const upload = multer({ storage });
+// requerimos el multer de la carpeta mildware
+const upload = require('../middlewares/mildawareMulterProduct')
 
 // Se importa el controlador
 const productsControllers = require("../controllers/productsController")

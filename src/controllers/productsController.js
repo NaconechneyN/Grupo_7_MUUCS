@@ -9,11 +9,14 @@ const productController = {
     productList: (req, res) => {
         const courses = getCourses()
 
+        console.log(courses)
+
         res.render("productList", { cursos: courses, titulo: "listado de producto" })
     },
     productListCarrito: (req, res) => {
         const courses = getCourses()
 
+        console.log(courses)
         res.render("productCart", { cursos: courses, titulo: "Carrito de producto" })
     },
     productDetail: (req, res) => {
@@ -58,10 +61,12 @@ const productController = {
 
             res.redirect('/products/carritoT');
         }
+        else{
+            res.render("productCreate", { titulo: "Creacion de producto", errors: errors.mapped(), oldDate : req.body })
+        }
 
 
-
-        res.render("productCreate", { titulo: "Creacion de producto", errors: errors.mapped(), oldDate : req.body })
+        
 
 
 

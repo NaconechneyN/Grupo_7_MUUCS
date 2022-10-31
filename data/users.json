@@ -1,11 +1,1 @@
-[
-    {
-        "id": 1,
-        "nombreyapellido": "Nicolás Naconechney",
-        "date": "Naconechney",
-        "Email": "naconechneynicolas@gmail.com",
-        "Contraseña": "123Nico",
-        "Imagen": "image"
-    }
-
-]
+[{"id":"b02b89b6-6614-447f-be68-3edc2e9afce2","nombreyapellido":"Maria Luisa Fernandez","date":"2022-10-25","email":"marilufer156@gmail.com","password":"$2a$10$.nXV81SQjSbBP6Hub3jG.eZZfKgbSfsCzHvYNVh/63zh0sb1lmm.2","imagen":"1667067323271_img.jpg"},{"id":"f546e805-87d3-44e6-9c7a-2aee2557dd9a","nombreyapellido":"Maria Luisa Fernandez","date":"2022-10-11","email":"lucioabalos97@gmail.com","password":"$2a$10$uKB33bt44lwmcmLqxnPp0.F27.HNnOI9rMiNhSHQp8C6VX6SRqd.O","imagen":"1667067450111_img.jpg"},{"id":"6edfdf5d-379c-471d-9c85-2858da430561","nombreyapellido":"asdasd","date":"2022-10-17","email":"lucioabalos@gmail.com","password":"$2a$10$1NuFDfSHvuUiEPw88V8Y5OETyvu/UOFA5dv1iQuWaHMu.Syu.YP86","imagen":"1667069152959_img.jpg"}]

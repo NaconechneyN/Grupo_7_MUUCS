@@ -20,10 +20,10 @@ const controllers = {
 
         let users = getUsers()
 
-
+        console.log(req.body.email)
         if(req.body.email != ''){
-            let userInDb = users.some(elem => elem.Email === req.body.email)
-            
+            let userInDb = users.some(elem => elem.email === req.body.email)
+            console.log(userInDb)
             if (userInDb){
                 let error = {
                     value: '',
@@ -49,7 +49,8 @@ const controllers = {
                 nombreyapellido : req.body.nombre,
                 date : req.body.date,
                 email : req.body.email,
-                password: req.body.password
+                password: bcryptjs.hashSync(req.body.password,10),
+                imagen : req.file.filename
                 }
                 console.log(newUser);
                 
@@ -74,14 +75,14 @@ const controllers = {
 
         let users = getUsers()
 
-        console.log(users)
+
         if (errors.isEmpty()){
             
-            let userInDb = users.some(elem => elem.email === req.body.email)
+            let userInDb = users.filter(elem => elem.email === req.body.email)
+            userInDb = userInDb.pop()
 
-            console.log(userInDb)
             if (userInDb){
-                if(bcryptjs.compareSync(userInDb.password, req.body.password)){
+                if(bcryptjs.compareSync(req.body.password, userInDb.password)){
                     req.session.usuarioLogueado = userInDb;
                     console.log(req.session.usuarioLogueado)
                     res.redirect('/')
@@ -108,9 +109,9 @@ const controllers = {
                 errors.errors.push(error)
             }    
         }
-
-        res.render('login', {errors: errors.mapped(), old: req.body},)
-
+        else{
+            res.render('login', {errors: errors.mapped(), old: req.body},)
+        }
 
     }     
 }

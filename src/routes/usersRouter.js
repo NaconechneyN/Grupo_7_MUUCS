@@ -9,10 +9,12 @@ const { body } = require('express-validator')
 //VER DONDE VA
 
 
-
+// REQUIERO MILDWARE DE VALIDACIONES PARA EL REGISTRO Y EL LOGIN
 const validateUser = require('../middlewares/mildwareUserForm');
 const validateLogin = require('../middlewares/mildwareUserLogin');
 
+// requerimos el multer de la carpeta mildware
+const upload = require('../middlewares/mildwareMulterUser')
 
 // REQUIERO VISTA LOGIN
 
@@ -28,7 +30,7 @@ router.get('/register', controllers.register);
 
 // POSTEO REGISTER 
 
-router.post('/register', validateUser, controllers.updateUser);
+router.post('/register', [upload.single("imagen"), validateUser], controllers.updateUser);
 
 router.post('/login', validateLogin, controllers.processLogin);
 
