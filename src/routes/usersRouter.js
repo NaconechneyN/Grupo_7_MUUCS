@@ -3,6 +3,9 @@ const router= express.Router();
 const controllers = require('../controllers/usersControllers');
 const guest = require('../middlewares/mildwareGuest')
 
+// Requerimos mildware para verificar que el usuario esta logueado
+const noGuest = require('../middlewares/mildwareNoGuest.js')
+
 
 //VALIDACIONES
 
@@ -34,6 +37,9 @@ router.post('/register', [upload.single("imagen"), validateUser], controllers.up
 
 router.post('/login', validateLogin, controllers.processLogin);
 
+// REQUIERO VISTA Perfil
+
+router.get('/perfil',noGuest, controllers.perfil);
 
 
 

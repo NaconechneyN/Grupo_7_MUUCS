@@ -86,7 +86,7 @@ const controllers = {
                     delete userInDb.password;
                     req.session.usuarioLogueado = userInDb;
                     console.log(req.session.usuarioLogueado)
-                    res.send(req.session.usuarioLogueado)
+                    res.redirect('/users/perfil')
 
                 }
                 else{
@@ -114,7 +114,10 @@ const controllers = {
             res.render('login', {errors: errors.mapped(), old: req.body},)
         }
 
-    }     
+    },
+    perfil: (req, res) =>{
+        res.render('profile', {user : req.session.usuarioLogueado},)
+    } 
 }
 
 
