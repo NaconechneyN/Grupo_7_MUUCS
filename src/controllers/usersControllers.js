@@ -10,8 +10,8 @@ const  {  v4 : uuidv4  }  =  require ( 'uuid' ) ;
 
 const controllers = {
    
-    login: (req, res) => res.render('login',{title: 'Login'}),
-    register: (req, res) => res.render('register',{title: 'Register'}),
+    login: (req, res) => res.render('login',{titulo: 'Login'}),
+    register: (req, res) => res.render('register',{titulo: 'Register'}),
     updateUser: (req, res) =>{
         // GUARDAMOS ERRORES
         let errors = validationResult(req);
@@ -116,8 +116,13 @@ const controllers = {
 
     },
     perfil: (req, res) =>{
-        res.render('profile', {user : req.session.usuarioLogueado},)
-    } 
+        res.render('profile', {user : req.session.usuarioLogueado, titulo: 'muucs'},)
+    },
+
+    outperfil: (req, res) =>{
+        delete req.session.usuarioLogueado
+        res.redirect('/')
+    }
 }
 
 

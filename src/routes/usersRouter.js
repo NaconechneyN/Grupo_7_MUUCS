@@ -37,6 +37,12 @@ router.post('/register', [upload.single("imagen"), validateUser], controllers.up
 
 router.post('/login', validateLogin, controllers.processLogin);
 
+
+
+//cerrar sesion
+router.get('/loginout', noGuest, controllers.outperfil);
+
+
 // REQUIERO VISTA Perfil
 
 router.get('/perfil',noGuest, controllers.perfil);
