@@ -18,7 +18,7 @@
 .menu{
     height: 100%;
     width: 25%;
-    background: rgba(55, 55, 55, 0.421);
+    background: rgba(55, 55, 55, 0.464);
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     backdrop-filter: blur(2px);
@@ -34,9 +34,20 @@
 }
 
 .tituloMenu{
-    color: white;
-    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px ;
 }
+    
+
+
+.titulodelMenu{
+    color: white;
+    font-size: 26px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: bold;
+}
+
 
 
 
