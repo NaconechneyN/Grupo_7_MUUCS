@@ -98,8 +98,12 @@ header img {
     border-right: 0px;
     border: 2px outset #8a9597;
     box-shadow:   #a62892 0px 2px 8px;
+    padding-left: 8px;
 }
+.busqueda input:focus {
+    outline: none;
 
+}
 
 i {
     color:  #a62892;
