@@ -1,4 +1,73 @@
-* {
+.profile{
+    background-image: url('../img/fondoProfile.png');
+    background-size: cover;
+    padding: 30px;
+}
+.contenedorProfile{
+    margin: 100px;
+    height: 500px;
+    margin-top: 2em;
+    border-radius: 10px;
+    background-color: transparent;
+    display: flex;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+
+
+}
+
+.menu{
+    height: 100%;
+    width: 25%;
+    background: rgba(55, 55, 55, 0.421);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    backdrop-filter: blur(2px);
+    padding: 15px;
+}
+
+.todoProfile{
+    background: rgba(55, 55, 55, 0.355);
+    height: 100%;
+    width: 85%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.tituloMenu{
+    color: white;
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* * {
 
 
     margin: 0;
@@ -39,11 +108,11 @@
     justify-content: center;
     display: flex;
 }
-
+ */
 
 /* -------------------------------------------------------------main--------------------------------------------------------------------------- */
 
-.mainMain{
+/* .mainMain{
     display: flex;
 }
 
@@ -71,4 +140,4 @@
     color: white;
     border-top-left-radius: 20%;
     border-top-right-radius: 20%;
-}
+} */
