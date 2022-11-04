@@ -26,7 +26,7 @@ body {
 .header {
     display: flex ;
     height: 50px;
-    border-bottom: 2px outset #a62892;
+    /* border-bottom: 2px outset #a62892; */
     
 }
 
@@ -97,9 +97,13 @@ header img {
     border-bottom-left-radius:20px ;
     border-right: 0px;
     border: 2px outset #8a9597;
-    box-shadow:   #a62892 0px 2px 8px;
+    /* box-shadow:   #a62892 0px 2px 8px; */
+    padding-left: 8px;
 }
+.busqueda input:focus {
+    outline: none;
 
+}
 
 i {
     color:  #a62892;
@@ -110,7 +114,8 @@ i {
     border-bottom-right-radius:20px ;
     border-left: 0px;
     border: 2px outset #8a9597;
-    box-shadow:  #a62892 0px 2px 5px;
+    margin-top: 3px;
+    margin-right: 8px;
 }
 
 
@@ -426,8 +431,8 @@ form .buttonRegistrarse input:hover{
     height: 50px;
     align-items: stretch;
     justify-content: flex-start;
-    box-shadow: -1px 18px 23px -15px rgba(255,0,255,1) !important;
-    border-bottom: 2px outset #a62892;
+    /* box-shadow: -1px 18px 23px -15px rgba(255,0,255,1) !important; */
+    /* border-bottom: 2px outset #a62892; */
 }
 
 
@@ -451,6 +456,7 @@ form .buttonRegistrarse input:hover{
 #izquierda {
     width: 60%;
     justify-content: start;
+    font-size: 12px;
 }
 #derecha {
     justify-content: end;
@@ -463,6 +469,7 @@ form .buttonRegistrarse input:hover{
     width: 48%;
     font-size: 1em;
     text-decoration: none;
+    font-size: 15px;
 }
 
 .categoria a{
@@ -470,8 +477,8 @@ form .buttonRegistrarse input:hover{
     font-size: 1.30em;
     color: #FFFFFF;
     align-items: center;
-    font-weight: bolder;
-    text-shadow: 2px 2px 2px #a62892;
+    /* font-weight: bolder; */
+    /* text-shadow: 2px 2px 2px #a62892; */
     display: flex;
     justify-content: center;
     transition-property: color, text-shadow, padding-left;
@@ -487,7 +494,6 @@ form .buttonRegistrarse input:hover{
 
 .categoria ul a:hover{
     color: rgba(255,0,255,1);
-    text-shadow: 1px 1px 2px #FFFFFF;
     padding-left: 5px;
 }
 
@@ -498,10 +504,51 @@ form .buttonRegistrarse input:hover{
 }
 
 
-.busqueda {
+
+/* .busqueda {
     width: 60%;
 
+} */
+
+.search-bar{
+    width: 100%;
+    max-width: 700px;
+    background: rgb(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    backdrop-filter: blur(4px) saturate(180%);
+    
 }
+
+.search-bar input{
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    color: #cac7ff;
+    margin-left: 10px;
+    
+}
+
+.search-bar button img{
+    width: 20px;
+    height: 17px;
+    margin-top: 4px;
+    
+}
+
+.search-bar button{
+    border: 0;
+    border-radius: 50%;
+    /* width: 60px;
+    height: 60px; */
+    background: transparent;
+    cursor: pointer;
+    height: 23px;
+    
+}
+
 .usuario {
     width: 25%;
     display: none;
@@ -516,6 +563,7 @@ form .buttonRegistrarse input:hover{
     text-align: center;
     padding: 3px 0px 5px 0px ;
     line-height: 125%
+
 }
 @media(max-width: 767px){
     .categoria {
