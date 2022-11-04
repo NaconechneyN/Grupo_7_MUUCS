@@ -58,4 +58,4 @@ const Product = {
     }
 }
 
-module.exports = Products;
+module.exports = Product;
