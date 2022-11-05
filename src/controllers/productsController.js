@@ -1,34 +1,25 @@
-const getCourses = require("../utils/getCourses")
-const setCourses = require("../utils/setCourses")
 const fs = require('fs')
 const path = require('path')
 const { validationResult } = require('express-validator')
-const  {  v4 : uuidv4  }  =  require ( 'uuid' ) ; 
+const  {  v4 : uuidv4  }  =  require ( 'uuid' ) 
+const product = require("../models/Products")
+const carrito = require("../models/Carrito")
 
 const productController = {
     productList: (req, res) => {
-        const courses = getCourses()
-
-        console.log(courses)
+        const courses = product.findAll()
 
         res.render("productList", { cursos: courses, titulo: "listado de producto" })
     },
     productListCarrito: (req, res) => {
-        const courses = getCourses()
+        const courses = carrito.findByPk(req.body.idCarrito).producto
 
-        console.log(courses)
         res.render("productCart", { cursos: courses, titulo: "Carrito de producto" })
     },
     productDetail: (req, res) => {
-        const courses = getCourses()
-        const courseId = req.params.id
+        const courseItem = product.findByPk(req.body.id)
 
-        const courseItem = courses.filter(course => course.id == courseId)
-
-        const context = courseItem[0]
-
-
-        res.render("productDetail", { nombre: context, titulo: "detalle de producto" })
+        res.render("productDetail", { nombre: courseItem, titulo: "detalle de producto" })
     },
 
 
@@ -43,50 +34,26 @@ const productController = {
         if (errors.isEmpty()) {
             const curso = req.body;
 
-            const courses = getCourses();
-
-
-            curso.id = uuidv4 ( );
             curso.actualizacion = Date.now();
             curso.valoracion = 0;
             curso.numeroDeRegistarados = 0;
             curso.imagen = req.file.filename
 
+            product.create(curso)
 
-
-            courses.push(curso);
-
-            setCourses(JSON.stringify(courses));
-
-
-            res.redirect('/products/carritoT');
+            res.redirect('/');
         }
         else{
             res.render("productCreate", { titulo: "Creacion de producto", errors: errors.mapped(), oldDate : req.body })
         }
 
-
-        
-
-
-
     },
 
     productEdit: (req, res) => {
-        const id = req.params.id;
+       
+        const curso = product.findByPk(req.body.id)
 
-        const courses = getCourses();
-
-        const curso = courses.filter(course => course.id == id);
-
-        const curso1 = curso.shift();
-
-        console.log(curso1);
-
-
-
-
-        res.render("productEdit", { titulo: "Edicion de producto", curso: curso1 })
+        res.render("productEdit", { titulo: "Edicion de producto", curso: curso})
     },
 
     productEdit1: (req, res) => {
@@ -94,70 +61,25 @@ const productController = {
         let errors = validationResult(req)
 
         if (errors.isEmpty()) {
-            const curso = req.body;
-
-            const courses = getCourses();
-
-            courses.forEach(curso => {
-                if (curso.id == req.body.id) {
-
-                    curso.titulo = req.body.titulo,
-                        curso.descripcion = req.body.descripcion,
-                        curso.descripcionQueAprenderas = req.body.descripcionQueAprenderas,
-                        curso.tipoDeEnsenianza = req.body.tipoDeEnsenianza,
-                        curso.certifiacion = req.body.certifiacion,
-                        curso.QuienLoImparte = req.body.QuienLoImparte,
-                        curso.precio = req.body.precio,
-                        curso.duracion = req.body.duracion,
-                        curso.actualizacion = req.body.actualizacion
-                    if (req.file != null) {
-                        curso.imagen = req.file.filename
-                    }
-
-                }
-            })
-            setCourses(JSON.stringify(courses));
-            console.log(req.body)
-
+            product.edit(req.body)
             res.redirect("/products/carritoT")
 
         }
+        const curso = product.findByPk(req.body.id)
 
-        const id = req.body.id;
-
-        const courses = getCourses();
-
-        const curso = courses.filter(course => course.id == id);
-
-        const curso1 = curso.shift();
-
-        res.render("productEdit", { titulo: "Edición de producto", errors: errors.mapped(), curso: curso1 })
+        res.render("productEdit", { titulo: "Edición de producto", errors: errors.mapped(), curso: curso})
 
 
 
 
     },
     productDelete: (req, res) => {
-        let courses = getCourses()
+        const curso = product.findByPk(req.body.id)
+        product.delete(req.body.id)
 
-        const id = req.params.id
+        fs.unlinkSync(path.join(__dirname, `../../public/img/products/${curso.imagen}`))
 
-
-
-        const cursos = courses.filter(course => course.id != id)
-        const imagen = ({}, courses.filter(course => course.id == id)).pop()
-
-        console.log(imagen)
-
-
-        fs.unlinkSync(path.join(__dirname, `../../public/img/products/${imagen.imagen}`))
-
-        setCourses(JSON.stringify(cursos))
-
-        let curso1 = getCourses()
-
-
-        res.render("productList", { cursos: curso1, titulo: "listado de producto" })
+        res.render("productList", { cursos: curso, titulo: "listado de producto" })
 
     }
 

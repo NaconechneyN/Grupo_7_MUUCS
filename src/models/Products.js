@@ -1,22 +1,15 @@
 const fs = require("fs")
 const path = require('path')
+const  {  v4 : uuidv4  }  =  require ( 'uuid' )
 
 const Product = {
-    fileName: './data/coursesDataBase.json',
+    fileName: "../../data/coursesDataBase.json",
 
     getData: function(){
         return JSON.parse(fs.readFileSync(this.fileName, 'utf-8'))
+        
     },
 
-    generateId: function() {
-        let allProducts = this.findAll();
-        let lastProducts = allProducts.pop();
-        if (lastProducts){
-            return lastProducts.id + 1;
-        }
-
-        return 1;
-    },
 
     findAll: function () {
         return this.getData();
@@ -39,7 +32,7 @@ const Product = {
     create: function (productData) {
         let allProducts = this.findAll();
         let newProduct = {
-            id: this.generateId(),
+            id: uuidv4 ( ),
             ...productData
         }
         allProducts.push(newProduct);
@@ -55,7 +48,35 @@ const Product = {
         return true;
 
 
+    },
+
+    edit: function (curso) {
+        let allProducts = this.findAll()
+        allProducts.forEach(cursoEdit => {
+            if (cursoEdit.id == curso.id) {
+
+                cursoEdit.titulo = curso.titulo,
+                cursoEdit.descripcion = curso.descripcion,
+                cursoEdit.descripcionQueAprenderas = curso.descripcionQueAprenderas,
+                cursoEdit.tipoDeEnsenianza = curso.tipoDeEnsenianza,
+                cursoEdit.certifiacion = curso.certifiacion,
+                cursoEdit.QuienLoImparte = curso.QuienLoImparte,
+                cursoEdit.precio =curso.precio,
+                cursoEdit.duracion = curso.duracion,
+                cursoEdit.actualizacion = curso.actualizacion
+                if (curso.imagen != null) {
+                    cursoEdit.imagen = curso.imagen
+                }
+
+            }
+        })
+        fs.writeFileSync(this.fileName, JSON.stringify(allProducts, null, ' '));
+        return true;
     }
+  
 }
+
+
+
 
 module.exports = Product;
