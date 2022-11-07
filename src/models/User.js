@@ -1,5 +1,6 @@
 const fs = require("fs")
 const path = require('path')
+const  {  v4 : uuidv4  }  =  require ( 'uuid' ) ; 
 
 const User = {
     fileName: './data/users.json',
@@ -8,15 +9,6 @@ const User = {
         return JSON.parse(fs.readFileSync(this.fileName, 'utf-8'))
     },
 
-    generateId: function() {
-        let allUsers = this.findAll();
-        let lastUser = allUsers.pop();
-        if (lastUser){
-            return lastUser.id + 1;
-        }
-
-        return 1;
-    },
 
     findAll: function () {
         return this.getData();
@@ -39,7 +31,7 @@ const User = {
     create: function (userData) {
         let allUsers = this.findAll();
         let newUser = {
-            id: this.generateId(),
+            id: uuidv4 ( ),
             ...userData
         }
         allUsers.push(newUser);
@@ -57,5 +49,6 @@ const User = {
 
     }
 }
+
 
 module.exports = User;

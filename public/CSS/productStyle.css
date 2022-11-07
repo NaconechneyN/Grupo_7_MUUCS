@@ -370,7 +370,7 @@ article:enabled .descripcion2 {
 .eliminar {
     font-size: 2em;
     position: absolute;
-    top: 5% !important;
+    top: 80% !important;
     left:90% !important;
     height: 7vh;
     align-items: center;
@@ -378,22 +378,42 @@ article:enabled .descripcion2 {
 .eliminarList{
     font-size: 2em;
     position: absolute;
-    top: 5% !important;
+    top: 6% !important;
     left:90% !important;
-    height: 7vh;
+    height: 5vh;
+    width: 5vh;
     align-items: center;
     position: absolute;
-    left: 75%;
-    top: 85%;
     background-color: #231C24;
     color: #a62892;
     border: #231C24;
-    padding: 4px;
+    border: 1px solid #a62892;
 }
 
-.eliminar i{
+.eliminarList i{
     position: relative;
-    top: -1.35vh;
+    top: -27%;
+}
+
+.editarProducto{
+    font-size: 2em;
+    position: absolute;
+    top: 6% !important;
+    left:83% !important;
+    height: 5vh;
+    width: 5vh;
+    align-items: center;
+    position: absolute;
+    background-color: #231C24;
+    color: #a62892;
+    border: #231C24;
+    border: 1px solid #a62892;
+}
+
+.editarProducto i{
+    position: relative;
+    top: -39%;
+    font-size: 0.75em
 }
 
 .finalizar {
@@ -432,7 +452,7 @@ article:enabled .descripcion2 {
     i.desplegador {
         left: 93% !important;
     }
-    .cursos article .descripcion button {
+    .cursos article .descripcion button .agregarCarritoList{
         position: absolute;
         left: 67%;
         top: 85%;

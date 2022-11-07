@@ -11,7 +11,8 @@
   "valoracion": "8",
   "numeroDeRegistarados": 13255,
   "duracion": "5 meses",
-  "precio": "$40264"
+  "precio": "$40264",
+  "dueño" : "Maria Luisa Fernandez"
  },
  {
   "id": 3,
@@ -29,7 +30,8 @@
   "actualizacion": 1665819792808,
   "valoracion": 0,
   "numeroDeRegistarados": 0,
-  "imagen": "1665819792798_img.jpg"
+  "imagen": "1665819792798_img.jpg",
+  "dueño" : "Maria Luisa Fernandez"
  },
  {
   "titulo": "Matematicas",
@@ -40,7 +42,8 @@
   "actualizacion": 1665819852275,
   "valoracion": 0,
   "numeroDeRegistarados": 0,
-  "imagen": "1665819852257_img.png"
+  "imagen": "1665819852257_img.png",
+  "dueño" : "Maria Luisa Fernandez"
  },
  {
   "titulo": "dsfsdfsdfsdfsdfsdfsdfsdfsd",
@@ -53,7 +56,8 @@
   "actualizacion": 1666114401090,
   "valoracion": 0,
   "numeroDeRegistarados": 0,
-  "imagen": "1666114401077_img.jpg"
+  "imagen": "1666114401077_img.jpg",
+  "dueño" : "Maria Luisa Fernandez"
  },
  {
   "titulo": "dsfsdfsdfsdfsdfsdfsdfsdfsd",
@@ -66,7 +70,8 @@
   "actualizacion": 1666114491886,
   "valoracion": 0,
   "numeroDeRegistarados": 0,
-  "imagen": "1666114491878_img.jpg"
+  "imagen": "1666114491878_img.jpg",
+  "dueño" : "Maria Luisa Fernandez"
  },
  {
   "titulo": "dsfsdfsdfsdfsdfsdfsdfsdfsd",
@@ -79,7 +84,8 @@
   "actualizacion": 1666114501850,
   "valoracion": 0,
   "numeroDeRegistarados": 0,
-  "imagen": "1666114501840_img.jpg"
+  "imagen": "1666114501840_img.jpg",
+  "dueño" : "Maria Luisa Fernandez"
  },
  {
   "titulo": "dsfsdfsdfsdfsdfsdfsdfsdfsd",

@@ -9,17 +9,26 @@ const productController = {
     productList: (req, res) => {
         const courses = product.findAll()
 
-        res.render("productList", { cursos: courses, titulo: "listado de producto" })
+        res.render("productList", { cursos: courses, titulo: "listado de producto", dueño : 0})
     },
     productListCarrito: (req, res) => {
         const courses = carrito.findByPk(req.body.idCarrito).producto
 
         res.render("productCart", { cursos: courses, titulo: "Carrito de producto" })
-    },
+    }
+    ,
     productDetail: (req, res) => {
         const courseItem = product.findByPk(req.body.id)
 
         res.render("productDetail", { nombre: courseItem, titulo: "detalle de producto" })
+    },
+    productMiList: (req, res) => {
+        console.log(req.session.usuarioLogueado)
+        const courses = product.filterByField("dueño", req.session.usuarioLogueado.nombreyapellido)
+
+
+
+        res.render("productList", { cursos: courses, titulo: "listado de producto", dueño : 1})
     },
 
 

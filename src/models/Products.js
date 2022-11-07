@@ -3,7 +3,7 @@ const path = require('path')
 const  {  v4 : uuidv4  }  =  require ( 'uuid' )
 
 const Product = {
-    fileName: "../../data/coursesDataBase.json",
+    fileName: "./data/coursesDataBase.json",
 
     getData: function(){
         return JSON.parse(fs.readFileSync(this.fileName, 'utf-8'))
@@ -26,6 +26,12 @@ const Product = {
         let allProducts = this.findAll();
         // se itera por cada producto buscando el que tenga el mismo id
         let productFound = allProducts.find(oneProduct => oneProduct[field] === text);
+        return productFound;
+    },
+    filterByField: function (field, text) {
+        let allProducts = this.findAll();
+        // se itera por cada producto buscando el que tenga el mismo id
+        let productFound = allProducts.filter(oneProduct => oneProduct[field] === text);
         return productFound;
     },
 

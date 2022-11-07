@@ -20,8 +20,12 @@ const upload = require('../middlewares/mildawareMulterProduct')
 const productsControllers = require("../controllers/productsController")
 // Ruta a products
 router.get("/", productsControllers.productList)
+// Ruta a productos de un usuario
+router.get("/mi", productsControllers.productMiList)
 // Ruta a un producto en particular por su ID
 router.get("/detail/:id", productsControllers.productDetail)
+// Ruta a un producto en particular por su ID de un usuario
+router.get("/mi/detail/:id",guest, productsControllers.productDetail)
 // Ruta a form para crear un nuevo producto
 router.get("/create",guest ,productsControllers.productCreate)
 //

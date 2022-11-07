@@ -3,9 +3,7 @@ const fs = require('fs');
 const ejs = require('ejs');
 const { validationResult } = require('express-validator');
 const bcryptjs = require('bcryptjs');
-const getUsers = require("../utils/getUsers")
-const setUsers = require("../utils/setUsers")
-const  {  v4 : uuidv4  }  =  require ( 'uuid' ) ; 
+const users = require("../models/User")
 
 
 const controllers = {
@@ -18,12 +16,9 @@ const controllers = {
 
         // ERROR SI EXISTE OTRO USUARIO CON EL MISMO EMAIL
 
-        let users = getUsers()
-
-        console.log(req.body.email)
+        
         if(req.body.email != ''){
-            let userInDb = users.some(elem => elem.email === req.body.email)
-            console.log(userInDb)
+            let userInDb = users.findByField("email",req.body.email)
             if (userInDb){
                 let error = {
                     value: '',
@@ -37,26 +32,19 @@ const controllers = {
             }
         }
 
-
-        
+        console.log(req.body)
 
         // SI NO HAY ERRORES, SE PROCEDE A CREAR EL USUARIO
 
-        console.log(errors)
         if (errors.isEmpty()){
             let newUser = {
-                id : uuidv4 ( ),
                 nombreyapellido : req.body.nombre,
                 date : req.body.date,
                 email : req.body.email,
                 password: bcryptjs.hashSync(req.body.password,10),
                 imagen : req.file.filename
                 }
-                console.log(newUser);
-                
-                users.push(newUser);
-
-                setUsers(JSON.stringify(users));
+                users.create(newUser)
 
 
                 res.redirect('/');
@@ -71,15 +59,9 @@ const controllers = {
         // GUARDAMOS ERRORES
         let errors = validationResult(req);
 
-
-
-        let users = getUsers()
-
-
         if (errors.isEmpty()){
             
-            let userInDb = users.filter(elem => elem.email === req.body.email)
-            userInDb = userInDb.pop()
+            let userInDb = users.findByField("email",req.body.email)
 
             if (userInDb){
                 if(bcryptjs.compareSync(req.body.password, userInDb.password)){
