@@ -1,8 +1,9 @@
 function guest (req, res, next){
     if(req.session.usuarioLogueado){
         next();
+    }else{
+        res.redirect('/')
     }
-    res.redirect('/')
 }
 
 module.exports = guest;

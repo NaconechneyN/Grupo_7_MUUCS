@@ -21,7 +21,7 @@ const productsControllers = require("../controllers/productsController")
 // Ruta a products
 router.get("/", productsControllers.productList)
 // Ruta a productos de un usuario
-router.get("/mi", productsControllers.productMiList)
+router.get("/mi",guest, productsControllers.productMiList)
 // Ruta a un producto en particular por su ID
 router.get("/detail/:id", productsControllers.productDetail)
 // Ruta a un producto en particular por su ID de un usuario
@@ -37,7 +37,7 @@ router.put("/editar",[upload.single("imagen"), validateProduct], productsControl
 // Ruta a lista de productos
 router.get("/carritoT", guest, productsControllers.productListCarrito)
 // Ruta a traves de ID para eliminar un producto
-router.delete("/delete/:id", productsControllers.productDelete)
+router.delete("/delete/:id",guest, productsControllers.productDelete)
 
 /*
 router.get("/", productsControllers.coursesList)

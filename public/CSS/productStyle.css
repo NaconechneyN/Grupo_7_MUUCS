@@ -416,6 +416,10 @@ article:enabled .descripcion2 {
     font-size: 0.75em
 }
 
+#id{
+    display : none
+}
+
 .finalizar {
     padding-top: 5vh;
     display: flex;

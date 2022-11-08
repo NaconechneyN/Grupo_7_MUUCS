@@ -97,8 +97,8 @@
                                    
                                     <button class="eliminarList"><i class="fa-solid fa-xmark"></i></button>
                                 </form>
-                                <form method="POST"  id="formulario" action="/products/delete/<%= cursos[i].id %>/?_method=DELETE">
-                                   
+                                <form method="GET"  id="formulario" action="/products/<%= cursos[i].id %>/editar">
+                                    <input type="text"  name="titulo" id="id" value=<%= cursos[i].id %>>
                                     <button class="editarProducto"><i class="fa-solid fa-pen-to-square"></i></button>
                                 </form>
                                 

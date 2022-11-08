@@ -18,7 +18,8 @@ const productController = {
     }
     ,
     productDetail: (req, res) => {
-        const courseItem = product.findByPk(req.body.id)
+        const id = req.params.id
+        const courseItem = product.findByPk(id)
 
         res.render("productDetail", { nombre: courseItem, titulo: "detalle de producto" })
     },
@@ -59,10 +60,13 @@ const productController = {
     },
 
     productEdit: (req, res) => {
-       
-        const curso = product.findByPk(req.body.id)
-
-        res.render("productEdit", { titulo: "Edicion de producto", curso: curso})
+        const id = req.params.id
+        console.log(id)
+        const curso = product.findByPk(id)
+        console.log(curso)
+        res.render("productEdit", { titulo: "Edicion de producto", curso: curso}) 
+        
+        
     },
 
     productEdit1: (req, res) => {
