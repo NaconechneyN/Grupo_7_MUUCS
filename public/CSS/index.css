@@ -50,20 +50,23 @@
     padding-top: 2rem;
     padding-bottom: 3rem;
     border-top: none;
-    color: #AE4CC5;
+    color: #f7d2ff;
     background: linear-gradient(180deg, #00021A, #0F0C0F);
     /* height: 25vh; */
 }
 
 .presentacion h2{
-    font-size: 30px;
-    padding-bottom: 4vh;
+    font-size: 25px;
+    padding-bottom: 2vh;
     text-align: center;
+    font-family: 'Noto Sans Lao', sans-serif;
+    font-weight: 700;
 }
 
 .presentacion p{
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
+    font-family: 'Noto Sans Lao', sans-serif;
 }
 
 .descubre{
@@ -171,11 +174,13 @@
 
 .titulo-seccion {
     font-size: 3rem;
-    font-weight: bold;
-    color: #c82eae;
+    /* font-weight: bold; */
+    color: #ff74e8;
+    letter-spacing: 4px;
     text-align: center;
     padding-bottom: 50px;
     padding-top: 50px;
+    font-family: 'Jost', sans-serif;
 }
   
 .box-seccion {
@@ -191,10 +196,11 @@
 }
 
 .box-seccion h2{
-    background: #ccc;
-    background: linear-gradient(70deg, #320d6c, #ff0cff);
+    /* background: #ccc; */
+    /* background: linear-gradient(70deg, #b79cff, #ff00ff); */
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
+    background-color: #ff3dff;
 
 }
 
