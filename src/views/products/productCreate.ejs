@@ -14,155 +14,219 @@
             <div class="contenedorReg">
                 <div class="title">Agregar un Curso</div>
 
-                
+
 
                 <form action="/products/create" id="formulario" method="POST" enctype="multipart/form-data">
                     <div class="user-details">
                         <div class="input-box">
                             <span class="details"> Titulo</span>
                             <input type="text" placeholder="5 a 20 caracteres" name="titulo" id="nombre"
-                            value=<%= locals.oldDate? oldDate.titulo : null %>>
+                                value=<%=locals.oldDate? oldDate.titulo : null %>>
                         </div>
                         <% if (locals.errors && errors.titulo) { %>
-                          <div class="errorCreate"> 
-                            
-                               <p> <%= errors.titulo.msg %></p> 
-                               
-                             </div>
-                             <% } %> 
-                        <div class="input-box">
-                            <span class="details"> Descripcion</span>
-                            <textarea  name="descripcion" id="nombreUsuario"><%= locals.oldDate? oldDate.descripcion : "200 caracteres como maximos"%></textarea>
-                        </div>
-                        <% if (locals.errors && errors.descripcion) { %>
-                            <div class="errorCreate"> 
-                              
-                                 <p> <%= errors.descripcion.msg %></p> 
-                                 
-                               </div>
-                               <% } %> 
-                        <div class="input-box">
-                            <span class="details"> Tipo de Enseñanza</span>
-                            <% if (locals.errors && errors.tipoDeEnsenianza) { %>
-                                <div class="errorCreate"> 
-                                  
-                                     <p> <%= errors.tipoDeEnsenianza.msg %></p> 
-                                     
-                                   </div>
-                                   <% } %> 
-                            <div class="cajaEnseñanza">
-                                <input type="checkbox" name="tipoDeEnsenianza" id="categoria1"
-                                    value="APRENDIZAJE COOPERATIVO">
-                                <label for="tipoDeEnsenianza" class="chicos">APRENDIZAJE COOPERATIVO</label>
-                                <label for="tipoDeEnsenianza" class="chicos">Método en el cual los educadores
-                                    agrupan a los alumnos para realizar sus tareas con éxito e impactar en los
-                                    estudiantes de forma positiva,
-                                    asegurando la atención y mejorando el aprendizaje, ya que cada miembro del grupo
-                                    realiza sus tareas apoyándose en el trabajo de los demás. </label>
+                            <div class="errorCreate">
+
+                                <p>
+                                    <%= errors.titulo.msg %>
+                                </p>
+
                             </div>
-                            <div class="cajaEnseñanza">
-                                <input type="checkbox" name="tipoDeEnsenianza" id="categoria1"
-                                    value="CLASES O AULA INVERTIDA">
-                                <label for="tipoDeEnsenianza" class="chicos">CLASES O AULA INVERTIDA</label>
-                                <label for="tipoDeEnsenianza" class="chicos">Método en el cual los educadores
-                                    agrupan a los alumnos para realizar sus tareas con éxito e impactar en los
-                                    estudiantes de forma positiva,
-                                    asegurando la atención y mejorando el aprendizaje, ya que cada miembro del grupo
-                                    realiza sus tareas apoyándose en el trabajo de los demás. </label>
-                            </div>
-                            <div class="cajaEnseñanza">
-                                <input type="checkbox" name="tipoDeEnsenianza" id="categoria1"
-                                    value="APRENDIZAJE BASADO EN EL PENSAMIENTO">
-                                <label for="tipoDeEnsenianza" class="chicos">APRENDIZAJE BASADO EN EL
-                                    PENSAMIENTO</label>
-                                <label for="tipoDeEnsenianza" class="chicos">El objetivo de este método consiste en
-                                    otorgar herramientas para contextualizar, relacionar, analizar, entender,
-                                    argumentar, convertir información en conocimiento y desarrollar el pensamiento, más
-                                    allá de la memorización.</label>
-                            </div>
-                            <div class="cajaEnseñanza">
-                                <input type="checkbox" name="tipoDeEnsenianza" id="categoria1"
-                                    value="PENSAMIENTO DE DISEÑO">
-                                <label for="tipoDeEnsenianza" class="chicos">PENSAMIENTO DE DISEÑO</label>
-                                <label for="tipoDeEnsenianza" class="chicos">Este método consiste en identificar
-                                    con mayor exactitud los problemas individuales de los alumnos, generando ideas,
-                                    resolviendo problemas creativamente y ampliar horizontes para las
-                                    soluciones.</label>
-                            </div>
-                            <div class="cajaEnseñanza">
-                                <input type="checkbox" name="tipoDeEnsenianza" id="categoria1"
-                                    value="APRENDIZAJE BASADO EN PROYECTO">
-                                <label for="tipoDeEnsenianza" class="chicos">APRENDIZAJE BASADO EN PROYECTO</label>
-                                <label for="tipoDeEnsenianza" class="chicos">Este tipo de aprendizaje permite que
-                                    los alumnos adquieran conocimiento y habilidades en la elaboración de proyectos.
-                                    Garantiza procesos de aprendizaje más didáctico, eficaces y prácticos, que permiten
-                                    que los alumnos desarrollen competencias como la comunicación, colaboración y
-                                    resolución de problemas.</label>
-                            </div>
-                            <div class="cajaEnseñanza">
-                                <input type="checkbox" name="tipoDeEnsenianza" id="categoria1" value="GAMIFICACIÓN">
-                                <label for="tipoDeEnsenianza" class="chicos">GAMIFICACIÓN</label>
-                                <label for="tipoDeEnsenianza" class="chicos">Consiste en la integración mecánica y
-                                    dinámica de juegos y videojuegos en entornos no lúdicos, para potenciar la
-                                    motivación, concentración, esfuerzos y valores positivos. El uso exponencial de los
-                                    videojuegos ha despertado el interés de expertos en este ámbito, que recomiendan
-                                    videojuegos educativos para los niños.</label>
-                            </div>
-                        </div>
-                        
-                        <div class="input-box">
-                            <span class="details"> Certificacion</span>
-                            <% if (locals.errors && errors.certificacion) { %>
-                                <div class="errorCreate"> 
-                                  
-                                     <p> <%= errors.certificacion.msg %></p> 
-                                     
-                                   </div>
-                                   <% } %> 
-                            <div class="cajaCertificacion">
-                                <input type="radio" name="certificacion" id="perfil1" value="Oficial">
-                                <label for="Certifiacion" class="chicos">Oficial</label>
-                                <input type="radio" name="certificacion" id="perfil2" value="No Oficial">
-                                <label for="Certifiacion" class="chicos">No Oficial</label>
-                            </div>
-                        </div>
-                        <div class="input-box">
-                            <span class="details"> Precio</span>
-                            <i class="fa-solid fa-hand-holding-dollar"></i><input class="precioA" type="text"
-                                name="precio" placeholder="Si es gratis, indicarlo con 0" id="domicilio" value=<%= locals.oldDate? oldDate.precio : null %>>
-                        </div>
-                        <% if (locals.errors && errors.precio) { %>
-                            <div class="errorCreate"> 
-                              
-                                 <p> <%= errors.precio.msg %></p> 
-                                 
-                               </div>
-                               <% } %> 
-                        <div class="input-box">
-                            <span class="details"> Duracion</span>
-                            <input type="text" name="duracion" placeholder="5 a 20 caracteres" id="nombre" value=<%= locals.oldDate? oldDate.duracion : null %>>
-                        </div>
-                        <% if (locals.errors && errors.duracion) { %>
-                            <div class="errorCreate"> 
-                              
-                                 <p> <%= errors.duracion.msg %></p> 
-                                 
-                               </div>
-                               <% } %> 
-                        <div class="input-box">
-                            <span class="details"> imagen de perfil</span>
-                            <input type="file" name="imagen"  id="imagen">
-                        </div>
-                        <% if (locals.errors && errors.imagen) { %>
-                            <div class="errorCreate"> 
-                              
-                                 <p> <%= errors.imagen.msg %></p> 
-                                 
-                               </div>
-                               <% } %> 
+                            <% } %>
+                                <div class="input-box">
+                                    <span class="details"> Descripcion</span>
+                                    <textarea name="descripcion"
+                                        id="nombreUsuario"><%= locals.oldDate? oldDate.descripcion : "200 caracteres como maximos"%></textarea>
+                                </div>
+                                <% if (locals.errors && errors.descripcion) { %>
+                                    <div class="errorCreate">
+
+                                        <p>
+                                            <%= errors.descripcion.msg %>
+                                        </p>
+
+                                    </div>
+                                    <% } %>
+                                        <div class="input-box">
+                                            <span class="details"> ¿Que aprenderan los alumnos?</span>
+                                            <textarea placeholder="200 caracteres maximo"
+                                                name="descripcionQueAprenderas"
+                                                id="nombreUsuario"></textarea>
+                                        </div>
+                                        <% if (locals.errors && errors.descripcionQueAprenderas) { %>
+                                            <div class="errorCreate">
+                                                <p> Error: te has pasado de los caracteres maximos (200)</p>
+                                            </div>
+                                            <% } %>
+                                                <div class="input-box">
+                                                    <span class="details"> Tipo de Enseñanza</span>
+                                                    <% if (locals.errors && errors.tipoDeEnsenianza) { %>
+                                                        <div class="errorCreate">
+
+                                                            <p>
+                                                                <%= errors.tipoDeEnsenianza.msg %>
+                                                            </p>
+
+                                                        </div>
+                                                        <% } %>
+                                                            <div class="cajaEnseñanza">
+                                                                <input type="checkbox" name="tipoDeEnsenianza"
+                                                                    id="categoria1" value="APRENDIZAJE COOPERATIVO">
+                                                                <label for="tipoDeEnsenianza" class="chicos">APRENDIZAJE
+                                                                    COOPERATIVO</label>
+                                                                <label for="tipoDeEnsenianza" class="chicos">Método en
+                                                                    el cual los educadores
+                                                                    agrupan a los alumnos para realizar sus tareas con
+                                                                    éxito e impactar en los
+                                                                    estudiantes de forma positiva,
+                                                                    asegurando la atención y mejorando el aprendizaje,
+                                                                    ya que cada miembro del grupo
+                                                                    realiza sus tareas apoyándose en el trabajo de los
+                                                                    demás. </label>
+                                                            </div>
+                                                            <div class="cajaEnseñanza">
+                                                                <input type="checkbox" name="tipoDeEnsenianza"
+                                                                    id="categoria1" value="CLASES O AULA INVERTIDA">
+                                                                <label for="tipoDeEnsenianza" class="chicos">CLASES O
+                                                                    AULA INVERTIDA</label>
+                                                                <label for="tipoDeEnsenianza" class="chicos">Método en
+                                                                    el cual los educadores
+                                                                    agrupan a los alumnos para realizar sus tareas con
+                                                                    éxito e impactar en los
+                                                                    estudiantes de forma positiva,
+                                                                    asegurando la atención y mejorando el aprendizaje,
+                                                                    ya que cada miembro del grupo
+                                                                    realiza sus tareas apoyándose en el trabajo de los
+                                                                    demás. </label>
+                                                            </div>
+                                                            <div class="cajaEnseñanza">
+                                                                <input type="checkbox" name="tipoDeEnsenianza"
+                                                                    id="categoria1"
+                                                                    value="APRENDIZAJE BASADO EN EL PENSAMIENTO">
+                                                                <label for="tipoDeEnsenianza" class="chicos">APRENDIZAJE
+                                                                    BASADO EN EL
+                                                                    PENSAMIENTO</label>
+                                                                <label for="tipoDeEnsenianza" class="chicos">El objetivo
+                                                                    de este método consiste en
+                                                                    otorgar herramientas para contextualizar,
+                                                                    relacionar, analizar, entender,
+                                                                    argumentar, convertir información en conocimiento y
+                                                                    desarrollar el pensamiento, más
+                                                                    allá de la memorización.</label>
+                                                            </div>
+                                                            <div class="cajaEnseñanza">
+                                                                <input type="checkbox" name="tipoDeEnsenianza"
+                                                                    id="categoria1" value="PENSAMIENTO DE DISEÑO">
+                                                                <label for="tipoDeEnsenianza" class="chicos">PENSAMIENTO
+                                                                    DE DISEÑO</label>
+                                                                <label for="tipoDeEnsenianza" class="chicos">Este método
+                                                                    consiste en identificar
+                                                                    con mayor exactitud los problemas individuales de
+                                                                    los alumnos, generando ideas,
+                                                                    resolviendo problemas creativamente y ampliar
+                                                                    horizontes para las
+                                                                    soluciones.</label>
+                                                            </div>
+                                                            <div class="cajaEnseñanza">
+                                                                <input type="checkbox" name="tipoDeEnsenianza"
+                                                                    id="categoria1"
+                                                                    value="APRENDIZAJE BASADO EN PROYECTO">
+                                                                <label for="tipoDeEnsenianza" class="chicos">APRENDIZAJE
+                                                                    BASADO EN PROYECTO</label>
+                                                                <label for="tipoDeEnsenianza" class="chicos">Este tipo
+                                                                    de aprendizaje permite que
+                                                                    los alumnos adquieran conocimiento y habilidades en
+                                                                    la elaboración de proyectos.
+                                                                    Garantiza procesos de aprendizaje más didáctico,
+                                                                    eficaces y prácticos, que permiten
+                                                                    que los alumnos desarrollen competencias como la
+                                                                    comunicación, colaboración y
+                                                                    resolución de problemas.</label>
+                                                            </div>
+                                                            <div class="cajaEnseñanza">
+                                                                <input type="checkbox" name="tipoDeEnsenianza"
+                                                                    id="categoria1" value="GAMIFICACIÓN">
+                                                                <label for="tipoDeEnsenianza"
+                                                                    class="chicos">GAMIFICACIÓN</label>
+                                                                <label for="tipoDeEnsenianza" class="chicos">Consiste en
+                                                                    la integración mecánica y
+                                                                    dinámica de juegos y videojuegos en entornos no
+                                                                    lúdicos, para potenciar la
+                                                                    motivación, concentración, esfuerzos y valores
+                                                                    positivos. El uso exponencial de los
+                                                                    videojuegos ha despertado el interés de expertos en
+                                                                    este ámbito, que recomiendan
+                                                                    videojuegos educativos para los niños.</label>
+                                                            </div>
+                                                </div>
+
+                                                <div class="input-box">
+                                                    <span class="details"> Certificacion</span>
+                                                    <% if (locals.errors && errors.certificacion) { %>
+                                                        <div class="errorCreate">
+
+                                                            <p>
+                                                                <%= errors.certificacion.msg %>
+                                                            </p>
+
+                                                        </div>
+                                                        <% } %>
+                                                            <div class="cajaCertificacion">
+                                                                <input type="radio" name="certificacion" id="perfil1"
+                                                                    value="Oficial">
+                                                                <label for="Certifiacion" class="chicos">Oficial</label>
+                                                                <input type="radio" name="certificacion" id="perfil2"
+                                                                    value="No Oficial">
+                                                                <label for="Certifiacion" class="chicos">No
+                                                                    Oficial</label>
+                                                            </div>
+                                                </div>
+                                                <div class="input-box">
+                                                    <span class="details"> Precio</span>
+                                                    <i class="fa-solid fa-hand-holding-dollar"></i><input
+                                                        class="precioA" type="text" name="precio"
+                                                        placeholder="Si es gratis, indicarlo con 0" id="domicilio"
+                                                        value=<%=locals.oldDate? oldDate.precio : null %>>
+                                                </div>
+                                                <% if (locals.errors && errors.precio) { %>
+                                                    <div class="errorCreate">
+
+                                                        <p>
+                                                            <%= errors.precio.msg %>
+                                                        </p>
+
+                                                    </div>
+                                                    <% } %>
+                                                        <div class="input-box">
+                                                            <span class="details"> Duracion</span>
+                                                            <input type="text" name="duracion"
+                                                                placeholder="5 a 20 caracteres" id="nombre"
+                                                                value=<%=locals.oldDate? oldDate.duracion : null %>>
+                                                        </div>
+                                                        <% if (locals.errors && errors.duracion) { %>
+                                                            <div class="errorCreate">
+
+                                                                <p>
+                                                                    <%= errors.duracion.msg %>
+                                                                </p>
+
+                                                            </div>
+                                                            <% } %>
+                                                                <div class="input-box">
+                                                                    <span class="details"> imagen de perfil</span>
+                                                                    <input type="file" name="imagen" id="imagen">
+                                                                </div>
+                                                                <% if (locals.errors && errors.imagen) { %>
+                                                                    <div class="errorCreate">
+
+                                                                        <p>
+                                                                            <%= errors.imagen.msg %>
+                                                                        </p>
+
+                                                                    </div>
+                                                                    <% } %>
                     </div>
 
-                   
+
                     <div class="buttonRegistrarse">
                         <input type="submit" value="Crea Curso">
                     </div>

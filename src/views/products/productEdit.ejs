@@ -43,9 +43,11 @@
                             <textarea placeholder="200 caracteres maximo" name="descripcionQueAprenderas"
                                 id="nombreUsuario"><%= curso.descripcionQueAprenderas %></textarea>
                         </div>
+                        <% if (locals.errors  && errors.descripcionQueAprenderas) { %>
                         <div class="errorCreate">
                             <p> Error: te has pasado de los caracteres maximos (200)</p>
                         </div>
+                        <% } %> 
                         <div class="input-box">
                             <span class="details"> Tipo de Enseñanza</span>
                             <% if (locals.errors  && errors.tipoDeEnsenianza) { %>
@@ -188,19 +190,20 @@
                                      <p> <%= errors.certificacion.msg %></p> 
                                      
                                    </div>
+                            
                                    <% } %> 
                             <div class="cajaCertificacion">
                                 <% if (curso.certifiacion==="Oficial" ) { %>
 
 
-                                    <input type="radio" name="certifiacion" id="perfil1" value="Oficial" checked>
+                                    <input type="radio" name="certificacion" id="perfil1" value="Oficial" checked>
                                     <label for="Certifiacion" class="chicos" >Oficial</label>
-                                    <input type="radio" name="certifiacion" id="perfil2" value="No Oficial">
+                                    <input type="radio" name="certificacion" id="perfil2" value="No Oficial">
                                     <label for="Certifiacion" class="chicos">No Oficial</label>
                                     <% }else{ %>
-                                        <input type="radio" name="certifiacion" id="perfil1" value="Oficial">
+                                        <input type="radio" name="certificacion" id="perfil1" value="Oficial">
                                         <label for="Certifiacion" class="chicos">Oficial</label>
-                                        <input type="radio" name="certifiacion" id="perfil2" value="No Oficial" checked>
+                                        <input type="radio" name="certificacion" id="perfil2" value="No Oficial" checked>
                                         <label for="Certifiacion" class="chicos" >No Oficial</label>
                                         <% } %>
                             </div>
@@ -226,7 +229,7 @@
                             <span class="details"> Duracion</span>
                             <input type="text" name="duracion" placeholder="5 a 20 caracteres" id="nombre" value="<%= curso.duracion %>">
                         </div>
-                        <% if (locals.errors != null) { %>
+                        <% if (locals.errors && errors.duracion) { %>
                             <div class="errorCreate"> 
                               
                                  <p> <%= errors.duracion.msg %></p> 
@@ -239,22 +242,25 @@
                     <input type="text" class="none" value="<%= curso.numeroDeRegistarados %>" name="numeroDeRegistarados" hidden> 
                     <input type="text" class="none" value="<%= curso.id %>" name="id" hidden> 
                     
+
+                    <!--
                     <div class="input-box">
                         <span class="details"> imagen de perfil</span>
-                        <input type="file" name="imagen"  id="imagen">
+                        <input type="file" name="imagen" value="/img/products/<%= curso.imagen %>"  id="imagen">
                         <img src="/img/products/<%= curso.imagen %> " alt="" class="">
                     </div>
-                    <% if (locals.errors != null) { %>
+                    <% if (locals.errors && errors.imagen) { %>
                         <div class="errorCreate"> 
                           
-                             <p> <%= errors.duracion.msg %></p> 
+                             <p> <%= errors.imagen.msg %></p> 
                              
                            </div>
                            <% } %> 
+                    -->
                     <div class="buttonRegistrarse">
                         <input type="submit" value="Editar Curso">
                     </div>
-
+                    -->
                 </form>
             </div>
 

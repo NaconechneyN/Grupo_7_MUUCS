@@ -40,6 +40,8 @@ const productController = {
     productCreate1: (req, res) => {
 
         let errors = validationResult(req)
+        console.log(errors.mapped())
+        console.log(req.session)
 
         if (errors.isEmpty()) {
             const curso = req.body;
@@ -48,6 +50,7 @@ const productController = {
             curso.valoracion = 0;
             curso.numeroDeRegistarados = 0;
             curso.imagen = req.file.filename
+            curso.dueño = req.session.usuarioLogueado.nombreyapellido
 
             product.create(curso)
 
@@ -70,17 +73,23 @@ const productController = {
     },
 
     productEdit1: (req, res) => {
-
+        console.log(req.body)
         let errors = validationResult(req)
 
+        console.log(errors.mapped())
+
         if (errors.isEmpty()) {
+            console.log(req.body)
             product.edit(req.body)
+            
             res.redirect("/products/carritoT")
 
+        }else{
+            
+            const curso = product.findByPk(req.body.id)
+    
+            res.render("productEdit", { titulo: "Edición de producto", errors: errors.mapped(), curso: curso})
         }
-        const curso = product.findByPk(req.body.id)
-
-        res.render("productEdit", { titulo: "Edición de producto", errors: errors.mapped(), curso: curso})
 
 
 

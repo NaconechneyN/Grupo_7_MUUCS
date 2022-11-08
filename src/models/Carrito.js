@@ -6,7 +6,7 @@ const Carrito = {
     fileName: "../../data/carrito.json",
 
     getData: function(){
-        return JSON.parse(fs.readFileSync(this.fileName, 'utf-8'))
+        return JSON.parse(path.join(__dirname, this.fileName), 'utf-8')
         
     },
 
@@ -24,7 +24,7 @@ const Carrito = {
             producto : []
         }
         allCarrito.push(newCarrito);
-        fs.writeFileSync(this.fileName, JSON.stringify(allCarrito, null, ' '));
+        fs.writeFileSync(path.join(__dirname, this.fileName), JSON.stringify(allCarrito, null, ' '));
         return true;
 
     },
@@ -32,7 +32,7 @@ const Carrito = {
     delete: function (id) {
         let allCarrito = this.findAll();
         let finalCarrito = allCarrito.filter(oneCarrito => oneCarrito.id !== id);
-        fs.writeFileSync(this.fileName, JSON.stringify(finalCarrito, null, ' '));
+        fs.writeFileSync(path.join(__dirname, this.fileName), JSON.stringify(finalCarrito, null, ' '));
         return true;
 
 
@@ -46,7 +46,7 @@ const Carrito = {
             }
         });
 
-        fs.writeFileSync(this.fileName, JSON.stringify(allCarrito, null, ' '));
+        fs.writeFileSync(path.join(__dirname, this.fileName), JSON.stringify(allCarrito, null, ' '));
         return true;
     },
 
@@ -59,7 +59,7 @@ const Carrito = {
             }
         });
 
-        fs.writeFileSync(this.fileName, JSON.stringify(allCarrito, null, ' '));
+        fs.writeFileSync(path.join(__dirname, this.fileName), JSON.stringify(allCarrito, null, ' '));
         return true;
     }
 

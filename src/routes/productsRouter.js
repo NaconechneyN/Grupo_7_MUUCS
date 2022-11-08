@@ -11,6 +11,7 @@ const guest = require('../middlewares/mildwareNoGuest.js')
 
 // Requerimos el mildware que creamos para la validacion del formulario de registro de un producto
 const validateProduct = require('../middlewares/mildwareProductsForm')
+const validateProductEdit = require('../middlewares/mildwareProductsFormEdit')
 
 
 // requerimos el multer de la carpeta mildware
@@ -33,7 +34,7 @@ router.post("/create",[upload.single("imagen"), validateProduct], productsContro
 // Ruta a traves de ID para modificar un producto
 router.get("/:id/editar", guest, productsControllers.productEdit)
 //
-router.put("/editar",[upload.single("imagen"), validateProduct], productsControllers.productEdit1)
+router.put("/editar",[upload.single("imagen"), validateProductEdit], productsControllers.productEdit1)
 // Ruta a lista de productos
 router.get("/carritoT", guest, productsControllers.productListCarrito)
 // Ruta a traves de ID para eliminar un producto

@@ -1,67 +1,23 @@
 [
  {
-  "id": 1,
-  "titulo": "ciencias",
-  "descripcion": "En este curso aprenderás desde las bases de calculo matemático hacia temas más avanzados",
-  "tipoDeEnseñanza": "A demanda",
-  "descripcionQueAprenderás": "Aprenderás sobre las estructuras de calculo, diferentes operadores, estructura y orden de los elementos",
-  "certificacion": "Certificacion oficial",
-  "QuienLoImparte": "UTN",
-  "actulizacion": "julio 2022",
-  "valoracion": "8",
-  "numeroDeRegistarados": 13255,
-  "duracion": "5 meses",
-  "precio": "$40264",
-  "dueño" : "Maria Luisa Fernandez"
- },
- {
-  "id": 3,
-  "titulo": "Lengua",
-  "precio": "8000"
- },
- {
-  "titulo": "Matematicas",
-  "descripcion": "Es para que ea el fer",
-  "tipoDeEnsenianza": "APRENDIZAJE COOPERATIVO",
-  "certifiacion": "Oficial",
-  "precio": "5000",
-  "duracion": "8 meses",
-  "id": 3,
-  "actualizacion": 1665819792808,
-  "valoracion": 0,
-  "numeroDeRegistarados": 0,
-  "imagen": "1665819792798_img.jpg",
-  "dueño" : "Maria Luisa Fernandez"
- },
- {
-  "titulo": "Matematicas",
-  "descripcion": "",
-  "precio": "",
-  "duracion": "",
-  "id": 4,
-  "actualizacion": 1665819852275,
-  "valoracion": 0,
-  "numeroDeRegistarados": 0,
-  "imagen": "1665819852257_img.png",
-  "dueño" : "Maria Luisa Fernandez"
- },
- {
-  "titulo": "dsfsdfsdfsdfsdfsdfsdfsdfsd",
+  "titulo": "Hola Soy Lucio",
   "descripcion": "sdfsddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddsdfsdfsdfsdfsdffsdfsdf",
+  "descripcionQueAprenderas": "dfsddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddsdfsdfsdfsdfsdffs",
   "tipoDeEnsenianza": "APRENDIZAJE COOPERATIVO",
   "certificacion": "Oficial",
   "precio": "20000",
   "duracion": "sdfsdfsdfsdfsdfsdfsdfsdfsdf",
   "id": "e79816c7-0cf6-45ef-8497-433274567087",
-  "actualizacion": 1666114401090,
+  "actualizacion": "1666114401090",
   "valoracion": 0,
   "numeroDeRegistarados": 0,
   "imagen": "1666114401077_img.jpg",
-  "dueño" : "Maria Luisa Fernandez"
+  "dueño": "Maria Luisa Fernandez"
  },
  {
   "titulo": "dsfsdfsdfsdfsdfsdfsdfsdfsd",
   "descripcion": "sdfsddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddsdfsdfsdfsdfsdffsdfsdf",
+  "descripcionQueAprenderas": "dfsddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddsdfsdfsdfsdfsdffs",
   "tipoDeEnsenianza": "APRENDIZAJE COOPERATIVO",
   "certificacion": "Oficial",
   "precio": "20000",
@@ -71,11 +27,12 @@
   "valoracion": 0,
   "numeroDeRegistarados": 0,
   "imagen": "1666114491878_img.jpg",
-  "dueño" : "Maria Luisa Fernandez"
+  "dueño": "Maria Luisa Fernandez"
  },
  {
   "titulo": "dsfsdfsdfsdfsdfsdfsdfsdfsd",
   "descripcion": "sdfsddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddsdfsdfsdfsdfsdffsdfsdf",
+  "descripcionQueAprenderas": "dfsddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddsdfsdfsdfsdfsdffs",
   "tipoDeEnsenianza": "APRENDIZAJE COOPERATIVO",
   "certificacion": "Oficial",
   "precio": "20000",
@@ -85,11 +42,12 @@
   "valoracion": 0,
   "numeroDeRegistarados": 0,
   "imagen": "1666114501840_img.jpg",
-  "dueño" : "Maria Luisa Fernandez"
+  "dueño": "Maria Luisa Fernandez"
  },
  {
   "titulo": "dsfsdfsdfsdfsdfsdfsdfsdfsd",
   "descripcion": "sdfsddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddsdfsdfsdfsdfsdffsdfsdf",
+  "descripcionQueAprenderas": "dfsddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddsdfsdfsdfsdfsdffs",
   "tipoDeEnsenianza": "APRENDIZAJE COOPERATIVO",
   "certificacion": "Oficial",
   "precio": "20000",
@@ -103,6 +61,7 @@
  {
   "titulo": "asdasdasd",
   "descripcion": "dasadbasgbsdfgdfgsdfgsdfgsdfgsdfgsdfsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssgdsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfg",
+  "descripcionQueAprenderas": "dfsddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddsdfsdfsdfsdfsdffs",
   "tipoDeEnsenianza": "APRENDIZAJE COOPERATIVO",
   "certificacion": "Oficial",
   "precio": "20000",
@@ -116,6 +75,7 @@
  {
   "titulo": "asdasdasd",
   "descripcion": "dasadbasgbsdfgdfgsdfgsdfgsdfgsdfgsdfsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssgdsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfg",
+  "descripcionQueAprenderas": "dfsddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddsdfsdfsdfsdfsdffs",
   "tipoDeEnsenianza": "APRENDIZAJE COOPERATIVO",
   "certificacion": "Oficial",
   "precio": "20000",
@@ -129,6 +89,7 @@
  {
   "titulo": "asdasdasd",
   "descripcion": "dasadbasgbsdfgdfgsdfgsdfgsdfgsdfgsdfsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssgdsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfg",
+  "descripcionQueAprenderas": "dfsddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddsdfsdfsdfsdfsdffs",
   "tipoDeEnsenianza": "APRENDIZAJE COOPERATIVO",
   "certificacion": "Oficial",
   "precio": "20000",
@@ -142,6 +103,7 @@
  {
   "titulo": "asdasdasd",
   "descripcion": "dasadbasgbsdfgdfgsdfgsdfgsdfgsdfgsdfsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssgdsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfg",
+  "descripcionQueAprenderas": "dfsddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddsdfsdfsdfsdfsdffs",
   "tipoDeEnsenianza": "APRENDIZAJE COOPERATIVO",
   "certificacion": "Oficial",
   "precio": "20000",
@@ -155,6 +117,7 @@
  {
   "titulo": "asdasdasd",
   "descripcion": "dasadbasgbsdfgdfgsdfgsdfgsdfgsdfgsdfsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssgdsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfg",
+  "descripcionQueAprenderas": "dfsddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddsdfsdfsdfsdfsdffs",
   "tipoDeEnsenianza": "APRENDIZAJE COOPERATIVO",
   "certificacion": "Oficial",
   "precio": "20000",
@@ -168,6 +131,7 @@
  {
   "titulo": "asdasdasd",
   "descripcion": "dasadbasgbsdfgdfgsdfgsdfgsdfgsdfgsdfsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssgdsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfg",
+  "descripcionQueAprenderas": "dfsddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddsdfsdfsdfsdfsdffs",
   "tipoDeEnsenianza": "APRENDIZAJE COOPERATIVO",
   "certificacion": "Oficial",
   "precio": "20000",
@@ -181,6 +145,7 @@
  {
   "titulo": "dsfsdfsdfsdfsdfsdfsdfsdfsd",
   "descripcion": "200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos",
+  "descripcionQueAprenderas": "dfsddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddsdfsdfsdfsdfsdffs",
   "tipoDeEnsenianza": "APRENDIZAJE COOPERATIVO",
   "certificacion": "Oficial",
   "precio": "20000",
@@ -194,6 +159,7 @@
  {
   "titulo": "dsfsdfsdfsdfsdfsdfsdfsdfsd",
   "descripcion": "200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos",
+  "descripcionQueAprenderas": "dfsddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddsdfsdfsdfsdfsdffs",
   "tipoDeEnsenianza": "APRENDIZAJE COOPERATIVO",
   "certificacion": "Oficial",
   "precio": "20000",
@@ -207,6 +173,7 @@
  {
   "titulo": "dsfsdfsdfsdfsdfsdfsdfsdfsd",
   "descripcion": "200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos",
+  "descripcionQueAprenderas": "dfsddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddsdfsdfsdfsdfsdffs",
   "tipoDeEnsenianza": "APRENDIZAJE COOPERATIVO",
   "certificacion": "Oficial",
   "precio": "20000",
@@ -220,6 +187,7 @@
  {
   "titulo": "dsfsdfsdfsdfsdfsdfsdfsdfsd",
   "descripcion": "200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos",
+  "descripcionQueAprenderas": "dfsddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddsdfsdfsdfsdfsdffs",
   "tipoDeEnsenianza": "APRENDIZAJE COOPERATIVO",
   "certificacion": "Oficial",
   "precio": "20000",
@@ -233,6 +201,7 @@
  {
   "titulo": "dsfsdfsdfsdfsdfsdfsdfsdfsd",
   "descripcion": "200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos",
+  "descripcionQueAprenderas": "dfsddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddsdfsdfsdfsdfsdffs",
   "tipoDeEnsenianza": "APRENDIZAJE COOPERATIVO",
   "certificacion": "Oficial",
   "precio": "20000",
@@ -246,6 +215,7 @@
  {
   "titulo": "dsfsdfsdfsdfsdfsdfsdfsdfsd",
   "descripcion": "200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos",
+  "descripcionQueAprenderas": "dfsddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddsdfsdfsdfsdfsdffs",
   "tipoDeEnsenianza": "APRENDIZAJE COOPERATIVO",
   "certificacion": "Oficial",
   "precio": "20000",
@@ -259,6 +229,7 @@
  {
   "titulo": "asdasdasd",
   "descripcion": "200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos",
+  "descripcionQueAprenderas": "dfsddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddsdfsdfsdfsdfsdffs",
   "tipoDeEnsenianza": "APRENDIZAJE COOPERATIVO",
   "certificacion": "Oficial",
   "precio": "20000",
@@ -272,6 +243,7 @@
  {
   "titulo": "asdasdasd",
   "descripcion": "200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos",
+  "descripcionQueAprenderas": "dfsddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddsdfsdfsdfsdfsdffs",
   "tipoDeEnsenianza": "APRENDIZAJE COOPERATIVO",
   "certificacion": "Oficial",
   "precio": "20000",
@@ -285,6 +257,7 @@
  {
   "titulo": "asdasdasd",
   "descripcion": "200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos",
+  "descripcionQueAprenderas": "dfsddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddsdfsdfsdfsdfsdffs",
   "tipoDeEnsenianza": "APRENDIZAJE COOPERATIVO",
   "certificacion": "Oficial",
   "precio": "20000",
@@ -298,6 +271,7 @@
  {
   "titulo": "asdasdasd",
   "descripcion": "200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos",
+  "descripcionQueAprenderas": "dfsddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddsdfsdfsdfsdfsdffs",
   "tipoDeEnsenianza": "APRENDIZAJE COOPERATIVO",
   "certificacion": "Oficial",
   "precio": "20000",
@@ -307,5 +281,20 @@
   "valoracion": 0,
   "numeroDeRegistarados": 0,
   "imagen": "1667060944336_img.png"
+ },
+ {
+  "id": "a0b09709-1db1-4659-b680-ef3ded49c745",
+  "titulo": "Hola Soy Lucio",
+  "descripcion": "200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos",
+  "descripcionQueAprenderas": "200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos200 caracteres como maximos",
+  "tipoDeEnsenianza": "APRENDIZAJE COOPERATIVO",
+  "certificacion": "Oficial",
+  "precio": "4000",
+  "duracion": "8 meses",
+  "actualizacion": 1667947036241,
+  "valoracion": 0,
+  "numeroDeRegistarados": 0,
+  "imagen": "1667947036227_img.jpg",
+  "dueño": "Maria Luisa Fernandez"
  }
 ]
