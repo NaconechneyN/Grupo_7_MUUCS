@@ -32,7 +32,8 @@
 
 
 .texto_baner p {
-    font-weight: bold;
+    /* font-weight: bold; */
+    font-family: 'Raleway', sans-serif;
 
 }
 
