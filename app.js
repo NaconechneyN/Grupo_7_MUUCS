@@ -2,6 +2,8 @@
 const express= require('express');
 const app = express();
 
+// Requerimos cookie para poder guardar informacion del lado del usuario
+const cookie = require('cookie-parser')
 
 // Requerimos path para poder manejar rutas relativas y absolutas
 const path = require('path');
@@ -23,6 +25,9 @@ const usersRouter = require('./src/routes/usersRouter')
 
 // Usamos session
 app.use(session({secret: "Muucs" }));
+
+// Usamos cookie
+app.use(cookie());
 
 // Usamos la funcion de static de express para indicarle a express cual e sla carpeta que tiene los activos staticos
 app.use(express.static(path.join(__dirname, 'public')));

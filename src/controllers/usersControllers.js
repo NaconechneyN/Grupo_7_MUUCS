@@ -67,7 +67,8 @@ const controllers = {
                 if(bcryptjs.compareSync(req.body.password, userInDb.password)){
                     delete userInDb.password;
                     req.session.usuarioLogueado = userInDb;
-                    console.log(req.session.usuarioLogueado)
+                    res.cookie('userEmail','hola',{maxAge: 1000*60})
+                    console.log(res.cookie)
                     res.redirect('/users/perfil')
 
                 }

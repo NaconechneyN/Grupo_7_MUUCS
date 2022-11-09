@@ -458,13 +458,13 @@ form .buttonRegistrarse input:hover{
 }
 
 #izquierda {
-    width: 60%;
+    width: 65%;
     justify-content: start;
     font-size: 12px;
 }
 #derecha {
     justify-content: end;
-    width: 40%;
+    width: 35%;
     padding-right: 2vh;
     
 }
@@ -477,7 +477,7 @@ form .buttonRegistrarse input:hover{
 }
 
 .categoria a{
-    width: 22%;
+    width: 25%;
     font-size: 1.30em;
     color: #FFFFFF;
     align-items: center;
@@ -565,12 +565,17 @@ form .buttonRegistrarse input:hover{
 }
 
 .informacion p{
-    color: #d32eb8;
+    color: #d32eb8 !important;
     font-weight: bold;
     text-align: center;
     padding: 3px 0px 5px 0px ;
-    line-height: 125%
+    line-height: 125%;
+    text-decoration: none;
+}
 
+.informacion a{
+    
+    text-decoration: none;
 }
 
 .informacion :hover{

@@ -25,15 +25,20 @@
             <button class="newCuenta"><i class="fa-solid fa-cart-shopping"></i></button>
         </div>
         <div class="informacion">
-            <p>¿Sabes que es Peer Teaching?</p>
+            <% if (locals.usuario) { %>
+                <p><a style=" color: #d32eb8; " href="/users/perfil"><i class="fa-solid fa-id-card"></i> Mi perfil      </a></p>
+            
+            <% } else { %>
+                <p>¿Sabes que es Peer Teaching?</p>
+            <% } %>
         </div>
     </div>
     <div class="categoria">
         
         <ul id="izquierda">
             <a href="/">Nosotros<i class="fa-solid fa-chevron-right"></i></a>
-            <a href="/productList">Ofertas<i class="fa-solid fa-chevron-right"></i></a>
-            <a href="">Vender<i class="fa-solid fa-chevron-right"></i></a>
+            <a href="">MuucsEnterPrice<i class="fa-solid fa-chevron-right"></i></a>
+            <a href="">CoachMuucs<i class="fa-solid fa-chevron-right"></i></a>
             <a href="">Soporte<i class="fa-solid fa-chevron-right"></i></a>
         </ul>
         <ul id="derecha">
