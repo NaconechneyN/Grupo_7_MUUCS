@@ -67,8 +67,11 @@ const controllers = {
                 if(bcryptjs.compareSync(req.body.password, userInDb.password)){
                     delete userInDb.password;
                     req.session.usuarioLogueado = userInDb;
-                    res.cookie('userEmail','hola',{maxAge: 1000*60})
-                    console.log(res.cookie)
+                    console.log(req.body)
+                    if(req.body.recordar){
+                        res.cookie('userEmail',req.session.usuarioLogueado.email,{maxAge: 1000*60*15})
+                    }
+                    
                     res.redirect('/users/perfil')
 
                 }
@@ -99,6 +102,7 @@ const controllers = {
 
     },
     perfil: (req, res) =>{
+        
         res.render('profile', {user : req.session.usuarioLogueado, titulo: 'muucs'},)
     },
 

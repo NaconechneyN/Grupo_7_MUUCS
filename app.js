@@ -5,6 +5,9 @@ const app = express();
 // Requerimos cookie para poder guardar informacion del lado del usuario
 const cookie = require('cookie-parser')
 
+// Requerimos mildware para saber si hay un usuario recordado
+const userLogged = require('./src/middlewares/mildwareUserLogged')
+
 // Requerimos path para poder manejar rutas relativas y absolutas
 const path = require('path');
 
@@ -28,6 +31,9 @@ app.use(session({secret: "Muucs" }));
 
 // Usamos cookie
 app.use(cookie());
+
+// Usamos mildware para saber si hay un usuario recordado
+app.use(userLogged);
 
 // Usamos la funcion de static de express para indicarle a express cual e sla carpeta que tiene los activos staticos
 app.use(express.static(path.join(__dirname, 'public')));

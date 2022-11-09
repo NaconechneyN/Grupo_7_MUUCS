@@ -1,6 +1,7 @@
 const users = require("../models/User")
 
 function guest (req, res, next){
+    
     res.locals.IsLogged = false;
 
     let emailCokie = req.cookies.userEmail
@@ -8,13 +9,18 @@ function guest (req, res, next){
     let userCokie = users.findByField('email', emailCokie)
 
     if(userCokie){
-        req.session.userLogged = userCokie;
+        
+        req.session.usuarioLogueado = userCokie;
+        
     }
 
-    if(req.session.userLogged){
+    if(req.session.usuarioLogueado){
+        
         res.locals.IsLogged = true;
-        res.locals.userLogged = req.session.userLogged ;
+        res.locals.userLogged = req.session.usuarioLogueado ;
     }
+
+    next();
  
 }
 
