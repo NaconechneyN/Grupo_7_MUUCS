@@ -177,7 +177,7 @@
 .titulos {
     background-color: #231c24;
     color: white;
-    text-shadow: 4px 4px 2px #a62892;
+    /* text-shadow: 4px 4px 2px #a62892; */
 }
 
 .titulos h1 {
