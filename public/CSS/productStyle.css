@@ -83,7 +83,7 @@
 
 .menu {
     display: flex;
-    background-color: #231c24;
+    background: transparent;
     color: aliceblue;
 }
 
@@ -175,7 +175,7 @@
 }
 
 .titulos {
-    background-color: #231c24;
+    background: transparent;
     color: white;
     /* text-shadow: 4px 4px 2px #a62892; */
 }
@@ -193,16 +193,18 @@
 }
 
 .cursos {
-    background-color: #231c24;
+    background: transparent;
 }
 
 .cursos article {
     color:  white;
     display: flex;
     margin: 10px 10px 0px 30px;
-    background-color: #231c24;
+    /* background-color: #231c24; */
+    background: rgba(255, 255, 255, 0.355);
     transition-property: border, border-radius, box-shadow;
     transition-duration: 0.3s;
+    word-wrap: break-word ;
 
 }
 
@@ -268,7 +270,8 @@
 
 
 main {
-    background-color: #231c24;
+    background-image: url('../img/fondoList.png');
+    background-size: cover;
 }
 
 .banner {
