@@ -203,7 +203,7 @@
     display: flex;
     margin: 10px 30px 30px 30px;
     /* background-color: #231c24; */
-    background: rgba(55, 55, 55, 0.355);
+    background: rgba(45, 45, 45, 0.697);
     transition-property: border, border-radius, box-shadow;
     transition-duration: 0.3s;
     word-wrap: break-word ;
@@ -223,12 +223,12 @@
 .cursos article .imagen img{
     width: 90%;
     height: 40vh;
-    border: 2px outset #8a9597;
+    border: 2px outset #1c1c1cdf;
 }
 
 .cursos article .descripcion {
     width: 70%;
-    padding: 10px 10px 10px 20px;
+    padding: 20px 10px 20px 20px;
     position: relative;
 }
 
@@ -237,6 +237,7 @@
     font-weight: bold;
     font-family: 'Hind Madurai', sans-serif;
     margin-bottom: 4px;
+    /* margin-top: 2%; */
     font-size: 2.2em;
     word-spacing: 5px;
 }
@@ -254,7 +255,7 @@
 
 
 .cursos article:hover {
-    background: rgba(55, 55, 55, 0.562);
+    background: rgba(36, 36, 36, 0.796);
     transition: all 0.3s ease;
     /* border: 0.5px solid rgba(255, 255, 255, 0.555); */
 /*     box-shadow: rgba(255,0,255,1) 0px 30px 60px -12px inset,rgba(255,0,255,1) 0px 18px 36px -18px inset;
@@ -284,7 +285,7 @@
 
 
 main {
-    background-image: url('../img/fondoproducts.png');
+    background-image: url('../img/fondoProducts.jpeg');
     background-size: cover;
 }
 
@@ -399,7 +400,7 @@ article:enabled .descripcion2 {
 .eliminarList{
     font-size: 2em;
     position: absolute;
-    top: 6% !important;
+    top: 4% !important;
     left:90% !important;
     height: 5vh;
     width: 5vh;
@@ -413,7 +414,8 @@ article:enabled .descripcion2 {
 
 .eliminarList i{
     position: relative;
-    top: -27%;
+    top: -14%;
+    right: -2%;
 }
 
 .editarProducto{
