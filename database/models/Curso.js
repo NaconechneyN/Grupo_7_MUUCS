@@ -36,7 +36,11 @@ module.exports = (sequelize, dataTypes) => {
         },
         id_categoria:{
             type:dataTypes.INTEGER
+        }, 
+        id_tipoDeEnsenanza:{
+            type:dataTypes.INTEGER
         }
+
     }
     let config = {
         tableName: "cursos",
