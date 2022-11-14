@@ -46,13 +46,26 @@ module.exports = (sequelize, dataTypes) => {
     const Curso = sequelize.define(alias, cols, config)
 
     Curso.associate = function (models) {
+        //hasMany -> Voto
         Curso.hasMany(models.Voto, {
             as: "votos",
             foreignKey: "id_cursos"
-        })
+        }),
         //belongsTo -> Categoria
+        Curso.belongsTo(models.Categoria, {
+            as: "categorias",
+            foreignKey: "id_categoria"
+        }),
         //belongsTo -> Usuario
+        Curso.belongsTo(models.Usuario, {
+            as: "usuarios",
+            foreignKey: "id_usuarios"
+        }),
         //belongsTo -> TipoDeEnsenanza
+        Curso.belongsTo(models.TipoDeEnsenanza, {
+            as: "tiposDeEnsenanza",
+            foreignKey: "id_tipoDeEnsenanza"
+        })
     }
    
 

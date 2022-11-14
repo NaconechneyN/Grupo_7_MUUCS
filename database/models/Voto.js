@@ -23,8 +23,10 @@ module.exports = (sequelize, dataTypes) => {
    
     Voto.associate = function (models) {
         Voto.belongsTo(models.Curso, {
-            foreignKey: "id_curso",
-            as: "cursos"
+            as: "cursos",
+            
+            foreignKey: "id_curso"
+            
         })
     }
     

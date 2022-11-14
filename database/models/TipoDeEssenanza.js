@@ -22,6 +22,13 @@ module.exports = (sequelize, dataTypes) => {
 
     const TipoDeEnsenanza = sequelize.define(alias, cols, config)
     // hasMany -> Curso
+    TipoDeEnsenanza.associate = function (models) {
+        TipoDeEnsenanza.hasMany (models.Curso, {
+            as: "cursos",
+
+            foreignKey: "id_tipoDeEnsenanza"
+        })
+    }
     
     return TipoDeEnsenanza
 }
