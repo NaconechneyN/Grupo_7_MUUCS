@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "Categoria"
+    let alias = "TipoDeEnsenanza"
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -8,14 +8,20 @@ module.exports = (sequelize, dataTypes) => {
         },
         nombre: {
             type: dataTypes.STRING,
+            unique: true,
+            allowNull: false
+        },
+        descripcion: {
+            type: dataTypes.STRING,
         }
     }
     let config = {
-        tableName: "categorias",
+        tableName: "tiposDeEnsenanza",
         timestamps: true
     }
 
-    const Categoria = sequelize.define(alias, cols, config)
+    const TipoDeEnsenanza = sequelize.define(alias, cols, config)
     // hasMany -> Curso
-    return Categoria
+    
+    return TipoDeEnsenanza
 }

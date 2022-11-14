@@ -1,3 +1,4 @@
+const { Voto } = require("./")
 module.exports = (sequelize, dataTypes) => {
     let alias = "Curso"
     let cols = {
@@ -11,21 +12,21 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             unique: true
         },
-        DESCRIPCION: {
+        descripcion: {
             type: dataTypes.TEXT,
             allowNull: false
         },
         certificacion: {
             type: dataTypes.BOOLEAN,
         },
-        //idUsuario: {
-         //   type: dataTypes.INTERGER
-        //},
+        id_usuario: {
+          type: dataTypes.INTEGER
+        },
         precio: {
             type: dataTypes.DECIMAL
         },
-        duracion: {
-            type: dataTypes.TIME
+        finalizacion: {
+            type: dataTypes.DATE
         },
         actualizacion: {
             type: dataTypes.DATE
@@ -33,7 +34,7 @@ module.exports = (sequelize, dataTypes) => {
         valoracion: {
             type: dataTypes.DECIMAL
         },
-        idcategoria:{
+        id_categoria:{
             type:dataTypes.INTEGER
         }
     }
@@ -43,5 +44,17 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     const Curso = sequelize.define(alias, cols, config)
+
+    Curso.associate = function (models) {
+        Curso.hasMany(models.Voto, {
+            as: "votos",
+            foreignKey: "id_cursos"
+        })
+        //belongsTo -> Categoria
+        //belongsTo -> Usuario
+        //belongsTo -> TipoDeEnsenanza
+    }
+   
+
     return Curso
 }

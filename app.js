@@ -58,9 +58,9 @@ path.join(__dirname, "./src/views/users")
 app.listen(process.env.PORT, ()=>{
     console.log("Servidor MUUCS levantado!")
 
-   db.sequelize.sync({
+   /* db.sequelize.sync({
     force: false
-   })
+   }) */
 });
 
 
@@ -71,9 +71,9 @@ app.use("/products", productsRouter);
 
 app.use("/users", usersRouter);
 
-if (true) {
+/* if (true) {
     const scriptDb = require("./src/scripts/jsonAsql")
     scriptDb();
 } 
-
+ */
 

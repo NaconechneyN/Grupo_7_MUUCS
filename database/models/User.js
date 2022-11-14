@@ -6,15 +6,24 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        nombreyapellido: {
+        nombreYApellido: {
             type: dataTypes.STRING,
             allowNull: false,
             unique: true
         },
-        password: {
+        nombreDeUsuario: {
+            type: dataTypes.STRING,
+            allowNull: false,
+            unique: true
+        },
+        contraseña: {
             type: dataTypes.STRING,
             allowNull: false
         },
+        domicilio: {
+            type: dataTypes.STRING,
+        },
+    
         email: {
             type: dataTypes.STRING,
             validate: {
@@ -39,5 +48,6 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     const User = sequelize.define(alias, cols, config)
+    // hasMany -> Curso
     return User
 }
