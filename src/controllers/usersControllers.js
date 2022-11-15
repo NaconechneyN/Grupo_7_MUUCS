@@ -51,7 +51,7 @@ const controllers = {
                 
         }
         else{
-            res.render('register', {errors: errors.mapped(), old: req.body},)
+            res.render('register', {errors: errors.mapped(), old: req.body, titulo :"Register"},)
         }
 
     },
