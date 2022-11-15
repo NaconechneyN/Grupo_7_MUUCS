@@ -11,7 +11,8 @@
 <body>
     <%- include('./partials/header') %>
         <main class="main">
-            <div class="contenedorReg">
+            <div class="contenedorCreate">
+            <div class="acaSi">
                 <div class="title">Agregar un Curso</div>
 
 
@@ -172,10 +173,10 @@
                                                         <% } %>
                                                             <div class="cajaCertificacion">
                                                                 <input type="radio" name="certificacion" id="perfil1"
-                                                                    value="Oficial">
+                                                                    value="Oficial" class="checkCertificacion">
                                                                 <label for="Certifiacion" class="chicos">Oficial</label>
                                                                 <input type="radio" name="certificacion" id="perfil2"
-                                                                    value="No Oficial">
+                                                                    value="No Oficial" class="checkCertificacion">
                                                                 <label for="Certifiacion" class="chicos">No
                                                                     Oficial</label>
                                                             </div>
@@ -234,6 +235,7 @@
 
                 </form>
             </div>
+        </div>
 
         </main>
         <%- include('./partials/footer') %>
