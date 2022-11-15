@@ -67,6 +67,10 @@
     
 }
 
+i{
+    color: #c64fb3 !important;
+}
+
 .banner h3 {
     padding-top: 5px;
     text-align: center;
@@ -203,13 +207,16 @@
     display: flex;
     margin: 10px 30px 30px 30px;
     /* background-color: #231c24; */
-    background: rgba(45, 45, 45, 0.697);
+    /* background: rgba(45, 45, 45, 0.697); */
+    background: rgba(55, 55, 55, 0.24);
     transition-property: border, border-radius, box-shadow;
     transition-duration: 0.3s;
     word-wrap: break-word ;
     border-radius: 10px;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(8px);
     transition: all 0.3s ease;
+    box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
+    border: solid 1px rgba(169, 169, 169, 0.264);
 }
 
 .cursos article .imagen {
@@ -235,7 +242,8 @@
 .cursos article .descripcion h4{
     color: white;
     font-weight: bold;
-    font-family: 'Hind Madurai', sans-serif;
+    /* font-family: 'Hind Madurai', sans-serif; */
+    font-family: 'Alata', sans-serif;
     margin-bottom: 4px;
     /* margin-top: 2%; */
     font-size: 2.2em;
@@ -243,7 +251,7 @@
 }
 
 .cursos article .descripcion p{
-    color: rgb(225, 225, 225);
+    color: rgb(194, 194, 194);
     margin: 0px;
     padding-right: 20px;
 }
@@ -255,8 +263,10 @@
 
 
 .cursos article:hover {
-    background: rgba(36, 36, 36, 0.796);
+    background: rgba(36, 36, 36, 0.392);
     transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
     /* border: 0.5px solid rgba(255, 255, 255, 0.555); */
 /*     box-shadow: rgba(255,0,255,1) 0px 30px 60px -12px inset,rgba(255,0,255,1) 0px 18px 36px -18px inset;
  */
@@ -272,15 +282,19 @@
     position: absolute;
     left: 75%;
     top: 85%;
-    background-color: #ffffff97;
-    color: #a62892;
-    border: 1px solid  rgba(255,0,255,1);
+    color: rgb(230, 228, 228);
+    border: 1px solid rgba(255, 255, 255, 0.504);
     padding: 4px;
     transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+    background: #231c2438;
 }
+    
 
 .agregarCarritoList:hover{
     transition: all 0.3s ease;
+    background: #231c24bd !important;
+    color: rgb(230, 228, 228);
 }
 
 
@@ -345,8 +359,9 @@ main {
     /* s */
     margin-bottom: 4px;
     font-size: 1.5em;
-    font-weight: bold;
-    font-family: 'Hind Madurai', sans-serif;
+    font-weight: 400;
+    /* font-family: 'Hind Madurai', sans-serif; */
+    font-family: 'Alata', sans-serif;
     padding-top: 20px ;
 }
 
@@ -406,11 +421,20 @@ article:enabled .descripcion2 {
     width: 5vh;
     align-items: center;
     position: absolute;
-    background-color: #231C24;
-    color: #a62892;
-    border: #231C24;
     border: 1px solid #a62892;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(8px);
+    background: #231c2438;
+    color: rgb(230, 228, 228);
+    border: 1px solid rgba(255, 255, 255, 0.504);
 }
+
+.eliminarList:hover{
+    transition: all 0.2s ease;
+    background: #231c24bd !important;
+    color: rgb(230, 228, 228);
+}
+
 
 .eliminarList i{
     position: relative;
@@ -421,21 +445,30 @@ article:enabled .descripcion2 {
 .editarProducto{
     font-size: 2em;
     position: absolute;
-    top: 6% !important;
+    top: 4% !important;
     left:83% !important;
     height: 5vh;
     width: 5vh;
     align-items: center;
     position: absolute;
-    background-color: #231C24;
-    color: #a62892;
-    border: #231C24;
-    border: 1px solid #a62892;
+    border: 1px solid #ffffff;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+    background: #231c2438;
+    color: rgb(230, 228, 228);
+    border: 1px solid rgba(255, 255, 255, 0.504);
 }
+
+.editarProducto:hover{
+    transition: all 0.3s ease;
+    background: #231c24bd !important;
+    color: rgb(230, 228, 228);
+}
+
 
 .editarProducto i{
     position: relative;
-    top: -39%;
+    top: -25%;
     font-size: 0.75em
 }
 
