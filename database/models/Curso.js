@@ -1,4 +1,3 @@
-const { Voto } = require("./")
 module.exports = (sequelize, dataTypes) => {
     let alias = "Curso"
     let cols = {

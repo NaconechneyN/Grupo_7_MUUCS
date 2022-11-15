@@ -1,7 +1,8 @@
 module.exports ={
   "development": {
     "dialect": "sqlite",
-    "storage": "./data/dev.db"
+    "storage": "./data/dev.db",
+    "login": true
   },
   "test": {
     "dialect": "sqlite",

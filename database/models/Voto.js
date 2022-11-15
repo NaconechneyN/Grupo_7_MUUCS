@@ -1,4 +1,3 @@
-const { Curso } = require("./") 
 module.exports = (sequelize, dataTypes) => {
     let alias = "Voto"
     let cols = {
@@ -24,7 +23,7 @@ module.exports = (sequelize, dataTypes) => {
     Voto.associate = function (models) {
         Voto.belongsTo(models.Curso, {
             as: "cursos",
-            
+
             foreignKey: "id_curso"
             
         })
