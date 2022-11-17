@@ -18,25 +18,26 @@ module.exports = (sequelize, dataTypes) => {
         certificacion: {
             type: dataTypes.BOOLEAN,
         },
-        id_usuario: {
+        idUsuarios: {
           type: dataTypes.INTEGER
         },
         precio: {
             type: dataTypes.DECIMAL
         },
-        finalizacion: {
-            type: dataTypes.DATE
+        duracion: {
+            type: dataTypes.STRING
         },
         actualizacion: {
             type: dataTypes.DATE
         },
         valoracion: {
-            type: dataTypes.DECIMAL
+            type: dataTypes.DECIMAL,
+            allowNull: true
         },
         id_categoria:{
             type:dataTypes.INTEGER
         }, 
-        id_tipoDeEnsenanza:{
+        id_idtipoDeEnsenianza:{
             type:dataTypes.INTEGER
         }
 
@@ -52,22 +53,22 @@ module.exports = (sequelize, dataTypes) => {
         //hasMany -> Voto
         Curso.hasMany(models.Voto, {
             as: "votos",
-            foreignKey: "id_cursos"
+            foreignKey: "idCursos"
         }),
         //belongsTo -> Categoria
         Curso.belongsTo(models.Categoria, {
             as: "categorias",
-            foreignKey: "id_categoria"
+            foreignKey: "idCategorias"
         }),
         //belongsTo -> Usuario
-        Curso.belongsTo(models.User, {
+        Curso.belongsTo(models.Usuario, {
             as: "usuarios",
-            foreignKey: "id_usuarios"
+            foreignKey: "idUsuarios"
         }),
         //belongsTo -> TipoDeEnsenanza
-        Curso.belongsTo(models.TipoDeEnsenanza, {
-            as: "tiposDeEnsenanza",
-            foreignKey: "id_tipoDeEnsenanza"
+        Curso.belongsTo(models.TipoDeEnsenianza, {
+            as: "tiposDeEnsenianza",
+            foreignKey: "idtipoDeEnsenianza"
         })
     }
    

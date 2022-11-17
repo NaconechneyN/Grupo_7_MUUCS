@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "TipoDeEnsenanza"
+    let alias = "TipoDeEnsenianza"
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -16,19 +16,19 @@ module.exports = (sequelize, dataTypes) => {
         }
     }
     let config = {
-        tableName: "tiposDeEnsenanza",
+        tableName: "tiposDeEnsenianza",
         timestamps: true
     }
 
-    const TipoDeEnsenanza = sequelize.define(alias, cols, config)
+    const TipoDeEnsenianza = sequelize.define(alias, cols, config)
     // hasMany -> Curso
-    TipoDeEnsenanza.associate = function (models) {
-        TipoDeEnsenanza.hasMany (models.Curso, {
+    TipoDeEnsenianza.associate = function (models) {
+        TipoDeEnsenianza.hasMany (models.Curso, {
             as: "cursos",
 
-            foreignKey: "id_tipoDeEnsenanza"
+            foreignKey: "idtipoDeEnsenianza"
         })
     }
     
-    return TipoDeEnsenanza
+    return TipoDeEnsenianza
 }

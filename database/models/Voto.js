@@ -8,8 +8,9 @@ module.exports = (sequelize, dataTypes) => {
         },
         id_curso: {
             type: dataTypes.INTEGER,
+            allowNull: true
         },
-        valoracion: {
+        calificacion: {
             type: dataTypes.INTEGER
         }
     }
@@ -24,7 +25,7 @@ module.exports = (sequelize, dataTypes) => {
         Voto.belongsTo(models.Curso, {
             as: "cursos",
 
-            foreignKey: "id_curso"
+            foreignKey: "idCursos"
             
         })
     }

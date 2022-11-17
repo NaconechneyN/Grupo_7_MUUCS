@@ -1,15 +1,23 @@
-module.exports ={
+module.exports = {
   "development": {
-    "dialect": "sqlite",
-    "storage": "./data/dev.db",
-    "login": true
+    "username": "root",
+    "password": "MUUCS",
+    "database": "structure",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
   },
   "test": {
-    "dialect": "sqlite",
-    "storage": "./data/test.sql"
+    "username": "root",
+    "password": "MUUCS",
+    "database": "structure",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
   },
   "production": {
-    "dialect": "sqlite",
-    "storage": "./data/prod.sql"
+    "username": "root",
+    "password": "MUUCS",
+    "database": "structure",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
   }
 }

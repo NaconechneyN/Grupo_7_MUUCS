@@ -8,6 +8,11 @@ module.exports = (sequelize, dataTypes) => {
         },
         nombre: {
             type: dataTypes.STRING,
+            allowNull: false 
+        },
+        idCategoriasM: {
+            type: dataTypes.INTEGER,
+            allowNull: false 
         }
     }
     let config = {
@@ -21,7 +26,7 @@ module.exports = (sequelize, dataTypes) => {
         Categoria.hasMany (models.Curso, {
             as: "cursos",
 
-            foreignKey: "id_categoria"
+            foreignKey: "idCategorias"
         })
     }
     

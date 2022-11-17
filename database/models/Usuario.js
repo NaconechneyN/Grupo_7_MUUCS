@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "User"
+    let alias = "Usuario"
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -13,7 +13,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         nombreDeUsuario: {
             type: dataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
             unique: true
         },
         contraseña: {
@@ -22,6 +22,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         domicilio: {
             type: dataTypes.STRING,
+            allowNull: true
         },
     
         email: {
@@ -40,22 +41,30 @@ module.exports = (sequelize, dataTypes) => {
         },
         imagen:{
             type:dataTypes.STRING
+        },
+        tipoDeUsuario:{
+            type:dataTypes.INTEGER,
+            allowNull: true
+        },
+        fechaDeNacimiento:{
+            type:dataTypes.DATE,
+            allowNull: false
         }
     }
     let config = {
-        tableName: "users",
+        tableName: "usarios",
         timestamps: true
     }
 
-    const User = sequelize.define(alias, cols, config)
+    const Usuario = sequelize.define(alias, cols, config)
     // hasMany -> Curso
-    User.associate = function (models) {
-        User.hasMany (models.Curso, {
+    Usuario.associate = function (models) {
+        Usuario.hasMany (models.Curso, {
             as: "cursos",
 
-            foreignKey: "id_usuario"
+            foreignKey: "idUsuarios"
         })
     }
 
-    return User
+    return Usuario;
 }
