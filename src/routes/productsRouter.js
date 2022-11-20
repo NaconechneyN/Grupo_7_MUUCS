@@ -40,6 +40,14 @@ router.get("/carritoT", guest, productsControllers.productListCarrito)
 // Ruta a traves de ID para eliminar un producto
 router.delete("/delete/:id",guest, productsControllers.productDelete)
 
+
+
+//CRUD BD 
+//creacion 
+//router.get("/crear", productsControllers.productCreate)
+//router.get("/crear", productsControllers.productList) ver donde van los guardados nuevos
+
+
 /*
 router.get("/", productsControllers.coursesList)
 

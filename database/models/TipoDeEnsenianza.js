@@ -17,7 +17,7 @@ module.exports = (sequelize, dataTypes) => {
     }
     let config = {
         tableName: "tiposDeEnsenianza",
-        timestamps: true
+        timestamps: false
     }
 
     const TipoDeEnsenianza = sequelize.define(alias, cols, config)

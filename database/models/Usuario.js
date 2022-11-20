@@ -58,7 +58,7 @@ module.exports = (sequelize, dataTypes) => {
 
     const Usuario = sequelize.define(alias, cols, config)
     // hasMany -> Curso
-    Usuario.associate = function (models) {
+    Usuario.associate = function (models) { 
         Usuario.hasMany (models.Curso, {
             as: "cursos",
 

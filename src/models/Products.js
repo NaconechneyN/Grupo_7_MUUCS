@@ -10,7 +10,6 @@ const Product = {
         
     },
 
-
     findAll: function () {
         return this.getData();
     },

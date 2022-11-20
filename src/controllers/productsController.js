@@ -5,6 +5,8 @@ const  {  v4 : uuidv4  }  =  require ( 'uuid' )
 const product = require("../models/Products")
 const carrito = require("../models/Carrito")
 
+//const db = require("../../database/models") 
+
 const productController = {
     productList: (req, res) => {
         const courses = product.findAll()
@@ -31,7 +33,18 @@ const productController = {
 
         res.render("productList", { cursos: courses, titulo: "listado de producto", dueño : 1})
     },
+    /*productCreate: (req, res) => {
+            db.Curso.findAll()
+                .then(function(cursos) {
+                    return res.render ("productList", {cursos: cursos})
+                })
+        },
+        productCreate1: (req, res) => {
+            db.Curso.create()
+                .then(function()) 
+        } 
 
+    },*/
 
     productCreate: (req, res) => {
         res.render("productCreate", { titulo: "Creacion de producto" })
