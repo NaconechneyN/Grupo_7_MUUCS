@@ -610,3 +610,7 @@ form .buttonRegistrarse input:hover{
     display: none;
    }
 }
+
+.carousel-inner img{
+    width: 100%;
+}
