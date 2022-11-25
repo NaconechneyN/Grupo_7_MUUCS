@@ -45,7 +45,7 @@ router.delete("/delete/:id",guest, productsControllers.productDelete)
 //CRUD BD 
 //creacion 
 //router.get("/crear", productsControllers.productCreate)
-//router.get("/crear", productsControllers.productList) ver donde van los guardados nuevos
+//router.post("/crear", productsControllers.productCreate1) ver donde van los guardados nuevos
 
 
 /*

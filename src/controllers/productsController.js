@@ -40,9 +40,16 @@ const productController = {
                 })
         },
         productCreate1: (req, res) => {
-            db.Curso.create()
-                .then(function()) 
-        } 
+            db.Curso.create({
+                    curso.actualizacion = Date.now();
+                    curso.valoracion = 0;
+                    curso.numeroDeRegistarados = 0;
+                    curso.imagen = req.file.filename
+                    curso.dueño = req.session.usuarioLogueado.nombreyapellido
+            });
+                res.redirect('/');
+
+               }
 
     },*/
 
