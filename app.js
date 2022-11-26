@@ -1,7 +1,7 @@
 // Requerimos express y lo asignamos a la constante app express la cual va a levantar el servidor
 const express= require('express');
 const app = express();
-const db = require("./database/models/index")
+
 
 // Requerimos cookie para poder guardar informacion del lado del usuario
 const cookie = require('cookie-parser')

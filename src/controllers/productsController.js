@@ -4,14 +4,22 @@ const { validationResult } = require('express-validator')
 const  {  v4 : uuidv4  }  =  require ( 'uuid' ) 
 const product = require("../models/Products")
 const carrito = require("../models/Carrito")
+const db = require("../database/models")
 
 //const db = require("../../database/models") 
 
 const productController = {
     productList: (req, res) => {
-        const courses = product.findAll()
+        db.Curso.findAll({
+            raw: true
+          })
+          .then((cursos) => {
+            console.log(cursos)		
+            res.render("productList", { cursos: cursos, titulo: "listado de producto", dueño : 0})
+          })
+        /*const courses = product.findAll()
 
-        res.render("productList", { cursos: courses, titulo: "listado de producto", dueño : 0})
+        res.render("productList", { cursos: courses, titulo: "listado de producto", dueño : 0})*/
     },
     productListCarrito: (req, res) => {
         const courses = carrito.findByPk(req.body.idCarrito).producto

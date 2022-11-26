@@ -3,7 +3,7 @@ const path = require('path')
 const  {  v4 : uuidv4  }  =  require ( 'uuid' )
 
 const Carrito = {
-    fileName: "../../data/carrito.json",
+    fileName: "../data/carrito.json",
 
     getData: function(){
         return JSON.parse(path.join(__dirname, this.fileName), 'utf-8')
