@@ -4,112 +4,143 @@ const ejs = require('ejs');
 const { validationResult } = require('express-validator');
 const bcryptjs = require('bcryptjs');
 const users = require("../models/User")
+const db = require("../database/models")
+const { v4: uuidv4 } = require('uuid')
 
 
 const controllers = {
-   
-    login: (req, res) => res.render('login',{titulo: 'Login'}),
-    register: (req, res) => res.render('register',{titulo: 'Register'}),
-    updateUser: (req, res) =>{
+
+    login: (req, res) => res.render('login', { titulo: 'Login' }),
+    register: (req, res) => res.render('register', { titulo: 'Register' }),
+    updateUser: (req, res) => {
         // GUARDAMOS ERRORES
         let errors = validationResult(req);
 
-        // ERROR SI EXISTE OTRO USUARIO CON EL MISMO EMAIL
-
-        
-        if(req.body.email != ''){
-            let userInDb = users.findByField("email",req.body.email)
-            if (userInDb){
-                let error = {
-                    value: '',
-                    msg: 'ya existe un email con ese valor',
-                    param: 'email',
-                    location: 'body'
-                  }
-                
-                errors.errors.push(error)
-                return res.render('register', {errors: errors.mapped() , old: req.body})
-            }
+        if (!errors.isEmpty()) {
+            return res.render('register', { errors: errors.mapped(), old: req.body, titulo: "Register" },)
         }
 
-        console.log(req.body)
 
-        // SI NO HAY ERRORES, SE PROCEDE A CREAR EL USUARIO
+        if (req.body.email != '') {
+            console.log(req.body.email)
+            db.Usuario.findAll({
+                raw: true,
+                where: {
+                    email: req.body.email
 
-        if (errors.isEmpty()){
-            let newUser = {
-                nombreyapellido : req.body.nombre,
-                date : req.body.date,
-                email : req.body.email,
-                password: bcryptjs.hashSync(req.body.password,10),
-                imagen : req.file.filename
                 }
-                users.create(newUser)
+            })
+                .then((usuario) => {
+                    console.log(usuario)
+                    if (usuario.length === 1) {
+                        let error = {
+                            value: '',
+                            msg: 'ya existe un email con ese valor',
+                            param: 'email',
+                            location: 'body'
+                        }
 
-
-                res.redirect('/');
-                
-        }
-        else{
-            res.render('register', {errors: errors.mapped(), old: req.body, titulo :"Register"},)
-        }
-
-    },
-    processLogin: (req, res) =>{
-        // GUARDAMOS ERRORES
-        let errors = validationResult(req);
-
-        if (errors.isEmpty()){
-            
-            let userInDb = users.findByField("email",req.body.email)
-
-            if (userInDb){
-                if(bcryptjs.compareSync(req.body.password, userInDb.password)){
-                    delete userInDb.password;
-                    req.session.usuarioLogueado = userInDb;
-                    console.log(req.body)
-                    if(req.body.recordar){
-                        res.cookie('userEmail',req.session.usuarioLogueado.email,{maxAge: 1000*60*15})
+                        errors.errors.push(error)
+                        return res.render('register', { errors: errors.mapped(), old: req.body, titulo: "Register" })
                     }
-                    
-                    res.redirect('/users/perfil')
+                    else {
+
+                        // SI NO HAY ERRORES, SE PROCEDE A CREAR EL USUARIO
+
+
+                        db.Usuario.create({
+                            idUsuarios: uuidv4(),
+                            nombreYApellido: req.body.nombre,
+                            fechaDeNacimiento: req.body.date,
+                            password: bcryptjs.hashSync(req.body.password, 10),
+                            email: req.body.email,
+                            imagen: req.file.filename
+                        })
+                        res.redirect('/');
+
+
+                    }
+                })
+
+        }
+
+
+
+
+
+
+
+    },
+    processLogin: (req, res) => {
+        // GUARDAMOS ERRORES
+        let errors = validationResult(req);
+
+        if (errors.isEmpty()) {
+
+            db.Usuario.findAll({
+                raw: true,
+                where: {
+                    email: req.body.email
 
                 }
-                else{
-                    let error = {
-                        value: '',
-                        msg: 'Contraseña invalida',
-                        param: 'password',
-                        location: 'body'
-                      }
-                      errors.errors.push(error)
-                }
-            }
-            else{
-                let error = {
-                    value: '',
-                    msg: 'Email invalido',
-                    param: 'email',
-                    location: 'body'
-                 }
-                
-                errors.errors.push(error)
-            }    
+            })
+                .then((usuarios) => {
+                    if (usuarios.length === 1) {
+                        const [usuario] = usuarios
+                        if (bcryptjs.compareSync(req.body.password, usuario.password)) {
+                            delete usuario.password;
+                            req.session.usuarioLogueado = usuario;
+                            console.log(req.body)
+                            if (req.body.recordar) {
+                                res.cookie('userEmail', req.session.usuarioLogueado.email, { maxAge: 1000 * 60 * 15 })
+                            }
+
+                            res.redirect('/users/perfil')
+
+                        }
+                        else {
+                            let error = {
+                                value: '',
+                                msg: 'Contraseña invalida',
+                                param: 'password',
+                                location: 'body'
+                            }
+                            errors.errors.push(error)
+                        }
+                    }
+                    else {
+                        let error = {
+                            value: '',
+                            msg: 'Email invalido',
+                            param: 'email',
+                            location: 'body'
+                        }
+
+                        errors.errors.push(error)
+                    }
+
+
+                })
+
+
+
         }
-        else{
-            res.render('login', {errors: errors.mapped(), old: req.body},)
+        else {
+            res.render('login', { errors: errors.mapped(), old: req.body },)
         }
 
     },
-    perfil: (req, res) =>{
-        
-        res.render('profile', {user : req.session.usuarioLogueado, titulo: 'muucs'},)
+    perfil: (req, res) => {
+
+        res.render('profile', { user: req.session.usuarioLogueado, titulo: 'muucs' },)
     },
 
-    outperfil: (req, res) =>{
+    outperfil: (req, res) => {
         delete req.session.usuarioLogueado
         res.redirect('/')
-    }
+    },
+
+    editar: (req, res) => res.render('editar', { titulo: 'Register' , user : req.session.usuarioLogueado})
 }
 
 

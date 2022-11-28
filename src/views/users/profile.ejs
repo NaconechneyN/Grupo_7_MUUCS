@@ -19,27 +19,33 @@
                         <p class="titulodelMenu">Mi Perfil</p>
                     </div>
                     <div class="opciones">
-                        <div class="opcion"><a href="http://localhost:3000/products/mi">Mis cursos</a></div>
-                        <div class="opcion"><a href="http://localhost:3000/products/create">Agregar Curso</a></div>
-                        <div class="opcion"><a href="http://localhost:3000/users/loginout">Cerrar sesion</a></div>
+                        <div class="opcion"><a href="http://localhost:3023/users/editar">Editar perdil</a></div>
+                        <div class="opcion"><a href="http://localhost:3023/products/mi">Mis cursos</a></div>
+                        <div class="opcion"><a href="http://localhost:3023/products/create">Agregar Curso</a></div>
+                        <div class="opcion"><a href="http://localhost:3023/users/loginout">Cerrar sesion</a></div>
                     </div>
                 </div>
                 <div class="todoProfile">
                     <div class="infoUser">
                         <div class="prim">
                             <div class="imgPerfil">
-                                <img id="imagenP" src="../img/fotoPerfilEj.jpg" alt="">
+                                <img id="imagenP" src="../img/users/<%= user.imagen %>" alt="">
                             </div>
                             <div class="contenedorDerecho">
-                                <div class="nombre">Martina Perez</div>
-                                <div class="datoPerfil">Edad/ocupacion</div>
+                                
+                                <div class="nombre"><%= user.nombreYApellido %></div>
+                                <div class="datoPerfil"><%= user.email %></div>
                             </div>
                         </div>
                         <div class="seg">
-                            <p>Hola, un cordial saludo mi nombre es Martina Perez (22 años - Programadora).</p>
-                            <p>- Soy creadora del canal de youtube Programación ATS que cuenta actualmente con más de 150 mil suscriptores.</p>
-                            <p>- En la plataforma de Udemy tengo publicado 6 cursos con más de 30 mil estudiantes y más de 5 mil reseñas positivas.</p>
-                            <p>Mis pasatiempos favoritos son practicar programación, matemáticas, juego al poker y realizo deportes como basket y fútbol.</p>
+                            
+                            
+                            <p>Fecha de nacimiento : <%= user.fechaDeNacimiento %></p>
+                            <% if (user.domicilio) { %>
+                            <p>Domicilio : <%= user.domicilio %></p>
+                            <p>Domicilio : <%= user.descripcion %></p>
+                            
+                            <% } %>
                         </div>
 
                         <!-- opcion: poner una seccion con los cursos que ofrece el usuario(si es que ofrece) -->

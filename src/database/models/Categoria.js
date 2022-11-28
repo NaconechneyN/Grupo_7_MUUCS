@@ -1,7 +1,7 @@
 module.exports = (sequelize, dataTypes) => {
     let alias = "Categoria"
     let cols = {
-        id: {
+        idCategorias: {
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true

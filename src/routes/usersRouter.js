@@ -40,13 +40,15 @@ router.post('/login', validateLogin, controllers.processLogin);
 
 
 //cerrar sesion
-router.get('/loginout', noGuest, controllers.outperfil);
+router.get('/loginout', controllers.outperfil);
 
 
 // REQUIERO VISTA Perfil
 
 router.get('/perfil',noGuest, controllers.perfil);
 
+// REQUIERO VISTA Perfil
+router.get('/editar',noGuest, controllers.editar);
 
 
 

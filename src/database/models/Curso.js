@@ -15,11 +15,15 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.TEXT,
             allowNull: false
         },
+        descripcionQueAprenderas: {
+            type: dataTypes.TEXT,
+            allowNull: false
+        },
         certificacion: {
             type: dataTypes.STRING,
         },
         idUsuarios: {
-          type: dataTypes.INTEGER
+          type: dataTypes.STRING
         },
         precio: {
             type: dataTypes.DECIMAL

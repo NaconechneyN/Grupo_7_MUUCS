@@ -12,6 +12,11 @@ const validateUser = [
     body('descripcion')
     .notEmpty().withMessage('Debes completar el campo es obligatorio')
     .isLength({ min: 100, max:200 }).withMessage('Debe Contener minimo 100 y maximo 200 Caracteres'),
+    body('descripcionQueAprenderas')
+    .notEmpty().withMessage('Debes completar el campo es obligatorio')
+    .isLength({ min: 100, max:500 }).withMessage('Debe Contener minimo 100 y maximo 500 Caracteres'),
+    body('categoria')
+    .notEmpty().withMessage('Debes completar elegir una opcion'),
     body('tipoDeEnsenianza')
     .notEmpty().withMessage('Debes completar elegir una opcion'),
     body('certificacion')

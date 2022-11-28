@@ -17,21 +17,32 @@ const productController = {
             console.log(cursos)		
             res.render("productList", { cursos: cursos, titulo: "listado de producto", dueño : 0})
           })
-        /*const courses = product.findAll()
-
-        res.render("productList", { cursos: courses, titulo: "listado de producto", dueño : 0})*/
+        
     },
     productListCarrito: (req, res) => {
+
+        
         const courses = carrito.findByPk(req.body.idCarrito).producto
 
         res.render("productCart", { cursos: courses, titulo: "Carrito de producto" })
     }
     ,
     productDetail: (req, res) => {
-        const id = req.params.id
+        db.Curso.findAll({
+            raw: true,
+            where: {
+                idCursos: req.params.id,
+                
+            }
+          })
+          .then((curso) => {
+            console.log(curso)		
+            res.render("productCart", { cursos: curso, titulo: "Carrito de producto" })
+          })
+        /*const id = req.params.id
         const courseItem = product.findByPk(id)
 
-        res.render("productDetail", { nombre: courseItem, titulo: "detalle de producto" })
+        res.render("productDetail", { nombre: courseItem, titulo: "detalle de producto" })*/
     },
     productMiList: (req, res) => {
         console.log(req.session.usuarioLogueado)
@@ -39,7 +50,7 @@ const productController = {
 
 
 
-        res.render("productList", { cursos: courses, titulo: "listado de producto", dueño : 1})
+        res.render("productList", { cursos: courses, titulo: "listado de producto"})
     },
     /*productCreate: (req, res) => {
             db.Curso.findAll()
@@ -72,15 +83,65 @@ const productController = {
         console.log(req.session)
 
         if (errors.isEmpty()) {
-            const curso = req.body;
+
+            
+            
+
+            
+            const categoria = db.Categoria.findAll({
+                raw: true,
+                where: {
+                    nombre: req.body.categoria,
+                    
+                }
+            })
+            const tipoDeEnsenianza = db.TipoDeEnsenianza.findAll({
+                raw: true,
+                where: {
+                    nombre: req.body.tipoDeEnsenianza,
+                    
+                }
+            })
+            Promise.all([categoria,tipoDeEnsenianza])
+            .then(([categoria,tipoDeEnsenianza]) => {
+                const [categorias] = categoria
+                const [tipoDeEnsenianzas] = tipoDeEnsenianza
+                console.log(categorias)
+                console.log(tipoDeEnsenianza)
+                const curso = {
+                    idCursos : uuidv4 ( ),
+                    titulo : req.body.titulo,
+                    descripcion : req.body.descripcion,
+                    descripcionQueAprenderas : req.body.descripcionQueAprenderas,
+                    certificacion : req.body.certificacion,
+                    precio : req.body.precio,
+                    duracion : req.body.duracion,
+                    actualizacion : Date.now(),
+                    imagen : req.file.filename,
+                    idUsuarios : "1b516343-6cf4-11ed-9e62-d8cb8a3abc27",
+                    idtipoDeEnsenianza : tipoDeEnsenianzas.idtipoDeEnsenianza,
+                    idCategorias : categorias.idCategorias
+                }
+                console.log(curso)
+
+                db.Curso.create(curso)
+                
+            })
+
+            
+            /*const curso = req.body;
 
             curso.actualizacion = Date.now();
             curso.valoracion = 0;
             curso.numeroDeRegistarados = 0;
             curso.imagen = req.file.filename
-            curso.dueño = req.session.usuarioLogueado.nombreyapellido
+            curso.duenio = req.session.usuarioLogueado.id
 
-            product.create(curso)
+            
+
+            
+            
+            product.create(curso)*/
 
             res.redirect('/');
         }
