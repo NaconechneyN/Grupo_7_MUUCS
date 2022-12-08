@@ -50,6 +50,9 @@ router.get('/perfil',noGuest, controllers.perfil);
 // REQUIERO VISTA Perfil
 router.get('/editar',noGuest, controllers.editar);
 
+//POST DE EDITAR DATOS
+router.post('/editar/:id',[noGuest, upload.single("imagen")], controllers.editar1);
+
 
 
 

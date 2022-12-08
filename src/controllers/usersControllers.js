@@ -140,7 +140,100 @@ const controllers = {
         res.redirect('/')
     },
 
-    editar: (req, res) => res.render('editar', { titulo: 'Register' , user : req.session.usuarioLogueado})
+    editar: (req, res) => {
+        console.log(req.session.usuarioLogueado)
+        res.render('editar', { titulo: 'Editar' , })
+    },
+
+    editar1: (req, res) => {
+        let errors = null; //validationResult(req)
+
+        /*if (errors.isEmpty()) {
+            return res.render('editar', { errors: errors.mapped(), old: req.body, titulo: "Editar" },)
+        }*/
+
+        console.log(req.body)
+
+        if(req.body.password === ''){
+            db.Usuario.update({
+                nombreYApellido: req.body.nombre,
+                fechaDeNacimiento: req.body.date,
+                email: req.body.email,
+                imagen: req.file.filename,
+                domicilio: req.body.domicilio,
+                descripcion: req.file.descripcion
+            },
+            {
+                where: {
+                    idUsuarios: req.params.id
+    
+                }
+            })
+        }
+        else{
+            db.Usuario.update({
+                nombreYApellido: req.body.nombre,
+                fechaDeNacimiento: req.body.date,
+                password: bcryptjs.hashSync(req.body.password, 10),
+                email: req.body.email,
+                imagen: req.file.filename,
+                domicilio: req.body.domicilio,
+                descripcion: req.file.descripcion
+            },
+            {
+                where: {
+                    id: req.params.id
+    
+                }
+            })
+        }
+        
+
+        /*db.Usuario.findAll({
+            raw: true,
+            where: {
+                email: req.body.email
+
+            }
+        })
+            .then((usuarios) => {
+                if (usuarios.length === 1) {
+                    const [usuario] = usuarios
+                    if (bcryptjs.compareSync(req.body.password, usuario.password)) {
+                        delete usuario.password;
+                        req.session.usuarioLogueado = usuario;
+                        console.log(req.body)
+                        if (req.body.recordar) {
+                            res.cookie('userEmail', req.session.usuarioLogueado.email, { maxAge: 1000 * 60 * 15 })
+                        }
+
+                        res.redirect('/users/perfil')
+
+                    }
+                    else {
+                        let error = {
+                            value: '',
+                            msg: 'Contraseña invalida',
+                            param: 'password',
+                            location: 'body'
+                        }
+                        errors.errors.push(error)
+                    }
+                }
+                else {
+                    let error = {
+                        value: '',
+                        msg: 'Email invalido',
+                        param: 'email',
+                        location: 'body'
+                    }
+
+                    errors.errors.push(error)
+                }
+
+
+            })*/
+    }
 }
 
 

@@ -8,12 +8,12 @@
 
     <div class="MainXd">
         <div class="contenedorReg">
-            <div class="title">Registrarse</div>
-            <form action="/users/register" id="formulario" method="POST" enctype="multipart/form-data">
+            <div class="title">Editar Datos</div>
+            <form action="/users/editar/<%= locals.userLogged.idUsuarios%>" id="formulario" method="POST" enctype="multipart/form-data">
                 <div class="user-details">
                     <div class="input-box">
                         <span class="details"> Nombre y apellido</span>
-                        <input type="text" placeholder="Nombre y apellido" id="nombre" name="nombre">
+                        <input type="text" value="<%= locals.userLogged.nombreYApellido%>" placeholder="Nombre y apellido" id="nombre" name="nombre">
                         <% if (locals.errors && errors.nombre) { %>
                             <p class="msg-error"><%= errors.nombre.msg%></p>
                           <% } %>
@@ -21,14 +21,14 @@
 
                     <div class="input-box">
                         <span class="details"> Fecha de nacimiento</span>
-                        <input type="date" id="date" placeholder="" name="date">
+                        <input type="date" value="<%= locals.userLogged.fechaDeNacimiento%>" id="date" placeholder="" name="date">
                         <% if (locals.errors && errors.date) { %>
                         <p class="msg-error"><%= errors.date.msg%></p>
                         <% } %>
                     </div>
                     <div class="input-box">
                         <span class="details"> Correo electronico</span>
-                        <input type="email" placeholder="Correo electronico" id="domicilio" name="email">
+                        <input type="email" value="<%= locals.userLogged.email%>" placeholder="Correo electronico" id="domicilio" name="email">
                         <% if (locals.errors && errors.email) { %>
                         <p class="msg-error"><%= errors.email.msg%></p>
                         <% } %>
@@ -48,9 +48,23 @@
                         <% } %>
                     </div>
                     <div class="input-box">
-                        <span class="details"> Confirmar contraseña</span>
-                        <input id="image" type="file" name="imagen" placeholder="Photo" required="" capture>
+                        <span class="details"> Imagen</span>
+                        <input id="image" type="file" name="imagen" placeholder="Photo" >
                     </div>
+                </div>
+                <div class="input-box">
+                    <span class="details"> Domicilio</span>
+                    <input type="text" placeholder="Domicilio" id="domicilio" name="domicilio">
+                    <% if (locals.errors && errors.domicilio) { %>
+                        <p class="msg-error"><%= errors.domicilio.msg%></p>
+                      <% } %>
+                </div>
+                <div class="input-box">
+                    <span class="details"> Descripcion</span>
+                    <input type="textarea" placeholder="Descripcion" id="descripcion" name="descripcion">
+                    <% if (locals.errors && errors.descripcion) { %>
+                        <p class="msg-error"><%= errors.descripcion.msg%></p>
+                      <% } %>
                 </div>
 
                 <div class="buttonRegistrarse">
