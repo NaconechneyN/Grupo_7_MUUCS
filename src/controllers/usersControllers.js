@@ -85,6 +85,7 @@ const controllers = {
                 }
             })
                 .then((usuarios) => {
+                    console.log(usuarios.length)
                     if (usuarios.length === 1) {
                         const [usuario] = usuarios
                         if (bcryptjs.compareSync(req.body.password, usuario.password)) {
@@ -106,6 +107,7 @@ const controllers = {
                                 location: 'body'
                             }
                             errors.errors.push(error)
+                            res.render('login', { errors: errors.mapped(), old: req.body, titulo:"login" },)
                         }
                     }
                     else {
@@ -117,16 +119,23 @@ const controllers = {
                         }
 
                         errors.errors.push(error)
+                        res.render('login', { errors: errors.mapped(), old: req.body, titulo:"login" },)
                     }
 
 
                 })
 
+                .catch( error => {
+                    console.error( 'función enRechazo invocada: ', error )
+                    res.render('login', { errors: errors.mapped(), old: req.body, titulo:"login" },)
+                  })
+                
+
 
 
         }
         else {
-            res.render('login', { errors: errors.mapped(), old: req.body },)
+            res.render('login', { errors: errors.mapped(), old: req.body, titulo:"login" },)
         }
 
     },

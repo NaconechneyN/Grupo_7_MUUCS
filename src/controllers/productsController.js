@@ -5,6 +5,7 @@ const  {  v4 : uuidv4  }  =  require ( 'uuid' )
 const product = require("../models/Products")
 const carrito = require("../models/Carrito")
 const db = require("../database/models")
+const {Op} = require("sequelize")
 
 //const db = require("../../database/models") 
 
@@ -47,31 +48,9 @@ const productController = {
     productMiList: (req, res) => {
         console.log(req.session.usuarioLogueado)
         const courses = product.filterByField("dueño", req.session.usuarioLogueado.nombreyapellido)
-
-
-
         res.render("productList", { cursos: courses, titulo: "listado de producto"})
     },
-    /*productCreate: (req, res) => {
-            db.Curso.findAll()
-                .then(function(cursos) {
-                    return res.render ("productList", {cursos: cursos})
-                })
-        },
-        productCreate1: (req, res) => {
-            db.Curso.create({
-                    curso.actualizacion = Date.now();
-                    curso.valoracion = 0;
-                    curso.numeroDeRegistarados = 0;
-                    curso.imagen = req.file.filename
-                    curso.dueño = req.session.usuarioLogueado.nombreyapellido
-            });
-                res.redirect('/');
-
-               }
-
-    },*/
-
+    
     productCreate: (req, res) => {
         res.render("productCreate", { titulo: "Creacion de producto" })
     },
@@ -84,10 +63,6 @@ const productController = {
 
         if (errors.isEmpty()) {
 
-            
-            
-
-            
             const categoria = db.Categoria.findAll({
                 raw: true,
                 where: {
@@ -118,7 +93,7 @@ const productController = {
                     duracion : req.body.duracion,
                     actualizacion : Date.now(),
                     imagen : req.file.filename,
-                    idUsuarios : "1b516343-6cf4-11ed-9e62-d8cb8a3abc27",
+                    idUsuarios : req.session.usuarioLogueado.idUsuarios,
                     idtipoDeEnsenianza : tipoDeEnsenianzas.idtipoDeEnsenianza,
                     idCategorias : categorias.idCategorias
                 }
@@ -127,21 +102,13 @@ const productController = {
                 db.Curso.create(curso)
                 
             })
+            .catch( error => {
+                console.error( 'función enRechazo invocada: ', error )
+                res.render("productCreate", { titulo: "Creacion de producto", errors: errors.mapped(), oldDate : req.body })
+              })
 
             
-            /*const curso = req.body;
-
-            curso.actualizacion = Date.now();
-            curso.valoracion = 0;
-            curso.numeroDeRegistarados = 0;
-            curso.imagen = req.file.filename
-            curso.duenio = req.session.usuarioLogueado.id
-
-            
-
-            
-            
-            product.create(curso)*/
+            product.create(curso)
 
             res.redirect('/');
         }
@@ -180,9 +147,6 @@ const productController = {
             res.render("productEdit", { titulo: "Edición de producto", errors: errors.mapped(), curso: curso})
         }
 
-
-
-
     },
     productDelete: (req, res) => {
         const curso = product.findByPk(req.body.id)
@@ -192,86 +156,24 @@ const productController = {
 
         res.render("productList", { cursos: curso, titulo: "listado de producto" })
 
+    },
+
+    productSearch: (req, res) => {
+        console.log(req.body);
+        db.Curso.findAll({
+            raw: true,
+            where: {
+                titulo: {[Op.like]:`%${req.body.busqueda}%`}
+               
+            }
+          })
+          .then((cursos) => {
+            console.log(cursos)		
+            res.render("productList", { cursos: cursos, titulo: "listado de producto", dueño : 0})
+          })
     }
 
-
-
-    /*productList: (req, res) => {
-        const courses = getCourses() 
-        const cursos = courses
-        
-        res.render("productList", cursos)
-    }, 
-    prductDetail: (req, res) => {
-        const courses = getCourses() 
-        const courseId = req.params.id
-
-        const courseItem = courses.cursos.filter(course => course.id == courseId)
-
-        const context = courseItem[0]
-        console.log(context)
-
-        res.render("prductDetail", context)
-    },
-    productCreateForm: (req, res) => {
-        res.render("coursesCarga")
-    },
-    courseCreate: (req, res) => {
-        let courses = getCourses() 
-        const length = courses.cursos.length
-        const newCourse = {
-            id: length + 1,
-            titulo: req.body.titulo,
-            precio: req.body.precio
-        }
-
-        courses.cursos.push(newCourse)
-        setCourses(JSON.stringify(courses))
-
-        res.redirect("/courses")
-    },
-    courseEditForm: (req, res) => {
-        const courses = getCourses() 
-        const courseId = req.params.id
-
-        const courseItem = courses.cursos.filter(course => course.id == courseId)
-
-        const context = {
-            id: courseId,
-            titulo: courseItem[0].titulo,
-            precio: courseItem[0].precio
-        }
-
-
-        res.render("courseEdi", context)
-    },
-    courseEdit: (req, res) => {
-        const courses = getCourses() 
-        const courseId = req.params.id
-
-        courses.cursos.forEach(curso => {
-            if (curso.id == courseId) {
-                curso.titulo = req.body.titulo,
-                curso.precio = req.body.precio
-            }
-        })
-
-        setCourses(JSON.stringify(courses))
-        res.redirect(`/courses/${courseId}`)
-    },
-    courseDelete: (req, res) => {
-        let courses = getCourses() 
-        const courseId = req.params.id
-
-        const cursos = courses.cursos.filter(course => course.id != courseId)
-
-        courses = {
-            cursos: cursos
-        }
-
-        setCourses(JSON.stringify(courses))
-        res.redirect("/courses")
-    }*/
+    
 }
 
 module.exports = productController;
