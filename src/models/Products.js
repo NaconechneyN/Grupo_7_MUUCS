@@ -3,13 +3,12 @@ const path = require('path')
 const  {  v4 : uuidv4  }  =  require ( 'uuid' )
 
 const Product = {
-    fileName: "../../data/coursesDataBase.json",
+    fileName: "../data/coursesDataBase.json",
 
     getData: function(){
         return JSON.parse(fs.readFileSync(path.join(__dirname, this.fileName), 'utf-8'))
         
     },
-
 
     findAll: function () {
         return this.getData();

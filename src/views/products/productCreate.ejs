@@ -61,6 +61,54 @@
                                                 <p> Error: te has pasado de los caracteres maximos (200)</p>
                                             </div>
                                             <% } %>
+                                            <div class="input-box">
+                                                <span class="details"> Categorias</span>
+                                                <% if (locals.errors && errors.categorias) { %>
+                                                    <div class="errorCreate">
+
+                                                        <p>
+                                                            <%= errors.categorias.msg %>
+                                                        </p>
+
+                                                    </div>
+                                                    <% } %>
+                                                        <div class="cajaCategoria">
+                                                            <input type="checkbox" class="checkCreate" name="categoria"
+                                                                id="categoria2" value="Desarrollo">
+                                                            <label for="tipoDeEnsenianza" class="chicosB">Desarrollo</label>
+                                                            
+                                                        </div>
+                                                        <div class="cajaCategoria">
+                                                            <input type="checkbox" class="checkCreate" name="categoria"
+                                                                id="categoria2" value="Negocios">
+                                                            <label for="tipoDeEnsenianza" class="chicosB">Negocios</label>
+                                                            
+                                                        </div>
+                                                        <div class="cajaCategoria">
+                                                            <input type="checkbox" class="checkCreate" name="categoria"
+                                                                id="categoria2" value="Finanzas y Contabilidad">
+                                                            <label for="tipoDeEnsenianza" class="chicosB">Finanzas y Contabilidad</label>
+                                                            
+                                                        </div>
+                                                        <div class="cajaCategoria">
+                                                            <input type="checkbox" class="checkCreate" name="categoria"
+                                                                id="categoria2" value="Desarrollo personal">
+                                                            <label for="tipoDeEnsenianza" class="chicosB">Desarrollo personal</label>
+                                                            
+                                                        </div>
+                                                        <div class="cajaCategoria">
+                                                            <input type="checkbox" class="checkCreate" name="categoria"
+                                                                id="categoria2" value="Marketing">
+                                                            <label for="tipoDeEnsenianza" class="chicosB">Marketing</label>
+                                                            
+                                                        </div>
+                                                        <div class="cajaCategoria">
+                                                            <input type="checkbox" class="checkCreate" name="categoria"
+                                                                id="categoria2" value="Diseño">
+                                                            <label for="tipoDeEnsenianza" class="chicosB">Diseño</label>
+                                                            
+                                                        </div>
+                                            </div>
                                                 <div class="input-box">
                                                     <span class="details"> Tipo de Enseñanza</span>
                                                     <% if (locals.errors && errors.tipoDeEnsenianza) { %>

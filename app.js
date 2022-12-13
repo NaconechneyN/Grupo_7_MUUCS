@@ -2,6 +2,7 @@
 const express= require('express');
 const app = express();
 
+
 // Requerimos cookie para poder guardar informacion del lado del usuario
 const cookie = require('cookie-parser')
 
@@ -55,7 +56,11 @@ path.join(__dirname, "./src/views/users")
 
 // Configuramos las conexiones en el host y puerto especificados con ayuda de dotenv
 app.listen(process.env.PORT, ()=>{
-    console.log("Servidor MUUCS acitvo bebé!")
+    console.log("Servidor MUUCS levantado!")
+
+   /* db.sequelize.sync({
+    force: false
+   }) */
 });
 
 
@@ -65,4 +70,10 @@ app.use(mainRouter);
 app.use("/products", productsRouter);
 
 app.use("/users", usersRouter);
+
+/* if (true) {
+    const scriptDb = require("./src/scripts/jsonAsql")
+    scriptDb();
+} 
+ */
 

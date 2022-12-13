@@ -39,6 +39,16 @@ router.put("/editar",[upload.single("imagen"), validateProductEdit], productsCon
 router.get("/carritoT", guest, productsControllers.productListCarrito)
 // Ruta a traves de ID para eliminar un producto
 router.delete("/delete/:id",guest, productsControllers.productDelete)
+// Ruta a traves de la cual recibimos la busqueda
+router.post("/search", productsControllers.productSearch)
+
+
+
+//CRUD BD 
+//creacion 
+//router.get("/crear", productsControllers.productCreate)
+//router.post("/crear", productsControllers.productCreate1) ver donde van los guardados nuevos
+
 
 /*
 router.get("/", productsControllers.coursesList)

@@ -21,7 +21,7 @@
         <%- include('./partials/header') %> 
 
         <main>
-            <% if(dueño == 0){ %>
+            <% if(locals.userLogged == null){ %>
             <div class="titulos">
                 <h1>Curso de Categoria</h1>
                 <h3>Cursos para dar tus primeros pasos</h3>
@@ -43,7 +43,7 @@
             <% } %>
             <div>&nbsp;</div>
             <div class="cursos">
-                <% if(dueño == 0){ %>
+                <% if(locals.userLogged == null){ %>
                     <% for( let i = 0; i <cursos.length; i++ ) { %>
                         <article>
                             <div class="imagen">
