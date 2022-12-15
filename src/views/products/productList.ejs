@@ -21,7 +21,7 @@
         <%- include('./partials/header') %> 
 
         <main>
-            <% if(locals.userLogged == null){ %>
+            <% if(dueño === 0){ %>
             <div class="titulos">
                 <h1>Curso de Categoria</h1>
                 <h3>Cursos para dar tus primeros pasos</h3>
@@ -43,7 +43,7 @@
             <% } %>
             <div>&nbsp;</div>
             <div class="cursos">
-                <% if(locals.userLogged == null){ %>
+                <% if(dueño === 0){ %>
                     <% for( let i = 0; i <cursos.length; i++ ) { %>
                         <article>
                             <div class="imagen">
@@ -104,7 +104,7 @@
                                    
                                     <button class="eliminarList"><i class="fa-solid fa-xmark"></i></button>
                                 </form>
-                                <form method="GET"  id="formulario" action="/products/<%= cursos[i].id %>/editar">
+                                <form method="GET"  id="formulario" action="/products/<%= cursos[i].idCursos %>/editar">
                                     <input type="text"  name="titulo" id="id" value=<%= cursos[i].id %>>
                                     <button class="editarProducto"><i class="fa-solid fa-pen-to-square"></i></button>
                                 </form>
