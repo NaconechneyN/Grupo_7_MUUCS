@@ -252,12 +252,14 @@ const productController = {
 
     },
     productDelete: (req, res) => {
-        const curso = product.findByPk(req.body.id)
-        product.delete(req.body.id)
+        db.Curso.destroy({
+            where: {
+                idCursos: req.params.id,
+                
+            }
+        })
 
-        fs.unlinkSync(path.join(__dirname, `../../public/img/products/${curso.imagen}`))
-
-        res.render("productList", { cursos: curso, titulo: "listado de producto" })
+        res.redirect('/users/perfil')
 
     },
 

@@ -100,7 +100,7 @@
                                 <span class="precio"><i class="fa-solid fa-hand-holding-dollar"></i> <%=cursos[i].precio%></span>
                                 <button class="agregarCarritoList"><span>Ver Detalle</span><i class="fa-solid fa-cart-shopping"></i></button>
                                 <!-- <i class="fa-solid fa-chevron-right desplegador"></i> -->
-                                <form method="POST"  id="formulario" action="/products/delete/<%= cursos[i].id %>/?_method=DELETE">
+                                <form method="POST"  id="formulario" action="/products/delete/<%= cursos[i].idCursos %>/?_method=DELETE">
                                    
                                     <button class="eliminarList"><i class="fa-solid fa-xmark"></i></button>
                                 </form>
