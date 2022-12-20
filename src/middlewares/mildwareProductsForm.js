@@ -27,7 +27,7 @@ const validateUser = [
     .notEmpty().withMessage('Debes completar el campo es obligatorio'),
     body('imagen').custom((value, { req }) => {
         let file = req.file
-        let extenciones = [".jpg", ".png", ".gif"]
+        let extenciones = [".jpg", ".png", ".gif", ".jpeg"]
         let extencion = path.extname(file.originalname)
         if (!file) {
           throw new Error('No has subiedo una imagen');
