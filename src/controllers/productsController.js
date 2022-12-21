@@ -68,8 +68,8 @@ const productController = {
 
 
         const courses = product.filterByField("dueño", req.session.usuarioLogueado.nombreyapellido)
-        res.render("productList", { cursos: courses, titulo: "listado de producto"})
-origin/main
+        res.render("productList", { cursos: courses, titulo: "listado de producto" })
+        origin / main
     },
 
     productCreate: (req, res) => {
