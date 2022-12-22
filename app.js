@@ -27,6 +27,9 @@ const mainRouter = require ('./src/routes/mainRouter')
 const productsRouter = require('./src/routes/productsRouter')
 const usersRouter = require('./src/routes/usersRouter')
 
+// Requerimos las rutas API
+const usersRoutes = require('./api/routes/usersRoutes')
+
 // Usamos session
 app.use(session({secret: "Muucs" }));
 
@@ -70,6 +73,8 @@ app.use(mainRouter);
 app.use("/products", productsRouter);
 
 app.use("/users", usersRouter);
+
+app.use("/api/users", usersRoutes);
 
 /* if (true) {
     const scriptDb = require("./src/scripts/jsonAsql")
