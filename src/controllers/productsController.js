@@ -2,8 +2,6 @@ const fs = require('fs')
 const path = require('path')
 const { validationResult } = require('express-validator')
 const  {  v4 : uuidv4  }  =  require ( 'uuid' ) 
-const product = require("../models/Products")
-const carrito = require("../models/Carrito")
 const db = require("../database/models")
 const {Op} = require("sequelize")
 

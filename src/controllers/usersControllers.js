@@ -3,7 +3,6 @@ const fs = require('fs');
 const ejs = require('ejs');
 const { validationResult } = require('express-validator');
 const bcryptjs = require('bcryptjs');
-const users = require("../models/User")
 const db = require("../database/models")
 const { v4: uuidv4 } = require('uuid')
 

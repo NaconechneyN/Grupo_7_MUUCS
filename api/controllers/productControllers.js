@@ -73,11 +73,14 @@ module.exports = {
             .then(([cursos, categorias, tiposEnsenianzas]) => {
                 const [curso] = cursos
                 
-                const tiposDeEnsenianza = tiposEnsenianzas.find((tiposDeEnsenianza) => tiposDeEnsenianza.idtipoDeEnsenianza == curso.idtipoDeEnsenianza)
+                curso.tiposDeEnsenianza = tiposEnsenianzas.find((tiposDeEnsenianza) => tiposDeEnsenianza.idtipoDeEnsenianza == curso.idtipoDeEnsenianza)
+                curso.categoria = categorias.find((categoria) => categoria.idCategorias == curso.idCategorias) 
                 
-                
-                
-                return res.json(cursos)
+                delete curso.idCategorias
+                delete curso.idtipoDeEnsenianza 
+                curso.imagen = "http://localhost:3023/img/products/" + curso.imagen
+
+                return res.json(curso)
             })
     }
 }
