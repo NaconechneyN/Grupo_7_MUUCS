@@ -9,7 +9,7 @@ module.exports = {
         const categorias = db.Categoria.findAll({
             raw: true,
         })
-        Promise.all([categorias, cursos])
+        Promise.all([cursos, categorias])
             .then(([cursos, categorias]) => {
                 const curso = {
                     count: cursos.length,
@@ -20,7 +20,8 @@ module.exports = {
                         Desarrollopersonal: 0,
                         Marketing: 0,
                         Diseño: 0
-                    }
+                    },
+                    products:[]
                 }
 
                 cursos.forEach(producto => {
@@ -43,26 +44,40 @@ module.exports = {
                         default:
                             curso.countByCategory.Diseño++;
                     }
+                    let users = {
+                        id : producto.idCursos,
+                        name : producto.titulo,
+                        description : producto.descripcion,
+                        detail : 'http://localhost:3023/api/products/'+producto.idCursos
+                    }
+                    curso.products.push(users)
                 })
-
-
+                console.log(cursos)
                 return res.json(curso)
             })
     },
     detail: (req, res) => {
-        db.Usuario.findAll({
+        const cursos = db.Curso.findAll({
             raw: true,
             where: {
-                idUsuarios: req.params.id
+                idCursos: req.params.id 
             }
         })
-            .then((usuarios) => {
-                let [usuario] = usuarios
-                let URLimagen = "http://localhost:3023/img/users/" + usuario.imagen
-                usuario.imagen = URLimagen
-                delete usuario.password
-                delete usuario.tipoDeUsuario
-                return res.json(usuario)
+        const categorias = db.Categoria.findAll({
+            raw: true,
+        })
+        const tiposEnsenianzas = db.TipoDeEnsenianza.findAll({
+            raw: true,
+        })
+        Promise.all([cursos, categorias, tiposEnsenianzas])
+            .then(([cursos, categorias, tiposEnsenianzas]) => {
+                const [curso] = cursos
+                
+                const tiposDeEnsenianza = tiposEnsenianzas.find((tiposDeEnsenianza) => tiposDeEnsenianza.idtipoDeEnsenianza == curso.idtipoDeEnsenianza)
+                
+                
+                
+                return res.json(cursos)
             })
     }
 }
