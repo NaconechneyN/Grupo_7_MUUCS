@@ -385,6 +385,24 @@ form .buttonRegistrarse input:hover{
     margin: 0 20px;
 }
 
+.botonimgR{
+    background-color: white;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid #a6289184;
+}
+
+.botonimgR p{
+    color: #231c24;
+    position: absolute;
+    padding-top: 6px;
+    padding-left: 12px;
+}
+
+input#image{
+ opacity: 0;
+}
+
 
 @media (max-width: 584px){
     .contenedorReg{
