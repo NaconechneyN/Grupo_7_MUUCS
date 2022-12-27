@@ -8,6 +8,12 @@ const date = document.querySelector('.date');
 const email = document.querySelector('.email');
 let reEmail  = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
+const password = document.querySelector('.password');
+let rePassword  = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/;
+
+const password2 = document.querySelector('.paswword2');
+
+
 formulario.addEventListener('submit', function (e) {
     if (formulario.nombre.value.length < 2 ) {
         console.log(nombre.lastElementChild)
@@ -22,7 +28,10 @@ formulario.addEventListener('submit', function (e) {
         }
     }
 
-    if ((Date.now() - Date.parse(formulario.date.value)) < 567993600000) {
+    
+
+
+    if ((Date.now() - Date.parse(formulario.date.value)) < 567993600000 || formulario.date.value == '') {
         if(!date.lastElementChild.classList.contains('msg-error')){
             date.innerHTML += '<p class="msg-error">No se ingresó una fecha valida!. Tienes que ser mayor de edad</p>'
         }
@@ -50,9 +59,9 @@ formulario.addEventListener('submit', function (e) {
     .then(response => response.json())
     .then(usuarios => {
         const emailEmpty = usuarios.users.find(usuarios => usuarios.email == formulario.email.value);
-        console.log(emailEmpty)
+        
         if (emailEmpty != null) {
-            console.log(email.lastElementChild)
+            
             if(!email.lastElementChild.classList.contains('error2')){
                 email.innerHTML += '<p class="msg-error error2">Ya existe un usuario con ese email.</p>'
             }
@@ -64,50 +73,33 @@ formulario.addEventListener('submit', function (e) {
             }
         }
     })
-
-    if (formulario.email.value.length < 2) {
-        alert('No se ingresó un nombre de Usuario válido!');
-        e.preventDefault();
-    }
-    else if ((Date.now() - Date.parse(formulario.date.value)) < 567993600000) {
-        alert('Tienes que ser mayor de edad para registrarse');
-        e.preventDefault();
-    }
-
-    else if (tiene_numeros(formulario.password.value) == 0 || tiene_letras(formulario.password.value) == 0 || formulario.password.value.length < 8) {
-        alert('La contraseña debe contener dígitos  y letras. Su longitud debe ser de mas de 8 caracteres');
-        e.preventDefault();
-        let password = formulario.password.value;
-        console.log(formulario.password.value);
-    }
-
-    else if (formulario.password.value != formulario.password2.value) {
-        alert('Las contraseñas deben coincidir');
-        e.preventDefault();
-    }
-    else {
-        alert('Se ha registrado correctamente!!')
-    }
-
-
-    function tiene_numeros(texto) {
-        var numeros = "0123456789";
-        for (i = 0; i < texto.length; i++) {
-            if (numeros.indexOf(texto.charAt(i), 0) != -1) {
-                return 1;
-            }
+    
+    if (!rePassword.test(formulario.password.value)) {
+        if(!password.lastElementChild.classList.contains('error1')){
+            password.innerHTML += '<p class="msg-error error1"> No se ingresó una contraseña valida!. Debe tener al menos 8 caracteres, letras mayúsculas, minúsculas, un número y un carácter especial.</p>'
         }
-        return 0;
+        e.preventDefault();
+    }
+    else{
+        if(password.lastElementChild.classList.contains('error1')){
+            password.lastElementChild.setAttribute("hidden", "hidden")
+        }
     }
 
-    function tiene_letras(texto) {
-        var letras = "abcdefghyjklmnñopqrstuvwxyzABCDEFGHYJKLMNÑOPQRSTUVWXYZ";
-        texto = texto.toLowerCase();
-        for (i = 0; i < texto.length; i++) {
-            if (letras.indexOf(texto.charAt(i), 0) != -1) {
-                return 1;
-            }
+    
+    if (formulario.password.value != formulario.password2.value) {
+        console.log()
+        if(!password2.lastElementChild.classList.contains('error1')){
+            password2.innerHTML += '<p class="msg-error error1">Las contraseñas no coinciden</p>'
         }
-        return 0;
+        e.preventDefault();
     }
+    else{
+        if(password2.lastElementChild.classList.contains('error1')){
+            password2.lastElementChild.setAttribute("hidden", "hidden")
+        }
+    }
+
+
+    console.log(formulario.imagen.value)
 });

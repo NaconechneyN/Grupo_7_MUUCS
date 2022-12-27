@@ -173,10 +173,11 @@ const controllers = {
             },
             {
                 where: {
-                    idUsuarios: req.params.id
+                    idUsuarios: req.session.usuarioLogueado.idUsuarios
     
                 }
             })
+            res.redirect('/users/perfil')
         }
         else{
             db.Usuario.update({
@@ -190,57 +191,15 @@ const controllers = {
             },
             {
                 where: {
-                    id: req.params.id
+                    idUsuarios: req.params.id
     
                 }
             })
+            res.redirect('/users/profile')
         }
         
 
-        /*db.Usuario.findAll({
-            raw: true,
-            where: {
-                email: req.body.email
-
-            }
-        })
-            .then((usuarios) => {
-                if (usuarios.length === 1) {
-                    const [usuario] = usuarios
-                    if (bcryptjs.compareSync(req.body.password, usuario.password)) {
-                        delete usuario.password;
-                        req.session.usuarioLogueado = usuario;
-                        console.log(req.body)
-                        if (req.body.recordar) {
-                            res.cookie('userEmail', req.session.usuarioLogueado.email, { maxAge: 1000 * 60 * 15 })
-                        }
-
-                        res.redirect('/users/perfil')
-
-                    }
-                    else {
-                        let error = {
-                            value: '',
-                            msg: 'Contraseña invalida',
-                            param: 'password',
-                            location: 'body'
-                        }
-                        errors.errors.push(error)
-                    }
-                }
-                else {
-                    let error = {
-                        value: '',
-                        msg: 'Email invalido',
-                        param: 'email',
-                        location: 'body'
-                    }
-
-                    errors.errors.push(error)
-                }
-
-
-            })*/
+        
     }
 }
 
