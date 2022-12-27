@@ -15,6 +15,7 @@ const controllers = {
         // GUARDAMOS ERRORES
         let errors = validationResult(req);
 
+        console.log(errors.mapped())
         if (!errors.isEmpty()) {
             return res.render('register', { errors: errors.mapped(), old: req.body, titulo: "Register" },)
         }
@@ -38,25 +39,41 @@ const controllers = {
                             param: 'email',
                             location: 'body'
                         }
-
+                        
                         errors.errors.push(error)
                         return res.render('register', { errors: errors.mapped(), old: req.body, titulo: "Register" })
                     }
                     else {
 
-                        // SI NO HAY ERRORES, SE PROCEDE A CREAR EL USUARIO
 
 
-                        db.Usuario.create({
-                            idUsuarios: uuidv4(),
-                            nombreYApellido: req.body.nombre,
-                            fechaDeNacimiento: req.body.date,
-                            password: bcryptjs.hashSync(req.body.password, 10),
-                            email: req.body.email,
-                            imagen: req.file.filename
-                        })
-                        res.redirect('/');
+                        let rePassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/;
+                        console.log(!rePassword.test(req.body.password))
 
+                        if (!rePassword.test(req.body.password)) {
+                            let error = {
+                                value: '',
+                                msg: 'No se ingresó una contraseña valida!. Debe tener al menos 8 caracteres, letras mayúsculas, minúsculas, un número y un carácter especial.',
+                                param: 'password',
+                                location: 'body'
+                            }
+
+                            errors.errors.push(error)
+                            return res.render('register', { errors: errors.mapped(), old: req.body, titulo: "Register" })
+                        }
+                        else {
+
+                            // SI NO HAY ERRORES, SE PROCEDE A CREAR EL USUARIO
+                            db.Usuario.create({
+                                idUsuarios: uuidv4(),
+                                nombreYApellido: req.body.nombre,
+                                fechaDeNacimiento: req.body.date,
+                                password: bcryptjs.hashSync(req.body.password, 10),
+                                email: req.body.email,
+                                imagen: req.file.filename
+                            })
+                            res.redirect('/');
+                        }
 
                     }
                 })
@@ -106,7 +123,7 @@ const controllers = {
                                 location: 'body'
                             }
                             errors.errors.push(error)
-                            res.render('login', { errors: errors.mapped(), old: req.body, titulo:"login" },)
+                            res.render('login', { errors: errors.mapped(), old: req.body, titulo: "login" },)
                         }
                     }
                     else {
@@ -118,23 +135,23 @@ const controllers = {
                         }
 
                         errors.errors.push(error)
-                        res.render('login', { errors: errors.mapped(), old: req.body, titulo:"login" },)
+                        res.render('login', { errors: errors.mapped(), old: req.body, titulo: "login" },)
                     }
 
 
                 })
 
-                .catch( error => {
-                    console.error( 'función enRechazo invocada: ', error )
-                    res.render('login', { errors: errors.mapped(), old: req.body, titulo:"login" },)
-                  })
-                
+                .catch(error => {
+                    console.error('función enRechazo invocada: ', error)
+                    res.render('login', { errors: errors.mapped(), old: req.body, titulo: "login" },)
+                })
+
 
 
 
         }
         else {
-            res.render('login', { errors: errors.mapped(), old: req.body, titulo:"login" },)
+            res.render('login', { errors: errors.mapped(), old: req.body, titulo: "login" },)
         }
 
     },
@@ -150,7 +167,7 @@ const controllers = {
 
     editar: (req, res) => {
         console.log(req.session.usuarioLogueado)
-        res.render('editar', { titulo: 'Editar' , })
+        res.render('editar', { titulo: 'Editar', })
     },
 
     editar1: (req, res) => {
@@ -162,7 +179,7 @@ const controllers = {
 
         console.log(req.body)
 
-        if(req.body.password === ''){
+        if (req.body.password === '') {
             db.Usuario.update({
                 nombreYApellido: req.body.nombre,
                 fechaDeNacimiento: req.body.date,
@@ -171,15 +188,15 @@ const controllers = {
                 domicilio: req.body.domicilio,
                 descripcion: req.file.descripcion
             },
-            {
-                where: {
-                    idUsuarios: req.session.usuarioLogueado.idUsuarios
-    
-                }
-            })
+                {
+                    where: {
+                        idUsuarios: req.session.usuarioLogueado.idUsuarios
+
+                    }
+                })
             res.redirect('/users/perfil')
         }
-        else{
+        else {
             db.Usuario.update({
                 nombreYApellido: req.body.nombre,
                 fechaDeNacimiento: req.body.date,
@@ -189,17 +206,17 @@ const controllers = {
                 domicilio: req.body.domicilio,
                 descripcion: req.file.descripcion
             },
-            {
-                where: {
-                    idUsuarios: req.params.id
-    
-                }
-            })
+                {
+                    where: {
+                        idUsuarios: req.params.id
+
+                    }
+                })
             res.redirect('/users/profile')
         }
-        
 
-        
+
+
     }
 }
 
