@@ -78,7 +78,7 @@ INSERT INTO `categorias` (`idCategorias`, `nombre`, `idCategoriasM`) VALUES
 
 CREATE TABLE `cursos` (
   `idCursos` varchar(36) NOT NULL,
-  `titulo` varchar(45) NOT NULL,
+  `titulo` varchar(100) NOT NULL,
   `descripcion` varchar(200) NOT NULL,
   `descripcionQueAprenderas` varchar(500) NOT NULL,
   `precio` double NOT NULL,

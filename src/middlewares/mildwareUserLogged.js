@@ -1,4 +1,3 @@
-const users = require("../models/User")
 const db = require("../database/models")
 
 function guest(req, res, next) {

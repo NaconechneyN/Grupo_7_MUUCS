@@ -1,6 +1,5 @@
 const db = require("../../src/database/models")
 
-
 module.exports ={
     list: (req, res) => {
         db.Usuario.findAll({

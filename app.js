@@ -80,9 +80,5 @@ app.use("/api/users", usersRoutes);
 
 app.use("/api/products", productRoutes);
 
-/* if (true) {
-    const scriptDb = require("./src/scripts/jsonAsql")
-    scriptDb();
-} 
- */
+
 
