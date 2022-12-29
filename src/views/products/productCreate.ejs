@@ -20,9 +20,9 @@
 
 
 
-                <form action="/products/create" id="formulario" method="POST" enctype="multipart/form-data">
+                <form action="/products/create" id="formulario1" method="POST" enctype="multipart/form-data">
                     <div class="user-details">
-                        <div class="input-box">
+                        <div class="input-box nombre">
                             <span class="details"> Titulo</span>
                             <input type="text" placeholder="5 a 20 caracteres" name="titulo" id="nombre"
                                 value=<%=locals.oldDate? oldDate.titulo : null %>>
@@ -36,7 +36,7 @@
 
                             </div>
                             <% } %>
-                                <div class="input-box">
+                                <div class="input-box descripcion">
                                     <span class="details"> Descripcion</span>
                                     <textarea name="descripcion"
                                         id="nombreUsuario"><%= locals.oldDate? oldDate.descripcion : "200 caracteres como maximos"%></textarea>
@@ -290,6 +290,8 @@
 
         </main>
         <%- include('./partials/footer') %>
+
+        <script type="text/javascript" src="../js/product.js"></script>
 
 
 </body>

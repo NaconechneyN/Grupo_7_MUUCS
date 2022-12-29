@@ -90,6 +90,7 @@ formulario.addEventListener('submit', function (e) {
         if(!password.lastElementChild.classList.contains('error1')){
             password.innerHTML += '<p class="msg-error error1"> No se ingresó una contraseña valida!. Debe tener al menos 8 caracteres, letras mayúsculas, minúsculas, un número y un carácter especial.</p>'
         }
+        password.lastElementChild.removeAttribute("hidden")
         e.preventDefault();
     }
     else{
@@ -104,6 +105,7 @@ formulario.addEventListener('submit', function (e) {
         if(!password2.lastElementChild.classList.contains('error1')){
             password2.innerHTML += '<p class="msg-error error1">Las contraseñas no coinciden</p>'
         }
+        password2.lastElementChild.removeAttribute("hidden")
         e.preventDefault();
     }
     else{
