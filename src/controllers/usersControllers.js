@@ -15,7 +15,7 @@ const controllers = {
         // GUARDAMOS ERRORES
         let errors = validationResult(req);
 
-        console.log(errors.mapped())
+        
         if (!errors.isEmpty()) {
             return res.render('register', { errors: errors.mapped(), old: req.body, titulo: "Register" },)
         }
@@ -91,6 +91,7 @@ const controllers = {
         // GUARDAMOS ERRORES
         let errors = validationResult(req);
 
+        
         if (errors.isEmpty()) {
 
             db.Usuario.findAll({

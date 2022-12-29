@@ -13,13 +13,22 @@ let rePassword  = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!
 
 const password2 = document.querySelector('.paswword2');
 
+const imagen = document.querySelector('.imagen');
+let extenciones = ["jpg", "png", "gif", "jpeg"]
+
+
+
 
 formulario.addEventListener('submit', function (e) {
+
+    
+
     if (formulario.nombre.value.length < 2 ) {
-        console.log(nombre.lastElementChild)
+        
         if(!nombre.lastElementChild.classList.contains('msg-error')){
             nombre.innerHTML += '<p class="msg-error">No se ingresó un nombre válido!. Tiene que tener al menos 2 caracteres</p>'
         }
+        nombre.lastElementChild.removeAttribute("hidden")
         e.preventDefault();
     }
     else{
@@ -35,6 +44,7 @@ formulario.addEventListener('submit', function (e) {
         if(!date.lastElementChild.classList.contains('msg-error')){
             date.innerHTML += '<p class="msg-error">No se ingresó una fecha valida!. Tienes que ser mayor de edad</p>'
         }
+        date.lastElementChild.removeAttribute("hidden")
         e.preventDefault();
     }
     else{
@@ -47,6 +57,7 @@ formulario.addEventListener('submit', function (e) {
         if(!email.lastElementChild.classList.contains('error1')){
             email.innerHTML += '<p class="msg-error error1">No se ingresó un email valido!. Tienes que ser un formato de email valido</p>'
         }
+        email.lastElementChild.removeAttribute("hidden")
         e.preventDefault();
     }
     else{
@@ -65,6 +76,7 @@ formulario.addEventListener('submit', function (e) {
             if(!email.lastElementChild.classList.contains('error2')){
                 email.innerHTML += '<p class="msg-error error2">Ya existe un usuario con ese email.</p>'
             }
+            email.lastElementChild.removeAttribute("hidden")
             e.preventDefault();
         }
         else{
@@ -88,7 +100,7 @@ formulario.addEventListener('submit', function (e) {
 
     
     if (formulario.password.value != formulario.password2.value) {
-        console.log()
+        
         if(!password2.lastElementChild.classList.contains('error1')){
             password2.innerHTML += '<p class="msg-error error1">Las contraseñas no coinciden</p>'
         }
@@ -100,6 +112,23 @@ formulario.addEventListener('submit', function (e) {
         }
     }
 
+    const extencion = formulario.imagen.value.split(".").pop()
 
-    console.log(formulario.imagen.value)
+    if (!extenciones.includes(extencion)) {
+        
+        if(!imagen.lastElementChild.classList.contains('error1')){
+            imagen.innerHTML += '<p class="msg-error error1">La imagen que ha subido no tiene un formato correspondiente. Los cuales son "jpg", "png", "gif", "jpeg"</p>'
+        }
+        imagen.lastElementChild.removeAttribute("hidden")
+        e.preventDefault();
+    }
+    else{
+        if(imagen.lastElementChild.classList.contains('error1')){
+            imagen.lastElementChild.setAttribute("hidden", "hidden")
+        }
+    }
+    
+
+    
+    
 });
