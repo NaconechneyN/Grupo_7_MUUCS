@@ -87,7 +87,9 @@ formulario.addEventListener('submit', function (e) {
     })
     
     if (!rePassword.test(formulario.password.value)) {
+        console.log("hola 1")
         if(!password.lastElementChild.classList.contains('error1')){
+            console.log("hola 2")
             password.innerHTML += '<p class="msg-error error1"> No se ingresó una contraseña valida!. Debe tener al menos 8 caracteres, letras mayúsculas, minúsculas, un número y un carácter especial.</p>'
         }
         password.lastElementChild.removeAttribute("hidden")
@@ -101,7 +103,7 @@ formulario.addEventListener('submit', function (e) {
 
     
     if (formulario.password.value != formulario.password2.value) {
-        
+        console.log("hola 3")
         if(!password2.lastElementChild.classList.contains('error1')){
             password2.innerHTML += '<p class="msg-error error1">Las contraseñas no coinciden</p>'
         }
@@ -129,6 +131,9 @@ formulario.addEventListener('submit', function (e) {
             imagen.lastElementChild.setAttribute("hidden", "hidden")
         }
     }
+
+    console.log(formulario.password.value)
+    console.log(formulario.password2.value)
     
 
     
