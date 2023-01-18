@@ -2,85 +2,93 @@ const db = require("../../src/database/models")
 
 
 module.exports = {
-    list: (req, res) => {
-        const cursos = db.Curso.findAll({
-            raw: true,
-        })
-        const categorias = db.Categoria.findAll({
-            raw: true,
-        })
-        Promise.all([cursos, categorias])
-            .then(([cursos, categorias]) => {
-                const curso = {
-                    count: cursos.length,
-                    countByCategory: {
-                        Desarrollo: 0,
-                        Negocios: 0,
-                        FinanzasyContabilidad: 0,
-                        Desarrollopersonal: 0,
-                        Marketing: 0,
-                        Diseño: 0
-                    },
-                    products:[]
-                }
+    list: async (req, res) => {
+        try {
+            const cursos = await db.Curso.findAll()
 
-                cursos.forEach(producto => {
-                    switch (producto.idCategorias) {
-                        case 1:
-                            curso.countByCategory.Desarrollo++;
-                            break;
-                        case 2:
-                            curso.countByCategory.Negocios++;
-                            break;
-                        case 3:
-                            curso.countByCategory.FinanzasyContabilidad++;
-                            break;
-                        case 4:
-                            curso.countByCategory.Desarrollopersonal++;
-                            break;
-                        case 5:
-                            curso.countByCategory.Marketing++;
-                            break;
-                        default:
-                            curso.countByCategory.Diseño++;
-                    }
-                    let users = {
-                        id : producto.idCursos,
-                        name : producto.titulo,
-                        description : producto.descripcion,
-                        detail : 'http://localhost:3023/api/products/'+producto.idCursos
-                    }
-                    curso.products.push(users)
-                })
-                console.log(cursos)
-                return res.json(curso)
-            })
-    },
-    detail: (req, res) => {
-        const cursos = db.Curso.findAll({
-            raw: true,
-            where: {
-                idCursos: req.params.id 
+            const queryCategorias = `SELECT CA.nombre as "name",
+                                  count(CA.nombre) as "count"     
+                            FROM cursos AS CU
+                            JOIN categorias AS CA
+                            ON CU.idCategorias = CA.idCategorias
+                            GROUP BY CU.idCategorias;`
+            const countByCategory = await db.sequelize.query(queryCategorias)
+
+            const queryTiposDeEnsenianza = `SELECT TE.nombre as "name",
+                                                   count(TE.nombre) as "count"     
+                                            FROM cursos AS CU
+                                            JOIN tipodeensenianza AS TE
+                                            ON CU.idtipoDeEnsenianza = TE.idtipoDeEnsenianza
+                                            GROUP BY CU.idCategorias;`
+            const countByTipoDeEnsenianza = await db.sequelize.query(queryTiposDeEnsenianza)
+            
+            const objResponse = {
+                count: cursos.length,
+                countByCategory: countByCategory[0],
+                countByTipoDeEnsenianza: countByTipoDeEnsenianza[0],
+                products: cursos.map(curso => ({
+                    status: 200,
+                    id: curso.idCursos,
+                    name: curso.titulo,
+                    description: curso.descripcion,
+                    descriptionQA: curso.descripcionQueAprenderas,
+                    certification: curso.certificacion,
+                    price: curso.precio,
+                    duration: curso.duracion,
+                    valoration: curso.valoration,
+                    idUser: curso.idUsuarios,
+                    detail: `http://${req.get('host')}/api/products/${curso.idCursos}`,
+                    image: `http://${req.get('host')}/img/products/${curso.imagen}`
+                }))
             }
-        })
-        const categorias = db.Categoria.findAll({
-            raw: true,
-        })
-        const tiposEnsenianzas = db.TipoDeEnsenianza.findAll({
-            raw: true,
-        })
-        Promise.all([cursos, categorias, tiposEnsenianzas])
-            .then(([cursos, categorias, tiposEnsenianzas]) => {
-                const [curso] = cursos
-                
-                curso.tiposDeEnsenianza = tiposEnsenianzas.find((tiposDeEnsenianza) => tiposDeEnsenianza.idtipoDeEnsenianza == curso.idtipoDeEnsenianza)
-                curso.categoria = categorias.find((categoria) => categoria.idCategorias == curso.idCategorias) 
-                
-                delete curso.idCategorias
-                delete curso.idtipoDeEnsenianza 
-                curso.imagen = "http://localhost:3023/img/products/" + curso.imagen
+            res.json(objResponse)
+        } catch(err) {
+            const objResponse = {
+                status: 500,
+                err: err
+            }
+            res.json(objResponse)
+        }
+    },
+    detail: async (req, res) => {
+        try {
+            let curso = await db.Curso.findByPk(req.params.id)
+            
+            if (curso) {
+                curso = curso.dataValues
 
-                return res.json(curso)
-            })
+                const categoria = await db.Categoria.findByPk(curso.idCategorias)
+                const tipoDeEnsenianza = await db.TipoDeEnsenianza.findByPk(curso.idtipoDeEnsenianza)
+
+                const objResponse = {
+                    status: 200,
+                    id: curso.idCursos,
+                    name: curso.titulo,
+                    description: curso.descripcion,
+                    descriptionQA: curso.descripcionQueAprenderas,
+                    certification: curso.certificacion,
+                    image: `http://${req.get('host')}/img/products/${curso.imagen}`,
+                    price: curso.precio,
+                    duration: curso.duracion,
+                    idUser: curso.idUsuarios,
+                    valoration: curso.valoration,
+                    category: categoria.dataValues,
+                    tipoDeEnsenianza: tipoDeEnsenianza.dataValues
+                }
+                res.json(objResponse)
+                return
+            }
+            const objResponse = {
+                status: 404,
+                err: err
+            }
+            res.json(objResponse)
+        } catch(err) {
+            const objResponse = {
+                status: 500,
+                err: err
+            }
+            res.json(objResponse)
+        }
     }
 }

@@ -1,43 +1,59 @@
 const db = require("../../src/database/models")
 
 module.exports ={
-    list: (req, res) => {
-        db.Usuario.findAll({
-            raw: true,
-            
-        })
-        .then((usuarios) => {
-            const usuario = {
-                count : usuarios.length,
-                users : []
+    list: async (req, res) => {
+        try {
+            const users = await db.Usuario.findAll()
+
+            const objResponse = {
+                status: 200,
+                count: users.length,
+                users: users.map(user => ({
+                    id: user.idUsuarios,
+                    name: user.nombreYApellido,
+                    email: user.email,
+                    detail: `http://${req.get('host')}/api/users/${user.idUsuarios}`
+                }))
             }
-            usuarios.forEach(user => {
-                let users = {
-                    id : user.idUsuarios,
-                    name : user.nombreYApellido,
-                    email : user.email,
-                    detail : 'http://localhost:3023/api/users/'+user.idUsuarios
-                }
-                usuario.users.push(users)
-            })
-            return res.json(usuario)
-        })
+            res.json(objResponse)
+        } catch(err) {
+            const objResponse = {
+                status: 500,
+                err: err
+            }
+            res.json(objResponse)
+        }
     },
-    detail: (req, res) => {
-        db.Usuario.findAll({
-            raw: true,
-            where: {
-                idUsuarios: req.params.id 
+    detail: async (req, res) => {
+        try {
+            let user = await  db.Usuario.findByPk(req.params.id)
+            
+            if (user) {
+                user = user.dataValues
+                const objResponse = {
+                    status: 200,
+                    id: user.idUsuarios,
+                    name: user.nombreYApellido,
+                    email: user.email,
+                    address: user.domicilio,
+                    image: `http://${req.get('host')}/img/users/${user.imagen}`,
+                    dob: user.fechaDeNacimiento //data of birth
+                }
+                res.json(objResponse)
+                return
             }
-        })
-        .then((usuarios) => {
-            let [usuario] = usuarios
-            let URLimagen = "http://localhost:3023/img/users/"+usuario.imagen
-            usuario.imagen = URLimagen
-            delete usuario.password
-            delete usuario.tipoDeUsuario
-            return res.json(usuario)
-        })  
+            const objResponse = {
+                status: 404,
+                err: err
+            }
+            res.json(objResponse)
+        } catch(err) {
+            const objResponse = {
+                status: 500,
+                err: err
+            }
+            res.json(objResponse)
+        }
     }
 }
 

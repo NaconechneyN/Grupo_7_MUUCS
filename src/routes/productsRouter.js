@@ -34,7 +34,7 @@ router.post("/create",[upload.single("imagen"), validateProduct], productsContro
 // Ruta a traves de ID para modificar un producto
 router.get("/:id/editar", guest, productsControllers.productEdit)
 //
-router.put("/editar",[upload.single("imagen"), validateProductEdit], productsControllers.productEdit1)
+router.put("/:id/editar", productsControllers.productEdit1)
 // Ruta a lista de productos
 router.get("/carritoT", guest, productsControllers.productListCarrito)
 // Ruta a traves de ID para eliminar un producto

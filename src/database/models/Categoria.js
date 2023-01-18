@@ -9,11 +9,11 @@ module.exports = (sequelize, dataTypes) => {
         nombre: {
             type: dataTypes.STRING,
             allowNull: false 
-        },
+        }/*,
         idCategoriasM: {
             type: dataTypes.INTEGER,
             allowNull: false 
-        }
+        }*/
     }
     let config = {
         tableName: "categorias",

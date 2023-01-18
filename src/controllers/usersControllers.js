@@ -89,16 +89,14 @@ const controllers = {
     },
     processLogin: (req, res) => {
         // GUARDAMOS ERRORES
-        let errors = validationResult(req);
+        const errors = validationResult(req);
 
-        
         if (errors.isEmpty()) {
 
             db.Usuario.findAll({
                 raw: true,
                 where: {
                     email: req.body.email
-
                 }
             })
                 .then((usuarios) => {

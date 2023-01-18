@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/partHead') %>
+        <link href="/css/formCreate.css" rel="stylesheet">
+        
+</head>
+
+<body>
+    <%- include('./partials/header') %>
+
+    <main class="main">
+        <div class="contenedorCreate">
+            <div class="acaSi">
+                <div class="title">
+                    <%= locals.titulo %>
+                </div>
+                <% if (locals.curso) { %>
+                    <form action=<%= `/products/${ locals.curso.idCursos }/editar?_method=PUT` %> method="post">
+                <% } else { %>
+                    <form action="/products/create" id="formulario1" method="POST" enctype="multipart/form-data">
+                <% } %>
+                    <div class="user-details">
+                        <!-- titulo -->
+                        <div class="input-box">
+                            <span for="titulo" class="details">Titulo</span>
+                            <input 
+                                type="text"
+                                name="titulo"
+                                id="titulo"
+                                placeholder="5 a 20 caracteres"
+                                <% if (locals.oldBody) { %>
+                                    value="<%= oldBody.titulo %>"
+                                <% } else if (locals.curso) { %>                                    
+                                    value="<%= curso.titulo %>"
+                                <% } %>
+                            >
+                        </div>
+                        <% if (locals.errors && errors.titulo) { %>
+                            <div class="errorCreate">
+                                <p><%= errors.titulo.msg %></p>
+                            </div>
+                        <% } %>
+                        <!-- descripcion -->
+                        <div class="input-box">
+                            <span class="details">Descripcion</span>
+                            <textarea
+                                name="descripcion"
+                                id="descripcion"
+                                placeholder="200 caracteres maximo"
+                            ><% if (locals.oldBody) { %><%= oldBody.descripcion %><% } else if (locals.curso) { %><%= locals.curso.descripcion %><% } %></textarea>
+                        </div>
+                        <% if (locals.errors && errors.descripcion) { %>
+                            <div class="errorCreate">
+                                <p><%= errors.descripcion.msg %></p>
+                            </div>
+                        <% } %>
+                        <!-- que aprenderan -->
+                        <div class="input-box">
+                            <span class="details">¿Que aprenderan los alumnos?</span>
+                            <textarea
+                                name="descripcionQueAprenderas"
+                                id="descripcionQueAprenderas"
+                                placeholder="200 caracteres maximo"
+                            ><% if (locals.oldBody) { %><%= oldBody.descripcionQueAprenderas %><% } else if (locals.curso) { %><%= locals.curso.descripcionQueAprenderas %><% } %></textarea>
+                        </div>
+                        <% if (locals.errors && errors.descripcionQueAprenderas) { %>
+                            <div class="errorCreate">
+                                <p><%= errors.descripcionQueAprenderas.msg %></p>
+                            </div>
+                        <% } %>
+                        <!-- categorias -->
+                        <div class="input-box">
+                            <span class="details">Categorias</span>
+                            <% locals.categorias.forEach(categoria => { %>
+                                <div class="cajaCategoria">
+                                    <input 
+                                        type="radio" 
+                                        name="categoria" 
+                                        value="<%= categoria.idCategorias %>"
+                                        id="<%= categoria.nombre.split(' ').join('') + categoria.idCategorias %>" 
+                                        class="checkCreate"
+                                        style="display: inline-block;"
+                                        <% if (locals.oldBody) { %>
+                                            <%= categoria.idCategorias == oldBody.categoria ? 'checked'  : '' %>
+                                        <% } else if (locals.curso) { %>
+                                            <%= categoria.idCategorias === locals.curso.idCategorias ? 'checked'  : '' %>
+                                        <% } %>
+                                    >
+                                    <label 
+                                        for="<%= categoria.nombre.split(' ').join('') + categoria.idCategorias %>"  
+                                        class="chicosB"
+                                        style="text-transform: capitalize;"
+                                    >
+                                        <%= categoria.nombre %>
+                                    </label>
+                                </div>
+                            <% }) %>
+                        </div>
+                        <% if (locals.errors && errors.categoria) { %>
+                            <div class="errorCreate">
+                                <p><%= errors.categoria.msg %></p>
+                            </div>
+                        <% } %>
+                        <!-- tipo de enseñanzas -->
+                        <div class="input-box">
+                            <span class="details">Tipo de Enseñanza</span>
+                            <% locals.tiposDeEnsenianza.forEach(tipoDeEnsenianza => { %>
+                                <div class="cajaEnseñanza">
+                                    <input 
+                                        type="radio" 
+                                        name="tipoDeEnsenianza" 
+                                        value="<%= tipoDeEnsenianza.idtipoDeEnsenianza %>"
+                                        id="<%= tipoDeEnsenianza.nombre.split(' ').join('') + tipoDeEnsenianza.idtipoDeEnsenianza %>" 
+                                        class="checkCreate"
+                                        style="display: inline-block;"
+                                        <% if (locals.oldBody) { %>
+                                            <%= tipoDeEnsenianza.idtipoDeEnsenianza == oldBody.tipoDeEnsenianza ? 'checked'  : '' %>
+                                        <% } else if (locals.curso) { %>
+                                            <%= tipoDeEnsenianza.idtipoDeEnsenianza === locals.curso.idtipoDeEnsenianza ? 'checked'  : '' %>
+                                        <% } %>
+                                    >
+                                    <label 
+                                        for="<%= tipoDeEnsenianza.nombre.split(' ').join('') + tipoDeEnsenianza.idtipoDeEnsenianza %>"  
+                                        class="chicosB"
+                                    >
+                                        <p style="text-transform: uppercase;"><%= tipoDeEnsenianza.nombre %></p>
+                                        <p style="font-size: 13px; font-weight: 300;"><%= tipoDeEnsenianza.descripcion %></p>
+                                    </label>
+                                </div>
+                            <% }) %>
+                        </div>
+                        <% if (locals.errors && errors.tipoDeEnsenianza) { %>
+                            <div class="errorCreate">
+                                <p><%= errors.tipoDeEnsenianza.msg %></p>
+                            </div>
+                        <% } %>
+                        <!-- certificacion -->
+                        <% if (!locals.curso) { %>
+                            <div class="input-box">
+                                <span class="details"> Certificacion</span>
+                                <div class="cajaCertificacion">
+                                    <input 
+                                        type="radio" 
+                                        name="certificacion" 
+                                        id="perfil1"
+                                        value="Oficial" 
+                                        class="checkCertificacion"
+                                        <% if (locals.oldBody) { %>
+                                            <%= oldBody.certificacion == "Oficial" ? 'checked'  : '' %>
+                                        <% } %>
+                                    >
+                                    <label for="Certifiacion" class="chicos">Oficial</label>
+                                    <input 
+                                        type="radio" 
+                                        name="certificacion" 
+                                        id="perfil2"
+                                        value="No Oficial" 
+                                        class="checkCertificacion"
+                                        <% if (locals.oldBody) { %>
+                                            <%= oldBody.certificacion == "No Oficial" ? 'checked'  : '' %>
+                                        <% } %>
+                                        >
+                                    <label for="Certifiacion" class="chicos">No
+                                        Oficial</label>
+                                </div>
+                            </div>
+                        <% } %>
+                        <% if (locals.errors && errors.certificacion) { %>
+                            <div class="errorCreate">
+                                <p><%= errors.certificacion.msg %></p>
+                            </div>
+                        <% } %>   
+                        <!-- precio -->
+                        <div class="input-box">
+                            <span class="details"> Precio</span>
+                            <i class="fa-solid fa-hand-holding-dollar"></i>
+                            <input 
+                                class="precioA" 
+                                type="text"
+                                name="precio" 
+                                placeholder="Si es gratis, indicarlo con 0" 
+                                id="precio" 
+                                <% if (locals.oldBody) { %>
+                                    value="<%= oldBody.precio %>"
+                                <% } else if (locals.curso) { %>
+                                    value="<%= locals.curso.precio %>"
+                                <% } %>
+                            >
+                        </div>
+                        <% if (locals.errors && errors.precio) { %>
+                            <div class="errorCreate">
+                                <p><%= errors.precio.msg %></p>
+                            </div>
+                        <% } %>
+                        <!-- duracion -->
+                        <div class="input-box">
+                            <span class="details">Duracion</span>
+                            <input 
+                                type="text" 
+                                name="duracion" 
+                                placeholder="5 a 20 caracteres" 
+                                id="duracion" 
+                                <% if (locals.oldBody) { %>
+                                    value="<%= oldBody.duracion %>">
+                                <% } else if (locals.curso) { %>
+                                    value="<%= locals.curso.duracion %>">
+                                <% } %>
+                        </div>
+                        <% if (locals.errors && errors.duracion) { %>
+                            <div class="errorCreate">
+                                <p><%= errors.duracion.msg %></p>
+                            </div>
+                        <% } %>
+                        <!-- imagen de perfil -->
+                        <% if (!locals.curso) { %>
+                            <div class="input-box">
+                                <span class="details"> imagen de perfil</span>
+                                <input type="file" name="imagen" id="imagen">
+                            </div>
+                            <% if (locals.errors && errors.imagen) { %>
+                                <div class="errorCreate">
+                                    <p><%= errors.imagen.msg %></p>
+                                </div>
+                            <% } %>
+                        <% } %>    
+                    </div>
+                    <div class="buttonRegistrarse">
+                        <input 
+                            type="submit" 
+                            <% if (locals.curso) { %>
+                                value="Editar Curso"
+                            <% } else { %>
+                                value="Crea Curso"
+                            <% }  %>
+                        >
+                    </div>                    
+                </form>
+            </div>
+        </div>
+    </main>
+
+</body>

@@ -19,7 +19,7 @@ const validateUser = [
     .notEmpty().withMessage('Debes completar tu contraseña')
     .isLength({min:8}).withMessage('Debe contener al menos 8 caracteres'),
     body('password2')
-    .notEmpty().withMessage('Las contraseñas no coinciden'),
+    /*.notEmpty().withMessage('Las contraseñas no coinciden'),*/,
     body('imagen').custom((value, { req }) => {
         let file = req.file
         let extenciones = [".jpg", ".png", ".gif", ".jpeg"]

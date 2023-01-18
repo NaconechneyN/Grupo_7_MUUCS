@@ -72,7 +72,27 @@
 
                                                     </div>
                                                     <% } %>
-                                                        <div class="cajaCategoria">
+
+                                                        <% locals.categorias.forEach(categoria => { %>
+                                                            <div class="cajaCategoria">
+                                                                <input 
+                                                                    type="radio" 
+                                                                    name="categoria" 
+                                                                    value="<%= categoria.idCategorias %>"
+                                                                    id="<%= categoria.nombre.split(' ').join('') + categoria.idCategorias %>" 
+                                                                    class="checkCreate"
+                                                                    style="display: inline-block;"
+                                                                >
+                                                                <label 
+                                                                    for="<%= categoria.nombre.split(' ').join('') + categoria.idCategorias %>"  
+                                                                    class="chicosB"
+                                                                    style="text-transform: capitalize;"
+                                                                >
+                                                                    <%= categoria.nombre %>
+                                                                </label>
+                                                            </div>
+                                                        <% }) %>
+                                                        <!-- <div class="cajaCategoria">
                                                             <input type="checkbox" class="checkCreate" name="categoria"
                                                                 id="categoria2" value="Desarrollo">
                                                             <label for="tipoDeEnsenianza" class="chicosB">Desarrollo</label>
@@ -107,7 +127,7 @@
                                                                 id="categoria2" value="Diseño">
                                                             <label for="tipoDeEnsenianza" class="chicosB">Diseño</label>
                                                             
-                                                        </div>
+                                                        </div> -->
                                             </div>
                                                 <div class="input-box">
                                                     <span class="details"> Tipo de Enseñanza</span>
@@ -120,7 +140,26 @@
 
                                                         </div>
                                                         <% } %>
+                                                        <% locals.tiposDeEnsenianza.forEach(tipoDeEnsenianza => { %>
                                                             <div class="cajaEnseñanza">
+                                                                <input 
+                                                                    type="radio" 
+                                                                    name="tipoDeEnsenianza" 
+                                                                    value="<%= tipoDeEnsenianza.idtipoDeEnsenianza %>"
+                                                                    id="<%= tipoDeEnsenianza.nombre.split(' ').join('') + tipoDeEnsenianza.idtipoDeEnsenianza %>" 
+                                                                    class="checkCreate"
+                                                                    style="display: inline-block;"
+                                                                >
+                                                                <label 
+                                                                    for="<%= tipoDeEnsenianza.nombre.split(' ').join('') + tipoDeEnsenianza.idtipoDeEnsenianza %>"  
+                                                                    class="chicosB"
+                                                                >
+                                                                    <p style="text-transform: uppercase;"><%= tipoDeEnsenianza.nombre %></p>
+                                                                    <p style="font-size: 13px; font-weight: 300;"><%= tipoDeEnsenianza.descripcion %></p>
+                                                                </label>
+                                                            </div>
+                                                        <% }) %>
+                                                            <!-- <div class="cajaEnseñanza">
                                                                 <input type="checkbox" class="checkCreate" name="tipoDeEnsenianza"
                                                                     id="categoria1" value="APRENDIZAJE COOPERATIVO">
                                                                 <label for="tipoDeEnsenianza" class="chicosB">APRENDIZAJE
@@ -208,7 +247,7 @@
                                                                     videojuegos ha despertado el interés de expertos en
                                                                     este ámbito, que recomiendan
                                                                     videojuegos educativos para los niños.</label>
-                                                            </div>
+                                                            </div> -->
                                                 </div>
 
                                                 <div class="input-box">

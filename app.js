@@ -15,6 +15,10 @@ const path = require('path');
 // Requerimos path para poder manejar rnuestras variables de entorno
 const dotenv= require('dotenv').config();
 
+// CORS 
+const cors = require('cors')
+app.use(cors())
+
 // Requerimos methodOverride para poder usar tambien los protocolos put, patch y delete
 const methodOverride = require('method-override')
 app.use(methodOverride('_method'))
@@ -27,9 +31,10 @@ const mainRouter = require ('./src/routes/mainRouter')
 const productsRouter = require('./src/routes/productsRouter')
 const usersRouter = require('./src/routes/usersRouter')
 
+
 // Requerimos las rutas API
-const usersRoutes = require('./api/routes/usersRoutes')
-const productRoutes = require('./api/routes/productRoutes')
+const apiUsersRoutes  = require('./api/routes/usersRoutes')
+const apiProductRoutes = require('./api/routes/productRoutes')
 
 // Usamos session
 app.use(session({secret: "Muucs" }));
@@ -39,6 +44,7 @@ app.use(cookie());
 
 // Usamos mildware para saber si hay un usuario recordado
 app.use(userLogged);
+
 
 // Usamos la funcion de static de express para indicarle a express cual e sla carpeta que tiene los activos staticos
 app.use(express.static(path.join(__dirname, 'public')));
@@ -76,9 +82,9 @@ app.use("/products", productsRouter);
 app.use("/users", usersRouter);
 
 //Usamos las rutas requeridas anteriormente API
-app.use("/api/users", usersRoutes);
+app.use("/api/users",apiUsersRoutes);
 
-app.use("/api/products", productRoutes);
+app.use("/api/products", apiProductRoutes);
 
 
 
